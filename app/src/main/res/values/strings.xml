@@ -1,0 +1,815 @@
+<resources>
+    <string name="app_name">RPG</string>
+    <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
+    <string name="btn_avancar">Avançar</string>
+    <string name="btn_finish">FINALIZAR</string>
+    <string name="tab_text_1">Criar</string>
+    <string name="tab_text_2">Dados</string>
+    <string name="tab_text_3">Fichas</string>
+    <string name="tab_text_4">Livro</string>
+    <string name="txt_jog">Nome do Jogador:</string>
+    <string name="txt_nome">Nome do Personagem:</string>
+    <string name="txt_idade">Idade:</string>
+    <string name="txt_sistema">Sistema:</string>
+    <string name="txt_raca">Raça:</string>
+    <string name="txt_classe">Classe:</string>
+    <string name="txt_inicio">Dados:</string>
+    <string name="txt_fim">Escolha o valor do dado:</string>
+    <string name="d4">D4</string>
+    <string name="d6">D6</string>
+    <string name="d8">D8</string>
+    <string name="d10">D10</string>
+    <string name="d12">D12</string>
+    <string name="d20">D20</string>
+    <string name="da">Rolar</string>
+    <string name="escolharaca">Raça:</string>
+    <string name="escolhaorigem">Origem:</string>
+    <string name="escolhatendencia">Alinhamento:</string>
+    <string name="escolhametodo">Método para Definir Atributos:</string>
+    <string name="escolhaclasse">Classe:</string>
+    <string name="escolhaLevel">Nível:</string>
+    <string name="pontos">Pontos Restantes:</string>
+    <string name="rolar">Rolar</string>
+    <string name="comprar">Comprar</string>
+    <string name="consti">Constituição</string>
+    <string name="forc">Força</string>
+    <string name="destre">Destreza</string>
+    <string name="caris">Carisma</string>
+    <string name="sabe">Sabedoria</string>
+    <string name="inte">Inteligência</string>
+
+    <string-array name="Alin1">
+        <item>Caótico</item>
+        <item>Neutro</item>
+        <item>Leal</item>
+    </string-array>
+
+    <string-array name="Alin2">
+        <item>Bondoso</item>
+        <item>Neutro</item>
+        <item>Maligno</item>
+    </string-array>
+
+    <string-array name="Origem">
+        <item>Acólito</item>
+        <item>Amigo dos Animais</item>
+        <item>Amnésico</item>
+        <item>Aristocrata</item>
+        <item>Artesão</item>
+        <item>Artista</item>
+        <item>Assistente de Laboratório</item>
+        <item>Batedor</item>
+        <item>Capanga</item>
+        <item>Charlatão</item>
+        <item>Circense</item>
+        <item>Criminoso</item>
+        <item>Curandeiro</item>
+        <item>Eremita</item>
+        <item>Escravo</item>
+        <item>Estudioso</item>
+        <item>Fazendeiro</item>
+        <item>Forasteiro</item>
+        <item>Gladiador</item>
+        <item>Guarda</item>
+        <item>Herdeiro</item>
+        <item>Herói Camponês</item>
+        <item>Marujo</item>
+        <item>Mateiro</item>
+        <item>Membro de Guilda</item>
+        <item>Mercador</item>
+        <item>Minerador</item>
+        <item>Nômade</item>
+        <item>Pivete</item>
+        <item>Refugiado</item>
+        <item>Seguidor</item>
+        <item>Selvagem</item>
+        <item>Soldado</item>
+        <item>Taverneiro</item>
+        <item>Trabalhador</item>
+    </string-array>
+
+    <string-array name="Raças">
+        <item>Humano</item>
+        <item>Anão</item>
+        <item>Dahllan</item>
+        <item>Elfo</item>
+        <item>Goblin</item>
+        <item>Lefou</item>
+        <item>Minotauro</item>
+        <item>Qareen</item>
+        <item>Golem</item>
+        <item>Hynne</item>
+        <item>Kliren</item>
+        <item>Medusa</item>
+        <item>Osteon</item>
+        <item>Sereia/Tristão</item>
+        <item>Sílfide</item>
+        <item>Suraggel</item>
+        <item>Trog</item>
+    </string-array>
+
+    <string-array name="Classes">
+        <item>Arcanista</item>
+        <item>Bárbaro</item>
+        <item>Bardo</item>
+        <item>Bucaneiro</item>
+        <item>Caçador</item>
+        <item>Cavaleiro</item>
+        <item>Clérigo</item>
+        <item>Druida</item>
+        <item>Guerreiro</item>
+        <item>Inventor</item>
+        <item>Ladino</item>
+        <item>Lutador</item>
+        <item>Nobre</item>
+        <item>Paladino</item>
+    </string-array>
+
+    <string-array name="Atributos">
+        <item>Força</item>
+        <item>Destreza</item>
+        <item>Constituição</item>
+        <item>Inteligência</item>
+        <item>Sabedoria</item>
+        <item>Carisma</item>
+    </string-array>
+
+    <string name="edt_email">Email</string>
+    <string name="btn_login">Login</string>
+    <string name="edt_senha">Senha</string>
+    <string name="txt_forget">Esqueceu sua senha? Clique aqui</string>
+    <string name="txt_new">É novo aqui? Cadastre-se clicando aqui.</string>
+    <string name="edt_confirm">Confirmar Senha</string>
+    <string name="btn_cad">Cadastrar</string>
+    <string name="action_logout">Sair</string>
+
+    <string name="abjur">Abjuração</string>
+    <string name="adiv">Adivinhação</string>
+    <string name="conv">Convocação</string>
+    <string name="encan">Encantamento</string>
+    <string name="evoc">Evocação</string>
+    <string name="ilusao">Ilusão</string>
+    <string name="necro">Necromancia</string>
+    <string name="trans">Transmutação</string>
+
+    <string-array name="magias1arc">
+        <item>Alarme.\nAvisa quando alguém invadir uma área protegida.\n</item>
+        <item>Armadura Arcana.\nAumenta sua Defesa.\n</item>
+        <item>Resistência a Energia.\nFornece resistência contra um tipo de energia a sua escolha.\n</item>
+        <item>Tranca Arcana.\nTranca um item que possa ser aberto ou fechado.\n</item>
+        <item>Aviso.\nEnvia um alerta telepático para uma criatura. Compreensão. Você entende qualquer coisa escrita ou falada e pode ouvir pensamentos.\n</item>
+        <item>Compreensão.\nVocê entende qualquer coisa escrita ou falada e pode ouvir pensamentos.\n</item>
+        <item>Concentração de Combate.\nAo atacar, você pode rolar dois dados e ficar com o melhor.\n</item>
+        <item>Visão Mística.\nVocê pode ver auras mágicas.\n</item>
+        <item>Área Escorregadia.\nCriaturas na área podem cair ou objeto afetado pode ser derrubado.\n</item>
+        <item>Conjurar Monstro.\nConvoca um monstro sob seu comando.\n</item>
+        <item>Névoa.\nCria uma névoa que oferece camuflagem.\n</item>
+        <item>Teia.\nCriaturas na área ficam enredadas.\n</item>
+        <item>Adaga Mental.\nAlvo sofre dano mental e pode ficar pasmo.\n</item>
+        <item>Enfeitiçar.\nAlvo se torna prestativo e pode realizar um pedido seu.\n</item>
+        <item>Hipnotismo. \nAlvos ficam fascinados.\n</item>
+        <item>Sono. \nAlvo fica fatigado ou cai em um sono profundo.\n</item>
+        <item>Explosão de Chamas. \nCone causa dano de fogo.\n</item>
+        <item>Luz. \nObjeto ilumina como uma tocha.\n</item>
+        <item>Seta Infalível de Talude. \nDispara setas de energia que acertam automaticamente.\n</item>
+        <item>Toque Chocante. \nToque causa dano de eletricidade.\n</item>
+        <item>Criar Ilusão. \nCria uma ilusão visual ou sonora.\n</item>
+        <item>Disfarce Ilusório. \nMuda a aparência de uma ou mais criaturas.\n</item>
+        <item>Imagem Espelhada. \nCria duplicatas para confundir os inimigos, oferecendo bônus na Defesa.\n</item>
+        <item>Leque Cromático. \nCriaturas na área ficam ofuscadas ou atordoadas.</item>
+        <item>Amedrontar.\nO alvo fica abalado ou apavorado.\n</item>
+        <item>Escuridão. \nObjeto emana uma área de escuridão.\n</item>
+        <item>Raio do Enfraquecimento. \nO alvo fica fatigado ou vulnerável.\n</item>
+        <item>Vitalidade Fantasma. \nVocê recebe pontos de vida temporários.\n</item>
+        <item>Arma Mágica. \nArma recebe bônus ou poderes mágicos.\n</item>
+        <item>Primor Atlético. \nAlvo recebe bônus no deslocamento e em testes de Atletismo.\n</item>
+        <item>Queda Suave. \nAlvo cai lentamente.\n</item>
+        <item>Transmutar Objetos. \nPode consertar ou fabricar um objeto temporário.\n</item>
+    </string-array>
+
+    <string-array name="arc1abjur">
+        <item>Alarme.\nAvisa quando alguém invadir uma área protegida.\n</item>
+        <item>Armadura Arcana.\nAumenta sua Defesa.\n</item>
+        <item>Resistência a Energia.\nFornece resistência contra um tipo de energia a sua escolha.\n</item>
+        <item>Tranca Arcana.\nTranca um item que possa ser aberto ou fechado.\n</item>
+    </string-array>
+    <string-array name="arc1adiv">
+        <item>Aviso.\nEnvia um alerta telepático para uma criatura. Compreensão. Você entende qualquer coisa escrita ou falada e pode ouvir pensamentos.\n</item>
+        <item>Compreensão.\nVocê entende qualquer coisa escrita ou falada e pode ouvir pensamentos.\n</item>
+        <item>Concentração de Combate.\nAo atacar, você pode rolar dois dados e ficar com o melhor.\n</item>
+        <item>Visão Mística.\nVocê pode ver auras mágicas.\n</item>
+    </string-array>
+    <string-array name="arc1conv">
+        <item>Área Escorregadia.\nCriaturas na área podem cair ou objeto afetado pode ser derrubado.\n</item>
+        <item>Conjurar Monstro.\nConvoca um monstro sob seu comando.\n</item>
+        <item>Névoa.\nCria uma névoa que oferece camuflagem.\n</item>
+        <item>Teia.\nCriaturas na área ficam enredadas.\n</item>
+    </string-array>
+    <string-array name="arc1encan">
+        <item>Adaga Mental.\nAlvo sofre dano mental e pode ficar pasmo.v</item>
+        <item>Enfeitiçar.\nAlvo se torna prestativo e pode realizar um pedido seu.\n</item>
+        <item>Hipnotismo. \nAlvos ficam fascinados.\n</item>
+        <item>Sono. \nAlvo fica fatigado ou cai em um sono profundo.\n</item>
+    </string-array>
+    <string-array name="arc1evoc">
+        <item>Explosão de Chamas. \nCone causa dano de fogo.\n</item>
+        <item>Luz. \nObjeto ilumina como uma tocha.\n</item>
+        <item>Seta Infalível de Talude. \nDispara setas de energia que acertam automaticamente.\n</item>
+        <item>Toque Chocante. \nToque causa dano de eletricidade.\n</item>
+    </string-array>
+    <string-array name="arc1ilusao">
+        <item>Criar Ilusão. \nCria uma ilusão visual ou sonora.\n</item>
+        <item>Disfarce Ilusório. \nMuda a aparência de uma ou mais criaturas.\n</item>
+        <item>Imagem Espelhada. \nCria duplicatas para confundir os inimigos, oferecendo bônus na Defesa.\n</item>
+        <item>Leque Cromático. \nCriaturas na área ficam ofuscadas ou atordoadas.</item>
+    </string-array>
+    <string-array name="arc1necro">
+        <item>Amedrontar.\nO alvo fica abalado ou apavorado.\n</item>
+        <item>Escuridão. \nObjeto emana uma área de escuridão.\n</item>
+        <item>Raio do Enfraquecimento. \nO alvo fica fatigado ou vulnerável.\n</item>
+        <item>Vitalidade Fantasma. \nVocê recebe pontos de vida temporários.\n</item>
+    </string-array>
+    <string-array name="arc1trans">
+        <item>Arma Mágica. \nArma recebe bônus ou poderes mágicos.\n</item>
+        <item>Primor Atlético. \nAlvo recebe bônus no deslocamento e em testes de Atletismo.\n</item>
+        <item>Queda Suave. \nAlvo cai lentamente.\n</item>
+        <item>Transmutar Objetos. \nPode consertar ou fabricar um objeto temporário.\n</item>
+    </string-array>
+
+    <string-array name="magias2arc">
+        <item>Campo de Força. \nCria uma película protetora que absorve dano.\n</item>
+        <item>Dissipar Magia. \nCancela os efeitos de magias ativas em um alvo ou área.\n</item>
+        <item>Refúgio. \nCria um domo para abrigar o conjurador e seus aliados.\n</item>
+        <item>Runa de Proteção. \nRuna protege passagem ou objeto.\n</item>
+        <item>Ligação Telepática. \nEstabelece um vínculo telepático entre duas ou mais criaturas.\n</item>
+        <item>Localização. \nDetermina em que direção está um objeto ou criatura a sua escolha.\n</item>
+        <item>Mapear. \nTraça um esboço de mapa dos arredores.\n</item>
+        <item>Amarras Etéreas. \nLaços de energia prendem o alvo.\n</item>
+        <item>Montaria Arcana.\nConvoca uma criatura que serve como montaria.\n</item>
+        <item>Salto Dimensional. \nTeletransporta você e outras criaturas para um ponto dentro do alcance.\n</item>
+        <item>Servos Invisíveis. \nSeres invisíveis realizam tarefas para você.\n</item>
+        <item>Desespero Esmagador. \nCriaturas na área perdem a vontade de lutar.\n</item>
+        <item>Marca da Obediência. \nSímbolo mágico obriga o alvo a cumprir uma ordem.\n</item>
+        <item>Sussurros Insanos. \nDeixa o alvo confuso.\n</item>
+        <item>Bola de Fogo. \nEsfera incandescente explode, causando dano em todas as criaturas na área.\n</item>
+        <item>Flecha Ácida. \nDispara um projétil de ácido que corrói armaduras e outros objetos.\n</item>
+        <item>Relâmpago. \nCausa dano de eletricidade em criaturas numa linha.\n</item>
+        <item>Sopro das Uivantes. \nExplosão em cone causa dano de frio e empurra alvos.\n</item>
+        <item>Aparência Perfeita. \nAumenta o Carisma e concede bônus em perícias sociais.\n</item>
+        <item>Camuflagem Ilusória. \nA imagem do alvo fica distorcida, concedendo camuflagem.\n</item>
+        <item>Esculpir Sons. \nAltera os sons emitidos pelos alvos.\n</item>
+        <item>Invisibilidade. \nVocê se torna invisível por um curto período.\n</item>
+        <item>Conjurar Mortos-Vivos. \nErgue mortos-vivos para lutar por você.\n</item>
+        <item>Crânio Voador de Vladislav. \nCrânio flutuante causa dano em um alvo.\n</item>
+        <item>Toque Vampírico. \nToque causa dano e absorve pontos de vida.\n</item>
+        <item>Alterar Tamanho. \nAumenta ou diminui o tamanho de objetos e criaturas.\n</item>
+        <item>Metamorfose. \nTransforma o corpo do alvo.\n</item>
+        <item>Velocidade. \nAlvo pode fazer ações adicionais.\n</item>
+    </string-array>
+
+    <string-array name="arc2abjur">
+        <item>Campo de Força. \nCria uma película protetora que absorve dano.\n</item>
+        <item>Dissipar Magia. \nCancela os efeitos de magias ativas em um alvo ou área.\n</item>
+        <item>Refúgio. \nCria um domo para abrigar o conjurador e seus aliados.\n</item>
+        <item>Runa de Proteção. \nRuna protege passagem ou objeto.\n</item>
+    </string-array>
+    <string-array name="arc2adiv">
+        <item>Ligação Telepática. \nEstabelece um vínculo telepático entre duas ou mais criaturas.\n</item>
+        <item>Localização. \nDetermina em que direção está um objeto ou criatura a sua escolha.\n</item>
+        <item>Mapear. \nTraça um esboço de mapa dos arredores.\n</item>
+    </string-array>
+    <string-array name="arc2conv">
+        <item>Amarras Etéreas. \nLaços de energia prendem o alvo.\n</item>
+        <item>Montaria Arcana.\nConvoca uma criatura que serve como montaria.\n</item>
+        <item>Salto Dimensional. \nTeletransporta você e outras criaturas para um ponto dentro do alcance.\n</item>
+        <item>Servos Invisíveis. \nSeres invisíveis realizam tarefas para você.\n</item>
+    </string-array>
+    <string-array name="arc2encan">
+        <item>Desespero Esmagador. \nCriaturas na área perdem a vontade de lutar.\n</item>
+        <item>Marca da Obediência. \nSímbolo mágico obriga o alvo a cumprir uma ordem.\n</item>
+        <item>Sussurros Insanos. \nDeixa o alvo confuso.\n</item>
+    </string-array>
+    <string-array name="arc2evoc">
+        <item>Bola de Fogo. \nEsfera incandescente explode, causando dano em todas as criaturas na área.\n</item>
+        <item>Flecha Ácida. \nDispara um projétil de ácido que corrói armaduras e outros objetos.\n</item>
+        <item>Relâmpago. \nCausa dano de eletricidade em criaturas numa linha.\n</item>
+        <item>Sopro das Uivantes. \nExplosão em cone causa dano de frio e empurra alvos.\n</item>
+    </string-array>
+    <string-array name="arc2ilusao">
+        <item>Aparência Perfeita. \nAumenta o Carisma e concede bônus em perícias sociais.\n</item>
+        <item>Camuflagem Ilusória. \nA imagem do alvo fica distorcida, concedendo camuflagem.\n</item>
+        <item>Esculpir Sons. \nAltera os sons emitidos pelos alvos.\n</item>
+        <item>Invisibilidade. \nVocê se torna invisível por um curto período.\n</item>
+    </string-array>
+    <string-array name="arc2necro">
+        <item>Conjurar Mortos-Vivos. \nErgue mortos-vivos para lutar por você.\n</item>
+        <item>Crânio Voador de Vladislav. \nCrânio flutuante causa dano em um alvo.\n</item>
+        <item>Toque Vampírico. \nToque causa dano e absorve pontos de vida.\n</item>
+    </string-array>
+    <string-array name="arc2trans">
+        <item>Alterar Tamanho. \nAumenta ou diminui o tamanho de objetos e criaturas.\n</item>
+        <item>Metamorfose. \nTransforma o corpo do alvo.\n</item>
+        <item>Velocidade. \nAlvo pode fazer ações adicionais.\n</item>
+    </string-array>
+
+    <string-array name="magias3arc">
+        <item>Âncora Dimensional. \nImpede o alvo de se afastar de um ponto, mesmo com teletransporte.\n</item>
+        <item>Dificultar Detecção. \nProtege uma criatura ou objeto contra detecção e vidência.\n</item>
+        <item>Globo de Invulnerabilidade. \nEsfera protege contra magias de 1º e 2º círculos.\n</item>
+        <item>Contato Extraplanar. \nVocê barganha com criaturas de outros planos para obter ajuda.\n</item>
+        <item>Lendas e Histórias. \nDescobre detalhes sobre criaturas, objetos e lugares.</item>
+        <item>Vidência. \nPode ver e ouvir os arredores de uma criatura.\n</item>
+        <item>Convocação Instantânea. \nTeletransporta um objeto marcado para suas mãos.\n</item>
+        <item>Enxame Rubro de Ichabod. \nInvoca uma massa rastejante de demônios da Tormenta.\n</item>
+        <item>Teletransporte. \nTransporta você e outras criaturas e objetos para um local instantaneamente.\n</item>
+        <item>Imobilizar. \nAlvo fica lento ou paralisado.\n</item>
+        <item>Selo de Mana. \nVocê sela a energia de uma criatura, impedindo que use pontos de mana.\n</item>
+        <item>Erupção Glacial. \nEstacas de gelo explodem do chão, ferindo e derrubando os alvos.\n</item>
+        <item>Lança Ígnea de Aleph. \nProjétil de magma explode no alvo, causando dano por rodada.\n</item>
+        <item>Muralha Elemental. \nEvoca um muro feito de fogo ou gelo.\n</item>
+        <item>Ilusão Lacerante. \nCria uma ilusão perigosa que pode causar dano real.\n</item>
+        <item>Manto de Sombras. \nConjurador se cobre de sombras mágicas para vários efeitos.\n</item>
+        <item>Miragem. \nAltera uma área de forma ilusória.\n</item>
+        <item>Ferver Sangue. \nCriatura tem seu sangue aquecido até borbulhar, causando dano.\n</item>
+        <item>Servo Morto-Vivo. \nCria um aliado morto-vivo sob seu comando.\n</item>
+        <item>Tentáculos de Trevas. \nTentáculos de energia negativa atacam e agarram criaturas na área.\n</item>
+        <item>Pele de Pedra. \nEndurece sua pele, fornecendo resistência a dano.\n</item>
+        <item>Telecinesia. \nMove e arremessa criaturas e objetos com a mente.\n</item>
+        <item>Transformação de Guerra. \nVocê recebe habilidades superiores de combate, mas perde a habilidade de lançar magias.\n</item>
+        <item>Voo. \nVocê recebe deslocamento voo 12m.\n</item>
+    </string-array>
+
+    <string-array name="arc3abjur">
+        <item>Âncora Dimensional. \nImpede o alvo de se afastar de um ponto, mesmo com teletransporte.\n</item>
+        <item>Dificultar Detecção. \nProtege uma criatura ou objeto contra detecção e vidência.\n</item>
+        <item>Globo de Invulnerabilidade. \nEsfera protege contra magias de 1º e 2º círculos.\n</item>
+    </string-array>
+    <string-array name="arc3adiv">
+        <item>Contato Extraplanar. \nVocê barganha com criaturas de outros planos para obter ajuda.\n</item>
+        <item>Lendas e Histórias. \nDescobre detalhes sobre criaturas, objetos e lugares.</item>
+        <item>Vidência. \nPode ver e ouvir os arredores de uma criatura.\n</item>
+    </string-array>
+    <string-array name="arc3conv">
+        <item>Convocação Instantânea. \nTeletransporta um objeto marcado para suas mãos.\n</item>
+        <item>Enxame Rubro de Ichabod. \nInvoca uma massa rastejante de demônios da Tormenta.\n</item>
+        <item>Teletransporte. \nTransporta você e outras criaturas e objetos para um local instantaneamente.\n</item>
+    </string-array>
+    <string-array name="arc3encan">
+        <item>Imobilizar. \nAlvo fica lento ou paralisado.\n</item>
+        <item>Selo de Mana. \nVocê sela a energia de uma criatura, impedindo que use pontos de mana.\n</item>
+    </string-array>
+    <string-array name="arc3evoc">
+        <item>Erupção Glacial. \nEstacas de gelo explodem do chão, ferindo e derrubando os alvos.\n</item>
+        <item>Lança Ígnea de Aleph. \nProjétil de magma explode no alvo, causando dano por rodada.\n</item>
+        <item>Muralha Elemental. \nEvoca um muro feito de fogo ou gelo.\n</item>
+    </string-array>
+    <string-array name="arc3ilusao">
+        <item>Ilusão Lacerante. \nCria uma ilusão perigosa que pode causar dano real.\n</item>
+        <item>Manto de Sombras. \nConjurador se cobre de sombras mágicas para vários efeitos.\n</item>
+        <item>Miragem. \nAltera uma área de forma ilusória.\n</item>
+    </string-array>
+    <string-array name="arc3necro">
+        <item>Ferver Sangue. \nCriatura tem seu sangue aquecido até borbulhar, causando dano.\n</item>
+        <item>Servo Morto-Vivo. \nCria um aliado morto-vivo sob seu comando.\n</item>
+        <item>Tentáculos de Trevas. \nTentáculos de energia negativa atacam e agarram criaturas na área.\n</item>
+    </string-array>
+    <string-array name="arc3trans">
+        <item>Pele de Pedra. \nEndurece sua pele, fornecendo resistência a dano.\n</item>
+        <item>Telecinesia. \nMove e arremessa criaturas e objetos com a mente.\n</item>
+        <item>Transformação de Guerra. \nVocê recebe habilidades superiores de combate, mas perde a habilidade de lançar magias.\n</item>
+        <item>Voo. \nVocê recebe deslocamento voo 12m.\n</item>
+    </string-array>
+
+    <string-array name="magias4arc">
+        <item>Campo Antimagia. \nBarreira anula todos os efeitos mágicos.\n</item>
+        <item>Libertação. \nO alvo fica imune a efeitos que impeçam ou restrinjam movimentação.\n</item>
+        <item>Sonho. \nVocê entra nos sonhos de uma criatura e pode interagir com ela lá.\n</item>
+        <item>Visão da Verdade. \nVocê enxerga através de camuflagem, escuridão, ilusão e transmutação.\n</item>
+        <item>Conjurar Elemental. \nConvoca um elemental como aliado.\n</item>
+        <item>Mão Poderosa de Talude. \nMão gigante feita de energia pode realizar várias ações.\n</item>
+        <item>Viagem Planar. \nViaja até outro plano de existência.\n</item>
+        <item>Alterar Memória. \nPode apagar ou modificar a memória recente do alvo.\n</item>
+        <item>Marionete. \nControla o corpo do alvo.\n</item>
+        <item>Raio Polar. \nCausa dano de frio e congela alvo.\n</item>
+        <item>Relâmpago Flamejante de Reynard. \nDispara rajadas de fogo e relâmpago.\n</item>
+        <item>Talho Invisível de Edauros. \nLâmina de ar em alta velocidade corta os alvos.\n</item>
+        <item>Duplicata Ilusória. \nImagem projetada copia seus movimentos e ações.\n</item>
+        <item>Explosão Caleidoscópica. \nExplosão de luzes e sons desabilita os alvos.\n</item>
+        <item>Assassino Fantasmagórico. \nConjura um fantasma que persegue e tenta matar o alvo.\n</item>
+        <item>Muralha de Ossos. \nBarreira de ossos afiados impede o avanço dos inimigos.\n</item>
+        <item>Animar Objetos. \nObjetos comuns ganham vida e obedecem a seus comandos.\n</item>
+        <item>Controlar a Gravidade. \nManipula os efeitos da gravidade em uma área.\n</item>
+        <item>Desintegrar. \nRaio transforma um alvo em pó.\n</item>
+        <item>Forma Etérea. \nVocê pode se tornar etéreo enquanto a magia durar.\n</item>
+    </string-array>
+
+    <string-array name="arc4abjur">
+        <item>Campo Antimagia. \nBarreira anula todos os efeitos mágicos.\n</item>
+        <item>Libertação. \nO alvo fica imune a efeitos que impeçam ou restrinjam movimentação.\n</item>
+    </string-array>
+    <string-array name="arc4adiv">
+        <item>Sonho. \nVocê entra nos sonhos de uma criatura e pode interagir com ela lá.\n</item>
+        <item>Visão da Verdade. \nVocê enxerga através de camuflagem, escuridão, ilusão e transmutação.\n</item>
+    </string-array>
+    <string-array name="arc4conv">
+        <item>Conjurar Elemental. \nConvoca um elemental como aliado.\n</item>
+        <item>Mão Poderosa de Talude. \nMão gigante feita de energia pode realizar várias ações.\n</item>
+        <item>Viagem Planar. \nViaja até outro plano de existência.\n</item>
+    </string-array>
+    <string-array name="arc4encan">
+        <item>Alterar Memória. \nPode apagar ou modificar a memória recente do alvo.\n</item>
+        <item>Marionete. \nControla o corpo do alvo.\n</item>
+    </string-array>
+    <string-array name="arc4evoc">
+        <item>Raio Polar. \nCausa dano de frio e congela alvo.\n</item>
+        <item>Relâmpago Flamejante de Reynard. \nDispara rajadas de fogo e relâmpago.\n</item>
+        <item>Talho Invisível de Edauros. \nLâmina de ar em alta velocidade corta os alvos.\n</item>
+    </string-array>
+    <string-array name="arc4ilusao">
+        <item>Duplicata Ilusória. \nImagem projetada copia seus movimentos e ações.\n</item>
+        <item>Explosão Caleidoscópica. \nExplosão de luzes e sons desabilita os alvos.\n</item>
+    </string-array>
+    <string-array name="arc4necro">
+        <item>Assassino Fantasmagórico. \nConjura um fantasma que persegue e tenta matar o alvo.\n</item>
+        <item>Muralha de Ossos. \nBarreira de ossos afiados impede o avanço dos inimigos.\n</item>
+    </string-array>
+    <string-array name="arc4trans">
+        <item>Animar Objetos. \nObjetos comuns ganham vida e obedecem a seus comandos.\n</item>
+        <item>Controlar a Gravidade. \nManipula os efeitos da gravidade em uma área.\n</item>
+        <item>Desintegrar. \nRaio transforma um alvo em pó.\n</item>
+        <item>Forma Etérea. \nVocê pode se tornar etéreo enquanto a magia durar.\n</item>
+    </string-array>
+
+    <string-array name="magias5arc">
+        <item>Aprisionamento. \nPrende o alvo de diversas formas poderosas.\n</item>
+        <item>Engenho de Mana. \nDisco de energia flutuante é capaz de absorver magias e gerar PM.\n</item>
+        <item>Invulnerabilidade. \nRecebe uma série de imunidades físicas ou mentais a sua escolha.\n</item>
+        <item>Alterar Destino. \nEnxerga o futuro, podendo alterar o resultado de um teste.</item>
+        <item>Projetar Consciência. \nPode observar qualquer local ou criatura.\n</item>
+        <item>Buraco Negro. \nAbre uma ruptura no espaço que suga tudo ao redor.\n</item>
+        <item>Chuva de Meteoros. \nConvoca um enorme meteorito incandescente.\n</item>
+        <item>Semiplano. \nCria uma pequena dimensão.\n</item>
+        <item>Legião. \nVocê pode dominar a mente de vários alvos ao mesmo tempo e comandar suas vontades.\n</item>
+        <item>Palavra Primordial. \nPalavras mágicas podem atordoar, cegar e até matar uma criatura.\n</item>
+        <item>Possessão. \nTransfere sua consciência para o corpo do alvo, tomando controle total.\n</item>
+        <item>Barragem Elemental de Vectorius. \nLança esferas elementais explosivas.\n</item>
+        <item>Deflagração de Mana. \nExplosão de energia bruta causa dano e afeta magias e itens mágicos.\n</item>
+        <item>Mata-Dragão. \nDispara uma rajada de energia destruidora.\n</item>
+        <item>Réquiem. \nPrende os alvos em uma realidade ilusória que se repete infinitamente.\n</item>
+        <item>Sombra Assassina. \nManifesta uma cópia ilusória do alvo, que luta contra ele.\n</item>
+        <item>Roubar a Alma. \nArranca a alma do alvo e a prende em um objeto.\n</item>
+        <item>Toque da Morte.\nPode matar uma criatura instantaneamente.\n</item>
+        <item>Controlar o Tempo. \nAcelera, avança ou para o tempo.\n</item>
+        <item>Desejo. \nModifica a realidade a seu bel-prazer.\n</item>
+    </string-array>
+
+    <string-array name="arc5abjur">
+        <item>Aprisionamento. \nPrende o alvo de diversas formas poderosas.\n</item>
+        <item>Engenho de Mana. \nDisco de energia flutuante é capaz de absorver magias e gerar PM.\n</item>
+        <item>Invulnerabilidade. \nRecebe uma série de imunidades físicas ou mentais a sua escolha.\n</item>
+    </string-array>
+    <string-array name="arc5adiv">
+        <item>Alterar Destino. \nEnxerga o futuro, podendo alterar o resultado de um teste.</item>
+        <item>Projetar Consciência. \nPode observar qualquer local ou criatura.\n</item>
+    </string-array>
+    <string-array name="arc5conv">
+        <item>Buraco Negro. \nAbre uma ruptura no espaço que suga tudo ao redor.\n</item>
+        <item>Chuva de Meteoros. \nConvoca um enorme meteorito incandescente.\n</item>
+        <item>Semiplano. \nCria uma pequena dimensão.\n</item>
+    </string-array>
+    <string-array name="arc5encan">
+        <item>Legião. \nVocê pode dominar a mente de vários alvos ao mesmo tempo e comandar suas vontades.\n</item>
+        <item>Palavra Primordial. \nPalavras mágicas podem atordoar, cegar e até matar uma criatura.\n</item>
+        <item>Possessão. \nTransfere sua consciência para o corpo do alvo, tomando controle total.\n</item>
+    </string-array>
+    <string-array name="arc5evoc">
+        <item>Barragem Elemental de Vectorius. \nLança esferas elementais explosivas.\n</item>
+        <item>Deflagração de Mana. \nExplosão de energia bruta causa dano e afeta magias e itens mágicos.\n</item>
+        <item>Mata-Dragão. \nDispara uma rajada de energia destruidora.\n</item>
+    </string-array>
+    <string-array name="arc5ilusao">
+        <item>Réquiem. \nPrende os alvos em uma realidade ilusória que se repete infinitamente.\n</item>
+        <item>Sombra Assassina. \nManifesta uma cópia ilusória do alvo, que luta contra ele.\n</item>
+    </string-array>
+    <string-array name="arc5necro">
+        <item>Roubar a Alma. \nArranca a alma do alvo e a prende em um objeto.\n</item>
+        <item>Toque da Morte.\nPode matar uma criatura instantaneamente.\n</item>
+    </string-array>
+    <string-array name="arc5trans">
+        <item>Controlar o Tempo. \nAcelera, avança ou para o tempo.\n</item>
+        <item>Desejo. \nModifica a realidade a seu bel-prazer.\n</item>
+    </string-array>
+
+    <string-array name="magias1div">
+        <item>Escudo da Fé. \nProtege uma criatura.\n</item>
+        <item>Proteção Divina. \nAlvo recebe bônus em testes de resistência.\n</item>
+        <item>Resistência a Energia. \nFornece resistência contra um tipo de energia a sua escolha.\n</item>
+        <item>Santuário. \nInimigos devem passar num teste de Vontade para atacá-lo.\n</item>
+        <item>Suporte Ambiental. \nIgnora efeitos de calor e frio e pode respirar na água.\n</item>
+        <item>Aviso. \nEnvia um alerta telepático para uma criatura.\n</item>
+        <item>Compreensão. \nVocê entende qualquer coisa escrita ou falada e pode ouvir pensamentos.\n</item>
+        <item>Detectar Ameaças. \nDetecta a presença, quantidade e poder de criaturas na área.\n</item>
+        <item>Orientação. \nAlvo recebe bônus nos testes de perícia.\n</item>
+        <item>Visão Mística. \nVocê pode ver auras mágicas.\n</item>
+        <item>Arma Espiritual. \nCria uma arma de energia que ataca seus inimigos.\n</item>
+        <item>Caminhos da Natureza. \nConvoca um espírito que guia você e seus aliados em terreno selvagem.\n</item>
+        <item>Criar Elementos. \nCria uma quantidade Minúscula de água, ar, fogo ou terra.\n</item>
+        <item>Névoa. \nCria uma névoa que oferece camuflagem.\n</item>
+        <item>Acalmar Animal. \nUm animal fica prestativo.\n</item>
+        <item>Bênção. \nFornece bônus em ataques e dano.\n</item>
+        <item>Comando. \nForça o alvo a obedecer a uma ordem.\n</item>
+        <item>Tranquilidade. \nAcalma criaturas na área.\n</item>
+        <item>Consagrar. \nAbençoa a área, maximizando efeitos de cura.\n</item>
+        <item>Curar Ferimentos. \nSeu toque recupera pontos de vida.\n</item>
+        <item>Despedaçar. \nSom alto e agudo causa atordoamento e dano de impacto.\n</item>
+        <item>Luz. \nObjeto ilumina como uma tocha\n.</item>
+        <item>Escuridão. \nObjeto emana uma área de escuridão.\n</item>
+        <item>Infligir Ferimentos. \nSeu toque causa dano de trevas e pode deixar fraco.\n</item>
+        <item>Perdição. \nInimigos sofrem penalidade nos ataques e danos.\n</item>
+        <item>Profanar. \nConspurca a área, dobrando o dano de trevas.\n</item>
+        <item>Abençoar Alimentos. \nPurifica refeição, que também fornece bônus temporários.\n</item>
+        <item>Arma Mágica. \nArma recebe bônus ou poderes mágicos.\n</item>
+        <item>Armamento da Natureza. \nArma natural ou primitiva causa dano como se fosse maior.\n</item>
+        <item>Controlar Plantas. \nVegetação enreda criaturas.\n</item>
+    </string-array>
+
+    <string-array name="div1abjur">
+        <item>Escudo da Fé. \nProtege uma criatura.\n</item>
+        <item>Proteção Divina. \nAlvo recebe bônus em testes de resistência.\n</item>
+        <item>Resistência a Energia. \nFornece resistência contra um tipo de energia a sua escolha.\n</item>
+        <item>Santuário. \nInimigos devem passar num teste de Vontade para atacá-lo.\n</item>
+        <item>Suporte Ambiental. \nIgnora efeitos de calor e frio e pode respirar na água.\n</item>
+    </string-array>
+    <string-array name="div1adiv">
+        <item>Aviso. \nEnvia um alerta telepático para uma criatura.\n</item>
+        <item>Compreensão. \nVocê entende qualquer coisa escrita ou falada e pode ouvir pensamentos.\n</item>
+        <item>Detectar Ameaças. \nDetecta a presença, quantidade e poder de criaturas na área.\n</item>
+        <item>Orientação. \nAlvo recebe bônus nos testes de perícia.\n</item>
+        <item>Visão Mística. \nVocê pode ver auras mágicas.\n</item>
+    </string-array>
+    <string-array name="div1conv">
+        <item>Arma Espiritual. \nCria uma arma de energia que ataca seus inimigos.\n</item>
+        <item>Caminhos da Natureza. \nConvoca um espírito que guia você e seus aliados em terreno selvagem.\n</item>
+        <item>Criar Elementos. \nCria uma quantidade Minúscula de água, ar, fogo ou terra.\n</item>
+        <item>Névoa. \nCria uma névoa que oferece camuflagem.\n</item>
+    </string-array>
+    <string-array name="div1encan">
+        <item>Acalmar Animal. \nUm animal fica prestativo.\n</item>
+        <item>Bênção. \nFornece bônus em ataques e dano.\n</item>
+        <item>Comando. \nForça o alvo a obedecer a uma ordem.\n</item>
+        <item>Tranquilidade. \nAcalma criaturas na área.\n</item>
+    </string-array>
+    <string-array name="div1evoc">
+        <item>Consagrar. \nAbençoa a área, maximizando efeitos de cura.\n</item>
+        <item>Curar Ferimentos. \nSeu toque recupera pontos de vida.\n</item>
+        <item>Despedaçar. \nSom alto e agudo causa atordoamento e dano de impacto.\n</item>
+        <item>Luz. \nObjeto ilumina como uma tocha\n.</item>
+    </string-array>
+    <string-array name="div1ilusao">
+
+    </string-array>
+    <string-array name="div1necro">
+        <item>Escuridão. \nObjeto emana uma área de escuridão.\n</item>
+        <item>Infligir Ferimentos. \nSeu toque causa dano de trevas e pode deixar fraco.\n</item>
+        <item>Perdição. \nInimigos sofrem penalidade nos ataques e danos.\n</item>
+        <item>Profanar. \nConspurca a área, dobrando o dano de trevas.\n</item>
+    </string-array>
+    <string-array name="div1trans">
+        <item>Abençoar Alimentos. \nPurifica refeição, que também fornece bônus temporários.\n</item>
+        <item>Arma Mágica. \nArma recebe bônus ou poderes mágicos.\n</item>
+        <item>Armamento da Natureza. \nArma natural ou primitiva causa dano como se fosse maior.\n</item>
+        <item>Controlar Plantas. \nVegetação enreda criaturas.\n</item>
+    </string-array>
+
+    <string-array name="magias2div">
+        <item>Círculo da Justiça. \nCausa penalidades em Enganação, Furtividade e Ladinagem.\n</item>
+        <item>Dissipar Magia. \nCancela os efeitos de uma magia ativa em um alvo ou área.\n</item>
+        <item>Runa de Proteção. \nRuna protege passagem ou objeto.\n</item>
+        <item>Vestimenta da Fé. \nTraje, armadura ou escudo recebe bônus na Defesa.\n</item>
+        <item>Augúrio. \nDiz se uma ação trará resultados bons, ruins ou ambos.\n</item>
+        <item>Condição. \nMonitora a condição (PV, condições, magias afetando) de criaturas tocadas.\n</item>
+        <item>Globo da Verdade de Gwen. \nGlobo revela cena vista pelo conjurador.\n</item>
+        <item>Mente Divina. \nFornece bônus em um ou mais atributos mentais.\n</item>
+        <item>Voz Divina. \nConverse com criaturas variadas, plantas, rochas e cadáveres.\n</item>
+        <item>Enxame de Pestes. \nAlvo sofre dano de veneno toda rodada.\n</item>
+        <item>Soco de Arsenal. \nAlvo sofre dano de impacto e é empurrado.\n</item>
+        <item>Aliado Animal. \nUm animal prestativo se torna um aliado.\n</item>
+        <item>Marca da Obediência. \nSímbolo mágico obriga o alvo a cumprir uma ordem.\n</item>
+        <item>Oração. \nAliados recebem bônus e inimigos sofrem penalidades em testes e rolagens.\n</item>
+        <item>Controlar Fogo. \nMove ou apaga uma chama, esquenta um objeto ou cria armas flamejantes.\n</item>
+        <item>Purificação. \nToque remove condições prejudiciais.\n</item>
+        <item>Raio Solar. \nLinha causa dano de luz e deixa criaturas ofuscadas.\n</item>
+        <item>Tempestade Divina. \nCausa efeitos de vento, precipitações e penalidades para criaturas voadoras.\n</item>
+        <item>Silêncio. \nCria uma área em que é impossível ouvir sons ou lançar magias.\n</item>
+        <item>Conjurar Mortos-Vivos. \nErgue mortos-vivos para lutar por você.\n</item>
+        <item>Miasma Mefítico. \nNuvem causa dano de veneno e enjoo.\n</item>
+        <item>Rogar Maldição. \nO alvo sofre efeitos prejudiciais variados.\n</item>
+        <item>Controlar Madeira. \nFortalece, molda, repele ou deforma um objeto de madeira.\n</item>
+        <item>Físico Divino. \nFornece bônus em um ou mais atributos físicos.\n</item>
+    </string-array>
+
+    <string-array name="div2abjur">
+        <item>Círculo da Justiça. \nCausa penalidades em Enganação, Furtividade e Ladinagem.\n</item>
+        <item>Dissipar Magia. \nCancela os efeitos de uma magia ativa em um alvo ou área.\n</item>
+        <item>Runa de Proteção. \nRuna protege passagem ou objeto.\n</item>
+        <item>Vestimenta da Fé. \nTraje, armadura ou escudo recebe bônus na Defesa.\n</item>
+    </string-array>
+    <string-array name="div2adiv">
+        <item>Augúrio. \nDiz se uma ação trará resultados bons, ruins ou ambos.\n</item>
+        <item>Condição. \nMonitora a condição (PV, condições, magias afetando) de criaturas tocadas.\n</item>
+        <item>Globo da Verdade de Gwen. \nGlobo revela cena vista pelo conjurador.\n</item>
+        <item>Mente Divina. \nFornece bônus em um ou mais atributos mentais.\n</item>
+        <item>Voz Divina. \nConverse com criaturas variadas, plantas, rochas e cadáveres.\n</item>
+    </string-array>
+    <string-array name="div2conv">
+        <item>Enxame de Pestes. \nAlvo sofre dano de veneno toda rodada.\n</item>
+        <item>Soco de Arsenal. \nAlvo sofre dano de impacto e é empurrado.\n</item>
+    </string-array>
+    <string-array name="div2encan">
+        <item>Aliado Animal. \nUm animal prestativo se torna um aliado.\n</item>
+        <item>Marca da Obediência. \nSímbolo mágico obriga o alvo a cumprir uma ordem.\n</item>
+        <item>Oração. \nAliados recebem bônus e inimigos sofrem penalidades em testes e rolagens.\n</item>
+    </string-array>
+    <string-array name="div2evoc">
+        <item>Controlar Fogo. \nMove ou apaga uma chama, esquenta um objeto ou cria armas flamejantes.\n</item>
+        <item>Purificação. \nToque remove condições prejudiciais.\n</item>
+        <item>Raio Solar. \nLinha causa dano de luz e deixa criaturas ofuscadas.\n</item>
+        <item>Tempestade Divina. \nCausa efeitos de vento, precipitações e penalidades para criaturas voadoras.\n</item>
+    </string-array>
+    <string-array name="div2ilusao">
+        <item>Silêncio. \nCria uma área em que é impossível ouvir sons ou lançar magias.\n</item>
+    </string-array>
+    <string-array name="div2necro">
+        <item>Conjurar Mortos-Vivos. \nErgue mortos-vivos para lutar por você.\n</item>
+        <item>Miasma Mefítico. \nNuvem causa dano de veneno e enjoo.\n</item>
+        <item>Rogar Maldição. \nO alvo sofre efeitos prejudiciais variados.\n</item>
+    </string-array>
+    <string-array name="div2trans">
+        <item>Controlar Madeira. \nFortalece, molda, repele ou deforma um objeto de madeira.\n</item>
+        <item>Físico Divino. \nFornece bônus em um ou mais atributos físicos.\n</item>
+    </string-array>
+
+    <string-array name="magias3div">
+        <item>Banimento. \nExpulsa criaturas de outros planos e destrói mortos-vivos.\n</item>
+        <item>Proteção contra Magia. \nConcede bônus em testes de resistência contra magias.\n</item>
+        <item>Comunhão com a Natureza. \nVocê recebe dados para usar como bônus em testes de perícias.\n</item>
+        <item>Lendas e Histórias. \nDescobre detalhes sobre criaturas, objetos e magias.\n</item>
+        <item>Vidência. \nPode ver e ouvir os arredores de uma criatura.\n</item>
+        <item>Servo Divino. \nInvoca um espírito para realizar uma tarefa, por um preço.\n</item>
+        <item>Viagem Arbórea. \nVocê pode usar árvores e plantas para se teletransportar.\n</item>
+        <item>Despertar Consciência. \nPlantas e animais ganham consciência e se tornam aliados.\n</item>
+        <item>Heroísmo. \nAlvo fica imune a medo e ganha bônus contra inimigos mais poderosos do que ele.\n</item>
+        <item>Imobilizar. \nAlvo fica lento ou paralisado.\n</item>
+        <item>Missão Divina. \nAlvo deve cumprir uma tarefa, ou sofrer penalidades em testes.\n</item>
+        <item>Selo de Mana. \nVocê sela a energia de uma criatura, impedindo que use Pontos de Mana.\n</item>
+        <item>Coluna de Chamas. \nOs céus despejam luz e fogo sobre seus inimigos.\n</item>
+        <item>Dispersar as Trevas. \nDispersão anula magias, protege aliados e cega inimigos.\n</item>
+        <item>Sopro da Salvação. \nCone cura aliados e remove condições prejudiciais.\n</item>
+        <item>Manto de Sombras. \nConjurador se cobre de sombras mágicas para vários efeitos.\n</item>
+        <item>Anular a Luz. \nExplosão anula magias, protege aliados e enjoa inimigos.\n</item>
+        <item>Poeira da Podridão. \nNuvem causa dano de trevas e impede magia de cura.\n</item>
+        <item>Servo Morto-Vivo. \nCria um aliado mortovivo sob seu comando.\n</item>
+        <item>Controlar Água. \nCongela, derrete, evapora, aumenta ou reduz o nível de um corpo d’água.\n</item>
+        <item>Controlar Terra. \nAmolece, molda ou solidifica uma área de terra, pedra ou similar.\n</item>
+        <item>Pele de Pedra. \nEndurece sua pele, fornecendo resistência a dano.\n</item>
+        <item>Potência Divina. \nVocê aumenta de tamanho e recebe bônus de Força e resistência a dano, mas perde habilidade de lançar magias.\n</item>
+    </string-array>
+
+    <string-array name="div3abjur">
+        <item>Banimento. \nExpulsa criaturas de outros planos e destrói mortos-vivos.\n</item>
+        <item>Proteção contra Magia. \nConcede bônus em testes de resistência contra magias.\n</item>
+    </string-array>
+    <string-array name="div3adiv">
+        <item>Comunhão com a Natureza. \nVocê recebe dados para usar como bônus em testes de perícias.\n</item>
+        <item>Lendas e Histórias. \nDescobre detalhes sobre criaturas, objetos e magias.\n</item>
+        <item>Vidência. \nPode ver e ouvir os arredores de uma criatura.\n</item>
+    </string-array>
+    <string-array name="div3conv">
+        <item>Servo Divino. \nInvoca um espírito para realizar uma tarefa, por um preço.\n</item>
+        <item>Viagem Arbórea. \nVocê pode usar árvores e plantas para se teletransportar.\n</item>
+    </string-array>
+    <string-array name="div3encan">
+        <item>Despertar Consciência. \nPlantas e animais ganham consciência e se tornam aliados.\n</item>
+        <item>Heroísmo. \nAlvo fica imune a medo e ganha bônus contra inimigos mais poderosos do que ele.\n</item>
+        <item>Imobilizar. \nAlvo fica lento ou paralisado.\n</item>
+        <item>Missão Divina. \nAlvo deve cumprir uma tarefa, ou sofrer penalidades em testes.\n</item>
+        <item>Selo de Mana. \nVocê sela a energia de uma criatura, impedindo que use Pontos de Mana.\n</item>
+    </string-array>
+    <string-array name="div3evoc">
+        <item>Coluna de Chamas. \nOs céus despejam luz e fogo sobre seus inimigos.\n</item>
+        <item>Dispersar as Trevas. \nDispersão anula magias, protege aliados e cega inimigos.\n</item>
+        <item>Sopro da Salvação. \nCone cura aliados e remove condições prejudiciais.\n</item>
+    </string-array>
+    <string-array name="div3ilusao">
+        <item>Manto de Sombras. \nConjurador se cobre de sombras mágicas para vários efeitos.\n</item>
+    </string-array>
+    <string-array name="div3necro">
+        <item>Anular a Luz. \nExplosão anula magias, protege aliados e enjoa inimigos.\n</item>
+        <item>Poeira da Podridão. \nNuvem causa dano de trevas e impede magia de cura.\n</item>
+        <item>Servo Morto-Vivo. \nCria um aliado mortovivo sob seu comando.\n</item>
+    </string-array>
+    <string-array name="div3trans">
+        <item>Controlar Água. \nCongela, derrete, evapora, aumenta ou reduz o nível de um corpo d’água.\n</item>
+        <item>Controlar Terra. \nAmolece, molda ou solidifica uma área de terra, pedra ou similar.\n</item>
+        <item>Pele de Pedra. \nEndurece sua pele, fornecendo resistência a dano.\n</item>
+        <item>Potência Divina. \nVocê aumenta de tamanho e recebe bônus de Força e resistência a dano, mas perde habilidade de lançar magias.\n</item>
+    </string-array>
+
+    <string-array name="magias4div">
+        <item>Cúpula de Repulsão. \nCampo de força invisível impede a aproximação de um tipo de criatura.\n</item>
+        <item>Libertação. \nO alvo fica imune a efeitos que impeçam ou restrinjam movimentação.\n</item>
+        <item>Premonição. \nVocê vislumbra o futuro e pode refazer testes.\n</item>
+        <item>Visão da Verdade. \nVocê enxerga através de camuflagem, escuridão, ilusão e transmutação.\n</item>
+        <item>Guardião Divino. \nElemental de luz cura aliados.\n</item>
+        <item>Viagem Planar. \nViaja até outro plano de existência.\n</item>
+        <item>Conceder Milagre. \nAlvo pode lançar uma de suas magias de 2º círculo ou menor.\n</item>
+        <item>Círculo da Restauração. \nCírculo de energia luminosa restaura PV e PM.\n</item>
+        <item>Cólera de Azgher. \nExplosão solar cega, incendeia e causa dano.\n</item>
+        <item>Manto do Cruzado. \nInvoca um manto de energia que concede poderes a quem o vestir.\n</item>
+        <item>Terremoto. \nTremor de terra causa dano de impacto.\n</item>
+        <item>Ligação Sombria. \nAlvo sofre todo dano e efeitos negativos que você sofrer.\n</item>
+        <item>Muralha de Ossos. \nBarreira de ossos afiados impede o avanço dos inimigos.\n</item>
+        <item>Controlar o Clima. \nMuda o clima de uma área.\n</item>
+    </string-array>
+
+    <string-array name="div4abjur">
+        <item>Cúpula de Repulsão. \nCampo de força invisível impede a aproximação de um tipo de criatura.\n</item>
+        <item>Libertação. \nO alvo fica imune a efeitos que impeçam ou restrinjam movimentação.\n</item>
+    </string-array>
+    <string-array name="div4adiv">
+        <item>Premonição. \nVocê vislumbra o futuro e pode refazer testes.\n</item>
+        <item>Visão da Verdade. \nVocê enxerga através de camuflagem, escuridão, ilusão e transmutação.\n</item>
+    </string-array>
+    <string-array name="div4conv">
+        <item>Guardião Divino. \nElemental de luz cura aliados.\n</item>
+        <item>Viagem Planar. \nViaja até outro plano de existência.\n</item>
+    </string-array>
+    <string-array name="div4encan">
+        <item>Conceder Milagre. \nAlvo pode lançar uma de suas magias de 2º círculo ou menor.\n</item>
+    </string-array>
+    <string-array name="div4evoc">
+        <item>Círculo da Restauração. \nCírculo de energia luminosa restaura PV e PM.\n</item>
+        <item>Cólera de Azgher. \nExplosão solar cega, incendeia e causa dano.\n</item>
+        <item>Manto do Cruzado. \nInvoca um manto de energia que concede poderes a quem o vestir.\n</item>
+        <item>Terremoto. \nTremor de terra causa dano de impacto.\n</item>
+    </string-array>
+    <string-array name="div4ilusao">
+
+    </string-array>
+    <string-array name="div4necro">
+        <item>Ligação Sombria. \nAlvo sofre todo dano e efeitos negativos que você sofrer.\n</item>
+        <item>Muralha de Ossos. \nBarreira de ossos afiados impede o avanço dos inimigos.\n</item>
+    </string-array>
+    <string-array name="div4trans">
+        <item>Controlar o Clima. \nMuda o clima de uma área.\n</item>
+    </string-array>
+
+    <string-array name="magias5div">
+        <item>Aura Divina. \nEmana poder divino bruto, afetando as criaturas na área.\n</item>
+        <item>Invulnerabilidade. \nRecebe uma série de imunidades físicas ou mentais a sua escolha.\n</item>
+        <item>Lágrimas de Wynna. \nAlvo perde a capacidade de lançar magias arcanas.\n</item>
+        <item>Projetar Consciência. \nPode observar qualquer local ou criatura.\n</item>
+        <item>Buraco Negro. \nAbre uma ruptura no espaço que suga tudo ao redor.\n</item>
+        <item>Intervenção Divina. \nConvoca sua divindade para que realize um milagre.\n</item>
+        <item>Palavra Primordial. \nPalavras mágicas podem atordoar, cegar e até matar uma criatura.\n</item>
+        <item>Fúria do Panteão. \nNuvem gera efeitos destrutivos.\n</item>
+        <item>Segunda Chance. \nCura e ressuscita aliados.\n</item>
+        <item>Reanimação Impura. \nRessuscita uma criatura morta, mas como um zumbi sob seu controle.\n</item>
+        <item>Roubar a Alma. \nArranca a alma do alvo e a prende em um objeto.\n</item>
+        <item>Toque da Morte. \nPode matar uma criatura instantaneamente.\n</item>
+    </string-array>
+
+    <string-array name="div5abjur">
+        <item>Aura Divina. \nEmana poder divino bruto, afetando as criaturas na área.\n</item>
+        <item>Invulnerabilidade. \nRecebe uma série de imunidades físicas ou mentais a sua escolha.\n</item>
+        <item>Lágrimas de Wynna. \nAlvo perde a capacidade de lançar magias arcanas.\n</item>
+    </string-array>
+    <string-array name="div5adiv">
+        <item>Projetar Consciência. \nPode observar qualquer local ou criatura.\n</item>
+    </string-array>
+    <string-array name="div5conv">
+        <item>Buraco Negro. \nAbre uma ruptura no espaço que suga tudo ao redor.\n</item>
+        <item>Intervenção Divina. \nConvoca sua divindade para que realize um milagre.\n</item>
+    </string-array>
+    <string-array name="div5encan">
+        <item>Palavra Primordial. \nPalavras mágicas podem atordoar, cegar e até matar uma criatura.\n</item>
+    </string-array>
+    <string-array name="div5evoc">
+        <item>Fúria do Panteão. \nNuvem gera efeitos destrutivos.\n</item>
+        <item>Segunda Chance. \nCura e ressuscita aliados.\n</item>
+    </string-array>
+    <string-array name="div5ilusao">
+
+    </string-array>
+    <string-array name="div5necro">
+        <item>Reanimação Impura. \nRessuscita uma criatura morta, mas como um zumbi sob seu controle.\n</item>
+        <item>Roubar a Alma. \nArranca a alma do alvo e a prende em um objeto.\n</item>
+        <item>Toque da Morte. \nPode matar uma criatura instantaneamente.\n</item>
+    </string-array>
+    <string-array name="div5trans">
+
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

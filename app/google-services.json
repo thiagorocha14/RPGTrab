@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "183220087772",
+    "firebase_url": "https://rpgtrab.firebaseio.com",
+    "project_id": "rpgtrab",
+    "storage_bucket": "rpgtrab.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:183220087772:android:34dfab60dbb483cc",
+        "android_client_info": {
+          "package_name": "com.example.rpg"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "183220087772-klre5dtgl65asp724gctq4b9tpga9hmu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.rpg",
+            "certificate_hash": "bd8559b60df50268306ae6195b3be257cb9f8827"
+          }
+        },
+        {
+          "client_id": "183220087772-dnprc40sevc03n942vij3hq0pvp131d8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChjPhpJf2Z5ayzHa2P5gI-ZQUb0KieMrg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "183220087772-dnprc40sevc03n942vij3hq0pvp131d8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

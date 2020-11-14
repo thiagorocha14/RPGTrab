@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ListMagias"
+    android:background="@drawable/papel6">
+
+    <Button
+        android:id="@+id/btnNecro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/necro"
+        android:padding="10dp"
+        android:background="@drawable/button_avanc"
+        app:layout_constraintEnd_toEndOf="@+id/btnIlusao"
+        app:layout_constraintStart_toStartOf="@+id/btnIlusao"
+        app:layout_constraintTop_toBottomOf="@+id/btnIlusao"
+        app:layout_constraintBottom_toTopOf="@+id/btnTrans" />
+
+    <ListView
+        android:id="@+id/listmagias"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="65dp"
+        android:layout_marginEnd="42dp"
+        android:layout_marginBottom="65dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnAbjur"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="42dp"
+        android:background="@drawable/button_avanc"
+        android:padding="10dp"
+        android:text="@string/abjur"
+        app:layout_constraintBottom_toTopOf="@+id/btnAdiv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnAdiv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/adiv"
+        android:padding="10dp"
+        android:background="@drawable/button_avanc"
+        app:layout_constraintEnd_toEndOf="@+id/btnAbjur"
+        app:layout_constraintStart_toStartOf="@+id/btnAbjur"
+        app:layout_constraintTop_toBottomOf="@+id/btnAbjur"
+        app:layout_constraintBottom_toTopOf="@+id/btnConv"/>
+
+    <Button
+        android:id="@+id/btnConv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/conv"
+        android:padding="10dp"
+        android:background="@drawable/button_avanc"
+        app:layout_constraintEnd_toEndOf="@+id/btnAdiv"
+        app:layout_constraintStart_toStartOf="@+id/btnAdiv"
+        app:layout_constraintTop_toBottomOf="@+id/btnAdiv"
+        app:layout_constraintBottom_toTopOf="@+id/btnEncan"/>
+
+    <Button
+        android:id="@+id/btnEncan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/encan"
+        android:padding="10dp"
+        android:background="@drawable/button_avanc"
+        app:layout_constraintEnd_toEndOf="@+id/btnConv"
+        app:layout_constraintStart_toStartOf="@+id/btnConv"
+        app:layout_constraintTop_toBottomOf="@+id/btnConv"
+        app:layout_constraintBottom_toTopOf="@+id/btnEvoc"/>
+
+    <Button
+        android:id="@+id/btnEvoc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/evoc"
+        android:padding="10dp"
+        android:background="@drawable/button_avanc"
+        app:layout_constraintEnd_toEndOf="@+id/btnEncan"
+        app:layout_constraintStart_toStartOf="@+id/btnEncan"
+        app:layout_constraintTop_toBottomOf="@+id/btnEncan"
+        app:layout_constraintBottom_toTopOf="@+id/btnIlusao"/>
+
+    <Button
+        android:id="@+id/btnIlusao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ilusao"
+        android:padding="10dp"
+        android:background="@drawable/button_avanc"
+        app:layout_constraintEnd_toEndOf="@+id/btnEvoc"
+        app:layout_constraintStart_toStartOf="@+id/btnEvoc"
+        app:layout_constraintTop_toBottomOf="@+id/btnEvoc"
+        app:layout_constraintBottom_toTopOf="@+id/btnNecro"/>
+
+    <Button
+        android:id="@+id/btnTrans"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="42dp"
+        android:background="@drawable/button_avanc"
+        android:padding="10dp"
+        android:text="@string/trans"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btnNecro"
+        app:layout_constraintStart_toStartOf="@+id/btnNecro"
+        app:layout_constraintTop_toBottomOf="@+id/btnNecro" />
+
+    <TextView
+        android:id="@+id/txtMagias"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:text=""
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/listmagias"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/btnMagias"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center"
+        android:text="@string/btn_finish"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/listmagias"
+        app:layout_constraintStart_toStartOf="@+id/listmagias"
+        app:layout_constraintTop_toBottomOf="@+id/btnTrans" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

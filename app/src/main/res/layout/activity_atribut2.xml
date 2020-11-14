@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Atributos.Atribut2"
+    android:background="@drawable/papel4"
+    >
+
+    <ProgressBar
+        android:id="@+id/prgB"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn1"
+        app:layout_constraintEnd_toStartOf="@+id/btn2"
+        app:layout_constraintStart_toEndOf="@+id/btn1"
+        app:layout_constraintTop_toTopOf="@+id/btn1" />
+
+    <Button
+        android:id="@+id/btn1"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="32dp"
+        android:background="@drawable/button_avanc"
+        android:text="-"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn1A"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtTotal" />
+
+    <Button
+        android:id="@+id/btn2"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/button_avanc"
+        android:text="+"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn1"
+        app:layout_constraintEnd_toStartOf="@+id/txt1"
+        app:layout_constraintTop_toTopOf="@+id/btn1" />
+
+    <TextView
+        android:id="@+id/txt1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="0"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn2"
+        app:layout_constraintEnd_toStartOf="@+id/txtConsti"
+        app:layout_constraintTop_toTopOf="@+id/btn2" />
+
+    <TextView
+        android:id="@+id/txtTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/blaccb"
+        android:shadowColor="#FFFFFF"
+        android:shadowDx="1.5"
+        android:shadowDy="1.3"
+        android:shadowRadius="10"
+        android:text="TextView"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn1"
+        app:layout_constraintStart_toEndOf="@+id/txtPontos"
+        app:layout_constraintTop_toTopOf="parent" />
+    <ProgressBar
+        android:id="@+id/prgBA"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn1A"
+        app:layout_constraintEnd_toStartOf="@+id/btn2A"
+        app:layout_constraintStart_toEndOf="@+id/btn1A"
+        app:layout_constraintTop_toTopOf="@+id/btn1A" />
+
+    <Button
+        android:id="@+id/btn1A"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/button_avanc"
+        android:text="-"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn1B"
+        app:layout_constraintStart_toStartOf="@+id/btn1"
+        app:layout_constraintTop_toBottomOf="@+id/btn1" />
+
+    <Button
+        android:id="@+id/btn2A"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/button_avanc"
+        android:text="+"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn1A"
+        app:layout_constraintEnd_toEndOf="@+id/btn2"
+        app:layout_constraintStart_toStartOf="@+id/btn2"
+        app:layout_constraintTop_toTopOf="@+id/btn1A" />
+
+    <TextView
+        android:id="@+id/txt1A"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn2A"
+        app:layout_constraintEnd_toEndOf="@+id/txt1"
+        app:layout_constraintStart_toStartOf="@+id/txt1"
+        app:layout_constraintTop_toTopOf="@+id/btn2A" />
+    <ProgressBar
+        android:id="@+id/prgBB"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn1B"
+        app:layout_constraintEnd_toStartOf="@+id/btn2B"
+        app:layout_constraintStart_toEndOf="@+id/btn1B"
+        app:layout_constraintTop_toTopOf="@+id/btn1B" />
+
+    <Button
+        android:id="@+id/btn1B"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/button_avanc"
+        android:text="-"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn1C"
+        app:layout_constraintStart_toStartOf="@+id/btn1A"
+        app:layout_constraintTop_toBottomOf="@+id/btn1A" />
+
+    <Button
+        android:id="@+id/btn2B"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/button_avanc"
+        android:text="+"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn1B"
+        app:layout_constraintEnd_toEndOf="@+id/btn2A"
+        app:layout_constraintStart_toStartOf="@+id/btn2A"
+        app:layout_constraintTop_toTopOf="@+id/btn1B" />
+
+    <TextView
+        android:id="@+id/txt1B"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn2B"
+        app:layout_constraintEnd_toEndOf="@+id/txt1A"
+        app:layout_constraintStart_toStartOf="@+id/txt1A"
+        app:layout_constraintTop_toTopOf="@+id/btn2B" />
+    <ProgressBar
+        android:id="@+id/prgBC"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn1C"
+        app:layout_constraintEnd_toStartOf="@+id/btn2C"
+        app:layout_constraintStart_toEndOf="@+id/btn1C"
+        app:layout_constraintTop_toTopOf="@+id/btn1C" />
+
+    <Button
+        android:id="@+id/btn1C"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/button_avanc"
+        android:text="-"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn1D"
+        app:layout_constraintStart_toStartOf="@+id/btn1B"
+        app:layout_constraintTop_toBottomOf="@+id/btn1B" />
+
+    <Button
+        android:id="@+id/btn2C"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/button_avanc"
+        android:text="+"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn1C"
+        app:layout_constraintEnd_toEndOf="@+id/btn2B"
+        app:layout_constraintStart_toStartOf="@+id/btn2B"
+        app:layout_constraintTop_toTopOf="@+id/btn1C" />
+
+    <TextView
+        android:id="@+id/txt1C"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn2C"
+        app:layout_constraintEnd_toEndOf="@+id/txt1B"
+        app:layout_constraintStart_toStartOf="@+id/txt1B"
+        app:layout_constraintTop_toTopOf="@+id/btn2C" />
+
+    <ProgressBar
+        android:id="@+id/prgBD"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn1D"
+        app:layout_constraintEnd_toStartOf="@+id/btn2D"
+        app:layout_constraintStart_toEndOf="@+id/btn1D"
+        app:layout_constraintTop_toTopOf="@+id/btn1D" />
+
+    <Button
+        android:id="@+id/btn1D"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/button_avanc"
+        android:text="-"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn1E"
+        app:layout_constraintStart_toStartOf="@+id/btn1C"
+        app:layout_constraintTop_toBottomOf="@+id/btn1C" />
+
+    <Button
+        android:id="@+id/btn2D"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/button_avanc"
+        android:text="+"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn1D"
+        app:layout_constraintEnd_toEndOf="@+id/btn2C"
+        app:layout_constraintStart_toStartOf="@+id/btn2C"
+        app:layout_constraintTop_toTopOf="@+id/btn1D" />
+
+    <TextView
+        android:id="@+id/txt1D"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn2D"
+        app:layout_constraintEnd_toEndOf="@+id/txt1C"
+        app:layout_constraintStart_toStartOf="@+id/txt1C"
+        app:layout_constraintTop_toTopOf="@+id/btn2D" />
+    <ProgressBar
+        android:id="@+id/prgBE"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn1E"
+        app:layout_constraintEnd_toStartOf="@+id/btn2E"
+        app:layout_constraintStart_toEndOf="@+id/btn1E"
+        app:layout_constraintTop_toTopOf="@+id/btn1E" />
+
+    <Button
+        android:id="@+id/btn1E"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/button_avanc"
+        android:text="-"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnFinish2"
+        app:layout_constraintStart_toStartOf="@+id/btn1D"
+        app:layout_constraintTop_toBottomOf="@+id/btn1D" />
+
+    <Button
+        android:id="@+id/btn2E"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/button_avanc"
+        android:text="+"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn1E"
+        app:layout_constraintEnd_toEndOf="@+id/btn2D"
+        app:layout_constraintStart_toStartOf="@+id/btn2D"
+        app:layout_constraintTop_toTopOf="@+id/btn1E" />
+
+    <TextView
+        android:id="@+id/txt1E"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn2E"
+        app:layout_constraintEnd_toEndOf="@+id/txt1D"
+        app:layout_constraintStart_toStartOf="@+id/txt1D"
+        app:layout_constraintTop_toTopOf="@+id/btn2E" />
+
+    <Button
+        android:id="@+id/btnFinish2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_avanc"
+        android:padding="8dp"
+        android:text="@string/btn_avancar"
+        android:fontFamily="@font/blackcastle"
+        android:shadowColor="#FFFFFF"
+        android:shadowDx="1.5"
+        android:shadowDy="1.3"
+        android:shadowRadius="10"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/txtInte"
+        app:layout_constraintTop_toBottomOf="@+id/btn1E" />
+
+    <TextView
+        android:id="@+id/txtConsti"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:fontFamily="@font/blaccb"
+        android:shadowColor="#FFFFFF"
+        android:shadowDx="1.5"
+        android:shadowDy="1.3"
+        android:shadowRadius="10"
+        android:textSize="24dp"
+        android:text="@string/consti"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/txt1B"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/txt1B" />
+
+    <TextView
+        android:id="@+id/txtForc"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:fontFamily="@font/blaccb"
+        android:shadowColor="#FFFFFF"
+        android:shadowDx="1.5"
+        android:shadowDy="1.3"
+        android:shadowRadius="10"
+        android:textSize="24dp"
+        android:text="@string/forc"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/txt1"
+        app:layout_constraintEnd_toEndOf="@+id/txtConsti"
+        app:layout_constraintStart_toStartOf="@+id/txtConsti"
+        app:layout_constraintTop_toTopOf="@+id/txt1" />
+
+    <TextView
+        android:id="@+id/txtDest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/blaccb"
+        android:shadowColor="#FFFFFF"
+        android:shadowDx="1.5"
+        android:shadowDy="1.3"
+        android:shadowRadius="10"
+        android:textSize="24dp"
+        android:text="@string/destre"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/txt1A"
+        app:layout_constraintEnd_toEndOf="@+id/txtForc"
+        app:layout_constraintStart_toStartOf="@+id/txtForc"
+        app:layout_constraintTop_toTopOf="@+id/txt1A" />
+
+    <TextView
+        android:id="@+id/txtCar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/blaccb"
+        android:shadowColor="#FFFFFF"
+        android:shadowDx="1.5"
+        android:shadowDy="1.3"
+        android:shadowRadius="10"
+        android:textSize="24dp"
+        android:text="@string/caris"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/txt1E"
+        app:layout_constraintEnd_toEndOf="@+id/txtDest"
+        app:layout_constraintStart_toStartOf="@+id/txtDest"
+        app:layout_constraintTop_toTopOf="@+id/txt1E"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/txtSabe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/blaccb"
+        android:shadowColor="#FFFFFF"
+        android:shadowDx="1.5"
+        android:shadowDy="1.3"
+        android:shadowRadius="10"
+        android:textSize="24dp"
+        android:text="@string/sabe"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/txt1D"
+        app:layout_constraintEnd_toEndOf="@+id/txtCar"
+        app:layout_constraintStart_toStartOf="@+id/txtCar"
+        app:layout_constraintTop_toTopOf="@+id/txt1D"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/txtInte"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/blaccb"
+        android:shadowColor="#FFFFFF"
+        android:shadowDx="1.5"
+        android:shadowDy="1.3"
+        android:shadowRadius="10"
+        android:textSize="24dp"
+        android:text="@string/inte"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/txt1C"
+        app:layout_constraintEnd_toEndOf="@+id/txtSabe"
+        app:layout_constraintStart_toStartOf="@+id/txtSabe"
+        app:layout_constraintTop_toTopOf="@+id/txt1C" />
+
+    <TextView
+        android:id="@+id/txtPontos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:fontFamily="@font/blackcastle"
+        android:shadowColor="#FFFFFF"
+        android:shadowDx="1.5"
+        android:shadowDy="1.3"
+        android:shadowRadius="10"
+        android:text="@string/pontos"
+        android:textColor="@color/black"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/txtTotal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/txtTotal" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

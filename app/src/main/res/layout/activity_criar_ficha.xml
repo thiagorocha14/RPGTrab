@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CriarFicha"
+    android:background="@drawable/papel2"
+    >
+
+    <EditText
+        android:id="@+id/edtNick"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:backgroundTint="@color/black"
+        android:ems="10"
+        android:hint="Nome do Personagem:"
+        android:inputType="textPersonName"
+        android:textColor="@color/black"
+        android:textColorHint="#B9000000"
+        app:layout_constraintBottom_toTopOf="@+id/txtRace"
+        app:layout_constraintEnd_toStartOf="@+id/imgJog"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/spnRace"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:entries="@array/Raças"
+        android:prompt="@string/escolharaca"
+        android:spinnerMode="dropdown"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/txtLevel"
+        app:layout_constraintEnd_toStartOf="@+id/spnClass"
+        app:layout_constraintStart_toStartOf="@+id/edtNick"
+        app:layout_constraintTop_toBottomOf="@+id/txtRace" />
+
+    <Spinner
+        android:id="@+id/spnClass"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:entries="@array/Classes"
+        android:prompt="@string/escolhaclasse"
+        android:spinnerMode="dropdown"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/spnRace"
+        app:layout_constraintEnd_toEndOf="@+id/edtNick"
+        app:layout_constraintStart_toEndOf="@+id/spnRace"
+        app:layout_constraintTop_toTopOf="@+id/spnRace" />
+
+    <SeekBar
+        android:id="@+id/skbLvl"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/txtTendencia"
+        app:layout_constraintEnd_toStartOf="@+id/txtLvl"
+        app:layout_constraintStart_toStartOf="@+id/spnRace"
+        app:layout_constraintTop_toBottomOf="@+id/txtLevel" />
+
+    <TextView
+        android:id="@+id/txtLvl"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="1"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/skbLvl"
+        app:layout_constraintEnd_toEndOf="@+id/spnClass"
+        app:layout_constraintTop_toTopOf="@+id/skbLvl" />
+
+    <RadioGroup
+        android:id="@+id/rbGp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/spnOrigem"
+        app:layout_constraintEnd_toEndOf="@+id/txtMetodo"
+        app:layout_constraintStart_toStartOf="@+id/txtMetodo"
+        app:layout_constraintTop_toTopOf="@+id/spnOrigem">
+
+        <RadioButton
+            android:id="@+id/radioRoll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:fontFamily="@font/dragonforce"
+            android:shadowColor="#FFFFFF"
+            android:shadowDx="1.5"
+            android:shadowDy="1.3"
+            android:shadowRadius="10"
+            android:text="@string/rolar"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
+
+        <RadioButton
+            android:id="@+id/radioBuy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/dragonforce"
+            android:shadowColor="#FFFFFF"
+            android:shadowDx="1.5"
+            android:shadowDy="1.3"
+            android:shadowRadius="10"
+            android:text="@string/comprar"
+            android:textSize="24sp"/>
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnAvançar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_avanc"
+        android:text="@string/btn_avancar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/txtMetodo"
+        app:layout_constraintStart_toStartOf="@+id/spnOrigem"
+        app:layout_constraintTop_toBottomOf="@+id/spnOrigem" />
+
+    <TextView
+        android:id="@+id/txtRace"
+        style="@style/Titulo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/blackcastle"
+        android:shadowColor="#FFFFFF"
+        android:shadowDx="1.5"
+        android:shadowDy="1.3"
+        android:shadowRadius="10"
+        android:text="@string/escolharaca"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/spnRace"
+        app:layout_constraintEnd_toStartOf="@+id/imgRace"
+        app:layout_constraintStart_toStartOf="@+id/edtNick"
+        app:layout_constraintTop_toBottomOf="@+id/edtNick" />
+
+    <TextView
+        android:id="@+id/txtClass"
+        style="@style/Titulo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/blackcastle"
+        android:shadowColor="#FFFFFF"
+        android:shadowDx="1.5"
+        android:shadowDy="1.3"
+        android:shadowRadius="10"
+        android:text="@string/escolhaclasse"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/txtRace"
+        app:layout_constraintEnd_toEndOf="@+id/edtNick"
+        app:layout_constraintStart_toEndOf="@+id/imgRace"
+        app:layout_constraintTop_toTopOf="@+id/txtRace" />
+
+    <TextView
+        android:id="@+id/txtLevel"
+        style="@style/Titulo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/blackcastle"
+        android:shadowColor="#FFFFFF"
+        android:shadowDx="1.5"
+        android:shadowDy="1.3"
+        android:shadowRadius="10"
+        android:text="@string/escolhaLevel"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/skbLvl"
+        app:layout_constraintEnd_toEndOf="@+id/spnClass"
+        app:layout_constraintStart_toStartOf="@+id/spnRace"
+        app:layout_constraintTop_toBottomOf="@+id/spnRace" />
+
+    <TextView
+        android:id="@+id/txtOrigem"
+        style="@style/Titulo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="@string/escolhaorigem"
+        android:fontFamily="@font/blackcastle"
+        android:shadowColor="#FFFFFF"
+        android:shadowDx="1.5"
+        android:shadowDy="1.3"
+        android:shadowRadius="10"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/spnOrigem"
+        app:layout_constraintEnd_toStartOf="@+id/imgOrigem"
+        app:layout_constraintStart_toStartOf="@+id/spnAlin1"
+        app:layout_constraintTop_toBottomOf="@+id/spnAlin1" />
+
+    <TextView
+        android:id="@+id/txtTendencia"
+        style="@style/Titulo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/blackcastle"
+        android:shadowColor="#FFFFFF"
+        android:shadowDx="1.5"
+        android:shadowDy="1.3"
+        android:shadowRadius="10"
+        android:text="@string/escolhatendencia"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/spnAlin1"
+        app:layout_constraintEnd_toEndOf="@+id/txtLvl"
+        app:layout_constraintStart_toStartOf="@+id/skbLvl"
+        app:layout_constraintTop_toBottomOf="@+id/skbLvl" />
+
+    <Spinner
+        android:id="@+id/spnAlin2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:entries="@array/Alin2"
+        android:spinnerMode="dropdown"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/spnAlin1"
+        app:layout_constraintEnd_toEndOf="@+id/txtTendencia"
+        app:layout_constraintStart_toEndOf="@+id/imgMoral"
+        app:layout_constraintTop_toTopOf="@+id/spnAlin1" />
+
+    <Spinner
+        android:id="@+id/spnAlin1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:entries="@array/Alin1"
+        android:spinnerMode="dropdown"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/txtOrigem"
+        app:layout_constraintEnd_toStartOf="@+id/imgMoral"
+        app:layout_constraintStart_toStartOf="@+id/txtTendencia"
+        app:layout_constraintTop_toBottomOf="@+id/txtTendencia" />
+
+    <Spinner
+        android:id="@+id/spnOrigem"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:entries="@array/Origem"
+        android:spinnerMode="dropdown"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/btnAvançar"
+        app:layout_constraintEnd_toEndOf="@+id/txtOrigem"
+        app:layout_constraintStart_toStartOf="@+id/txtOrigem"
+        app:layout_constraintTop_toBottomOf="@+id/txtOrigem" />
+
+    <TextView
+        android:id="@+id/txtMetodo"
+        style="@style/Titulo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/blackcastle"
+        android:shadowColor="#FFFFFF"
+        android:shadowDx="1.5"
+        android:shadowDy="1.3"
+        android:shadowRadius="10"
+        android:text="@string/escolhametodo"
+        app:layout_constraintBottom_toBottomOf="@+id/txtOrigem"
+        app:layout_constraintEnd_toEndOf="@+id/spnAlin2"
+        app:layout_constraintStart_toEndOf="@+id/imgOrigem"
+        app:layout_constraintTop_toTopOf="@+id/txtOrigem" />
+
+    <ImageView
+        android:id="@+id/imgJog"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginEnd="24dp"
+        android:tint="@color/colorAccent"
+        app:layout_constraintBottom_toBottomOf="@+id/edtNick"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/edtNick"
+        app:srcCompat="@drawable/help18dp" />
+
+    <ImageView
+        android:id="@+id/imgRace"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:tint="@color/colorAccent"
+        app:layout_constraintBottom_toBottomOf="@+id/txtRace"
+        app:layout_constraintEnd_toStartOf="@+id/txtClass"
+        app:layout_constraintStart_toEndOf="@+id/txtRace"
+        app:layout_constraintTop_toTopOf="@+id/txtRace"
+        app:srcCompat="@drawable/help18dp" />
+
+    <ImageView
+        android:id="@+id/imgClasse"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:tint="@color/colorAccent"
+        app:layout_constraintBottom_toBottomOf="@+id/txtClass"
+        app:layout_constraintEnd_toEndOf="@+id/imgJog"
+        app:layout_constraintTop_toTopOf="@+id/txtClass"
+        app:srcCompat="@drawable/help18dp" />
+
+    <ImageView
+        android:id="@+id/imgNivel"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:tint="@color/colorAccent"
+        app:layout_constraintBottom_toBottomOf="@+id/txtLevel"
+        app:layout_constraintEnd_toEndOf="@+id/imgClasse"
+        app:layout_constraintTop_toTopOf="@+id/txtLevel"
+        app:srcCompat="@drawable/help18dp" />
+
+    <ImageView
+        android:id="@+id/imgAlin"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:tint="@color/colorAccent"
+        app:layout_constraintBottom_toBottomOf="@+id/txtTendencia"
+        app:layout_constraintEnd_toEndOf="@+id/imgNivel"
+        app:layout_constraintTop_toTopOf="@+id/txtTendencia"
+        app:srcCompat="@drawable/help18dp" />
+
+    <ImageView
+        android:id="@+id/imgMoral"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:tint="@color/colorAccent"
+        app:layout_constraintBottom_toBottomOf="@+id/spnAlin1"
+        app:layout_constraintEnd_toStartOf="@+id/spnAlin2"
+        app:layout_constraintStart_toEndOf="@+id/spnAlin1"
+        app:layout_constraintTop_toTopOf="@+id/spnAlin1"
+        app:srcCompat="@drawable/help18dp" />
+
+    <ImageView
+        android:id="@+id/imgEtico"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:tint="@color/colorAccent"
+        app:layout_constraintBottom_toBottomOf="@+id/spnAlin2"
+        app:layout_constraintEnd_toEndOf="@+id/imgAlin"
+        app:layout_constraintTop_toTopOf="@+id/spnAlin2"
+        app:srcCompat="@drawable/help18dp"
+        tools:layout_editor_absoluteX="378dp" />
+
+    <ImageView
+        android:id="@+id/imgOrigem"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:tint="@color/colorAccent"
+        app:layout_constraintBottom_toBottomOf="@+id/txtOrigem"
+        app:layout_constraintEnd_toStartOf="@+id/txtMetodo"
+        app:layout_constraintStart_toEndOf="@+id/txtOrigem"
+        app:layout_constraintTop_toTopOf="@+id/txtOrigem"
+        app:srcCompat="@drawable/help18dp" />
+
+    <ImageView
+        android:id="@+id/imgAtrib"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:tint="@color/colorAccent"
+        app:layout_constraintBottom_toBottomOf="@+id/txtMetodo"
+        app:layout_constraintEnd_toEndOf="@+id/imgEtico"
+        app:layout_constraintTop_toTopOf="@+id/txtMetodo"
+        app:srcCompat="@drawable/help18dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
