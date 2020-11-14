@@ -38,12 +38,9 @@ public class Frag4 extends Fragment {
             ficha = (Ficha) getArguments().getSerializable("ficha");
             if (extra.equals("Classe")) {
                 p = Integer.parseInt(ficha.getPaginaC()) - 1;
-                Log.v("Teste","Classe");
             }
             if (extra.equals("Raca")) {
                 p = Integer.parseInt(ficha.getPaginaR()) - 1;
-                Log.v("Teste","Raca");
-
             }
         }
         pdfView.fromAsset("t20.pdf")
@@ -55,10 +52,9 @@ public class Frag4 extends Fragment {
                 .password(null)
                 .scrollHandle(null)
                 .enableAntialiasing(true)
-                .spacing(0)
+                .spacing(1)
                 .pageFitPolicy(FitPolicy.WIDTH)
                 .load();
-
         return view;
     }
 
