@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -28,6 +30,8 @@ public class Atribut2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_atribut2);
+        final Animation animation;
+        animation = AnimationUtils.loadAnimation(this,R.anim.bounce);
         final Ficha ficha = (Ficha) getIntent().getSerializableExtra("Ficha");
         final ProgressBar prg, prgA,prgB,prgC,prgD,prgE;
         final Integer[] total = {20};
@@ -93,360 +97,446 @@ public class Atribut2 extends AppCompatActivity {
         {
             btn1.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View view) {
-                    if (prg.getProgress() == 7) {
+                public void onClick(final View view) {
+                    view.startAnimation(animation);
+                    view.postOnAnimationDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            if (prg.getProgress() == 7) {
 
-                    } else {
-                        if (prg.getProgress() + 1 == 15 || prg.getProgress() + 1 == 16) {
-                            total[0] = total[0] + 2;
-                            txttotal.setText(Integer.toString(total[0]));
-                        } else if (prg.getProgress() + 1 == 17 || prg.getProgress() + 1 == 18) {
-                            total[0] = total[0] + 3;
-                            txttotal.setText(Integer.toString(total[0]));
-                        } else {
-                            total[0]++;
-                            txttotal.setText(Integer.toString(total[0]));
+                            } else {
+                                if (prg.getProgress() + 1 == 15 || prg.getProgress() + 1 == 16) {
+                                    total[0] = total[0] + 2;
+                                    txttotal.setText(Integer.toString(total[0]));
+                                } else if (prg.getProgress() + 1 == 17 || prg.getProgress() + 1 == 18) {
+                                    total[0] = total[0] + 3;
+                                    txttotal.setText(Integer.toString(total[0]));
+                                } else {
+                                    total[0]++;
+                                    txttotal.setText(Integer.toString(total[0]));
+                                }
+                                prg.incrementProgressBy(-1);
+                                txt1.setText(Integer.toString(prg.getProgress() + 1));
+                            }
+                            view.clearAnimation();
                         }
-                        prg.incrementProgressBy(-1);
-                        txt1.setText(Integer.toString(prg.getProgress() + 1));
-                    }
+                    },50);
                 }
             });
             btn2.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View view) {
-                    if (total[0] == 0) {
+                public void onClick(final View view) {
+                    view.startAnimation(animation);
+                    view.postOnAnimationDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            if (total[0] == 0) {
 
-                    } else {
-                        if (prg.getProgress() == 17) {
-
-                        } else {
-                            if (prg.getProgress() + 1 == 14 || prg.getProgress() + 1 == 15) {
-                                if (total[0] < 2) {
-
-                                } else {
-                                    total[0] = total[0] - 2;
-                                    txttotal.setText(Integer.toString(total[0]));
-                                    prg.incrementProgressBy(+1);
-                                    txt1.setText(Integer.toString(prg.getProgress() + 1));
-                                }
-                            } else if (prg.getProgress() + 1 == 16 || prg.getProgress() + 1 == 17) {
-                                if (total[0] < 3) {
-
-                                } else {
-                                    total[0] = total[0] - 3;
-                                    txttotal.setText(Integer.toString(total[0]));
-                                    prg.incrementProgressBy(+1);
-                                    txt1.setText(Integer.toString(prg.getProgress() + 1));
-                                }
                             } else {
-                                total[0]--;
-                                txttotal.setText(Integer.toString(total[0]));
-                                prg.incrementProgressBy(+1);
-                                txt1.setText(Integer.toString(prg.getProgress() + 1));
+                                if (prg.getProgress() == 17) {
+
+                                } else {
+                                    if (prg.getProgress() + 1 == 14 || prg.getProgress() + 1 == 15) {
+                                        if (total[0] < 2) {
+
+                                        } else {
+                                            total[0] = total[0] - 2;
+                                            txttotal.setText(Integer.toString(total[0]));
+                                            prg.incrementProgressBy(+1);
+                                            txt1.setText(Integer.toString(prg.getProgress() + 1));
+                                        }
+                                    } else if (prg.getProgress() + 1 == 16 || prg.getProgress() + 1 == 17) {
+                                        if (total[0] < 3) {
+
+                                        } else {
+                                            total[0] = total[0] - 3;
+                                            txttotal.setText(Integer.toString(total[0]));
+                                            prg.incrementProgressBy(+1);
+                                            txt1.setText(Integer.toString(prg.getProgress() + 1));
+                                        }
+                                    } else {
+                                        total[0]--;
+                                        txttotal.setText(Integer.toString(total[0]));
+                                        prg.incrementProgressBy(+1);
+                                        txt1.setText(Integer.toString(prg.getProgress() + 1));
+                                    }
+                                }
                             }
+                            view.clearAnimation();
                         }
-                    }
+                    },50);
                 }
             });
         }
         {
             btn1A.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View view) {
-                    if (prgA.getProgress() == 7) {
+                public void onClick(final View view) {
+                    view.startAnimation(animation);
+                    view.postOnAnimationDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            if (prgA.getProgress() == 7) {
 
-                    } else {
-                        if (prgA.getProgress() + 1 == 15 || prgA.getProgress() + 1 == 16) {
-                            total[0] = total[0] + 2;
-                            txttotal.setText(Integer.toString(total[0]));
-                        } else if (prgA.getProgress() + 1 == 17 || prgA.getProgress() + 1 == 18) {
-                            total[0] = total[0] + 3;
-                            txttotal.setText(Integer.toString(total[0]));
-                        } else {
-                            total[0]++;
-                            txttotal.setText(Integer.toString(total[0]));
+                            } else {
+                                if (prgA.getProgress() + 1 == 15 || prgA.getProgress() + 1 == 16) {
+                                    total[0] = total[0] + 2;
+                                    txttotal.setText(Integer.toString(total[0]));
+                                } else if (prgA.getProgress() + 1 == 17 || prgA.getProgress() + 1 == 18) {
+                                    total[0] = total[0] + 3;
+                                    txttotal.setText(Integer.toString(total[0]));
+                                } else {
+                                    total[0]++;
+                                    txttotal.setText(Integer.toString(total[0]));
+                                }
+                                prgA.incrementProgressBy(-1);
+                                txt1A.setText(Integer.toString(prgA.getProgress() + 1));
+                            }
+                            view.clearAnimation();
                         }
-                        prgA.incrementProgressBy(-1);
-                        txt1A.setText(Integer.toString(prgA.getProgress() + 1));
-                    }
+                    },50);
                 }
             });
             btn2A.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View view) {
-                    if (total[0] == 0) {
+                public void onClick(final View view) {
+                    view.startAnimation(animation);
+                    view.postOnAnimationDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            if (total[0] == 0) {
 
-                    } else {
-                        if (prgA.getProgress() == 17) {
-
-                        } else {
-                            if (prgA.getProgress() + 1 == 14 || prgA.getProgress() + 1 == 15) {
-                                if (total[0] < 2) {
-
-                                } else {
-                                    total[0] = total[0] - 2;
-                                    txttotal.setText(Integer.toString(total[0]));
-                                    prgA.incrementProgressBy(+1);
-                                    txt1A.setText(Integer.toString(prgA.getProgress() + 1));
-                                }
-                            } else if (prgA.getProgress() + 1 == 16 || prgA.getProgress() + 1 == 17) {
-                                if (total[0] < 2) {
-
-                                } else {
-                                    total[0] = total[0] - 3;
-                                    txttotal.setText(Integer.toString(total[0]));
-                                    prgA.incrementProgressBy(+1);
-                                    txt1A.setText(Integer.toString(prgA.getProgress() + 1));
-                                }
                             } else {
-                                total[0]--;
-                                txttotal.setText(Integer.toString(total[0]));
-                                prgA.incrementProgressBy(+1);
-                                txt1A.setText(Integer.toString(prgA.getProgress() + 1));
+                                if (prgA.getProgress() == 17) {
+
+                                } else {
+                                    if (prgA.getProgress() + 1 == 14 || prgA.getProgress() + 1 == 15) {
+                                        if (total[0] < 2) {
+
+                                        } else {
+                                            total[0] = total[0] - 2;
+                                            txttotal.setText(Integer.toString(total[0]));
+                                            prgA.incrementProgressBy(+1);
+                                            txt1A.setText(Integer.toString(prgA.getProgress() + 1));
+                                        }
+                                    } else if (prgA.getProgress() + 1 == 16 || prgA.getProgress() + 1 == 17) {
+                                        if (total[0] < 2) {
+
+                                        } else {
+                                            total[0] = total[0] - 3;
+                                            txttotal.setText(Integer.toString(total[0]));
+                                            prgA.incrementProgressBy(+1);
+                                            txt1A.setText(Integer.toString(prgA.getProgress() + 1));
+                                        }
+                                    } else {
+                                        total[0]--;
+                                        txttotal.setText(Integer.toString(total[0]));
+                                        prgA.incrementProgressBy(+1);
+                                        txt1A.setText(Integer.toString(prgA.getProgress() + 1));
+                                    }
+                                }
                             }
+                            view.clearAnimation();
                         }
-                    }
+                    },50);
                 }
             });
         }
         {
             btn1B.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View view) {
-                    if (prgB.getProgress() == 7) {
+                public void onClick(final View view) {
+                    view.startAnimation(animation);
+                    view.postOnAnimationDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            if (prgB.getProgress() == 7) {
 
-                    } else {
-                        if (prgB.getProgress() + 1 == 15 || prgB.getProgress() + 1 == 16) {
-                            total[0] = total[0] + 2;
-                            txttotal.setText(Integer.toString(total[0]));
-                        } else if (prgB.getProgress() + 1 == 17 || prgB.getProgress() + 1 == 18) {
-                            total[0] = total[0] + 3;
-                            txttotal.setText(Integer.toString(total[0]));
-                        } else {
-                            total[0]++;
-                            txttotal.setText(Integer.toString(total[0]));
+                            } else {
+                                if (prgB.getProgress() + 1 == 15 || prgB.getProgress() + 1 == 16) {
+                                    total[0] = total[0] + 2;
+                                    txttotal.setText(Integer.toString(total[0]));
+                                } else if (prgB.getProgress() + 1 == 17 || prgB.getProgress() + 1 == 18) {
+                                    total[0] = total[0] + 3;
+                                    txttotal.setText(Integer.toString(total[0]));
+                                } else {
+                                    total[0]++;
+                                    txttotal.setText(Integer.toString(total[0]));
+                                }
+                                prgB.incrementProgressBy(-1);
+                                txt1B.setText(Integer.toString(prgB.getProgress() + 1));
+                            }
+                            view.clearAnimation();
                         }
-                        prgB.incrementProgressBy(-1);
-                        txt1B.setText(Integer.toString(prgB.getProgress() + 1));
-                    }
+                    },50);
                 }
             });
             btn2B.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View view) {
-                    if (total[0] == 0) {
+                public void onClick(final View view) {
+                    view.startAnimation(animation);
+                    view.postOnAnimationDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            if (total[0] == 0) {
 
-                    } else {
-                        if (prgB.getProgress() == 17) {
-
-                        } else {
-                            if (prgB.getProgress() + 1 == 14 || prgB.getProgress() + 1 == 15) {
-                                if (total[0] < 2) {
-
-                                } else {
-                                    total[0] = total[0] - 2;
-                                    txttotal.setText(Integer.toString(total[0]));
-                                    prgB.incrementProgressBy(+1);
-                                    txt1B.setText(Integer.toString(prgB.getProgress() + 1));
-                                }
-                            } else if (prgB.getProgress() + 1 == 16 || prgB.getProgress() + 1 == 17) {
-                                if (total[0] < 3) {
-
-                                } else {
-                                    total[0] = total[0] - 3;
-                                    txttotal.setText(Integer.toString(total[0]));
-                                    prgB.incrementProgressBy(+1);
-                                    txt1B.setText(Integer.toString(prgB.getProgress() + 1));
-                                }
                             } else {
-                                total[0]--;
-                                txttotal.setText(Integer.toString(total[0]));
-                                prgB.incrementProgressBy(+1);
-                                txt1B.setText(Integer.toString(prgB.getProgress() + 1));
+                                if (prgB.getProgress() == 17) {
+
+                                } else {
+                                    if (prgB.getProgress() + 1 == 14 || prgB.getProgress() + 1 == 15) {
+                                        if (total[0] < 2) {
+
+                                        } else {
+                                            total[0] = total[0] - 2;
+                                            txttotal.setText(Integer.toString(total[0]));
+                                            prgB.incrementProgressBy(+1);
+                                            txt1B.setText(Integer.toString(prgB.getProgress() + 1));
+                                        }
+                                    } else if (prgB.getProgress() + 1 == 16 || prgB.getProgress() + 1 == 17) {
+                                        if (total[0] < 3) {
+
+                                        } else {
+                                            total[0] = total[0] - 3;
+                                            txttotal.setText(Integer.toString(total[0]));
+                                            prgB.incrementProgressBy(+1);
+                                            txt1B.setText(Integer.toString(prgB.getProgress() + 1));
+                                        }
+                                    } else {
+                                        total[0]--;
+                                        txttotal.setText(Integer.toString(total[0]));
+                                        prgB.incrementProgressBy(+1);
+                                        txt1B.setText(Integer.toString(prgB.getProgress() + 1));
+                                    }
+                                }
                             }
+                            view.clearAnimation();
                         }
-                    }
+                    },50);
                 }
             });
         }
         {
             btn1C.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View view) {
-                    if (prgC.getProgress() == 7) {
+                public void onClick(final View view) {
+                    view.startAnimation(animation);
+                    view.postOnAnimationDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            if (prgC.getProgress() == 7) {
 
-                    } else {
-                        if (prgC.getProgress() + 1 == 15 || prgC.getProgress() + 1 == 16) {
-                            total[0] = total[0] + 2;
-                            txttotal.setText(Integer.toString(total[0]));
-                        } else if (prgC.getProgress() + 1 == 17 || prgC.getProgress() + 1 == 18) {
-                            total[0] = total[0] + 3;
-                            txttotal.setText(Integer.toString(total[0]));
-                        } else {
-                            total[0]++;
-                            txttotal.setText(Integer.toString(total[0]));
+                            } else {
+                                if (prgC.getProgress() + 1 == 15 || prgC.getProgress() + 1 == 16) {
+                                    total[0] = total[0] + 2;
+                                    txttotal.setText(Integer.toString(total[0]));
+                                } else if (prgC.getProgress() + 1 == 17 || prgC.getProgress() + 1 == 18) {
+                                    total[0] = total[0] + 3;
+                                    txttotal.setText(Integer.toString(total[0]));
+                                } else {
+                                    total[0]++;
+                                    txttotal.setText(Integer.toString(total[0]));
+                                }
+                                prgC.incrementProgressBy(-1);
+                                txt1C.setText(Integer.toString(prgC.getProgress() + 1));
+                            }
+                            view.clearAnimation();
                         }
-                        prgC.incrementProgressBy(-1);
-                        txt1C.setText(Integer.toString(prgC.getProgress() + 1));
-                    }
+                    },50);
                 }
             });
             btn2C.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View view) {
-                    if (total[0] == 0) {
+                public void onClick(final View view) {
+                    view.startAnimation(animation);
+                    view.postOnAnimationDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            if (total[0] == 0) {
 
-                    } else {
-                        if (prgC.getProgress() == 17) {
-
-                        } else {
-                            if (prgC.getProgress() + 1 == 14 || prgC.getProgress() + 1 == 15) {
-                                if (total[0] < 2) {
-
-                                } else {
-                                    total[0] = total[0] - 2;
-                                    txttotal.setText(Integer.toString(total[0]));
-                                    prgC.incrementProgressBy(+1);
-                                    txt1C.setText(Integer.toString(prgC.getProgress() + 1));
-                                }
-                            } else if (prgC.getProgress() + 1 == 16 || prgC.getProgress() + 1 == 17) {
-                                if (total[0] < 3) {
-
-                                } else {
-                                    total[0] = total[0] - 3;
-                                    txttotal.setText(Integer.toString(total[0]));
-                                    prgC.incrementProgressBy(+1);
-                                    txt1C.setText(Integer.toString(prgC.getProgress() + 1));
-                                }
                             } else {
-                                total[0]--;
-                                txttotal.setText(Integer.toString(total[0]));
-                                prgC.incrementProgressBy(+1);
-                                txt1C.setText(Integer.toString(prgC.getProgress() + 1));
+                                if (prgC.getProgress() == 17) {
+
+                                } else {
+                                    if (prgC.getProgress() + 1 == 14 || prgC.getProgress() + 1 == 15) {
+                                        if (total[0] < 2) {
+
+                                        } else {
+                                            total[0] = total[0] - 2;
+                                            txttotal.setText(Integer.toString(total[0]));
+                                            prgC.incrementProgressBy(+1);
+                                            txt1C.setText(Integer.toString(prgC.getProgress() + 1));
+                                        }
+                                    } else if (prgC.getProgress() + 1 == 16 || prgC.getProgress() + 1 == 17) {
+                                        if (total[0] < 3) {
+
+                                        } else {
+                                            total[0] = total[0] - 3;
+                                            txttotal.setText(Integer.toString(total[0]));
+                                            prgC.incrementProgressBy(+1);
+                                            txt1C.setText(Integer.toString(prgC.getProgress() + 1));
+                                        }
+                                    } else {
+                                        total[0]--;
+                                        txttotal.setText(Integer.toString(total[0]));
+                                        prgC.incrementProgressBy(+1);
+                                        txt1C.setText(Integer.toString(prgC.getProgress() + 1));
+                                    }
+                                }
                             }
+                            view.clearAnimation();
                         }
-                    }
+                    },50);
                 }
             });
         }
         {
             btn1D.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View view) {
-                    if (prgD.getProgress() == 7) {
+                public void onClick(final View view) {
+                    view.startAnimation(animation);
+                    view.postOnAnimationDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            if (prgD.getProgress() == 7) {
 
-                    } else {
-                        if (prgD.getProgress() + 1 == 15 || prgD.getProgress() + 1 == 16) {
-                            total[0] = total[0] + 2;
-                            txttotal.setText(Integer.toString(total[0]));
-                        } else if (prgD.getProgress() + 1 == 17 || prgD.getProgress() + 1 == 18) {
-                            total[0] = total[0] + 3;
-                            txttotal.setText(Integer.toString(total[0]));
-                        } else {
-                            total[0]++;
-                            txttotal.setText(Integer.toString(total[0]));
+                            } else {
+                                if (prgD.getProgress() + 1 == 15 || prgD.getProgress() + 1 == 16) {
+                                    total[0] = total[0] + 2;
+                                    txttotal.setText(Integer.toString(total[0]));
+                                } else if (prgD.getProgress() + 1 == 17 || prgD.getProgress() + 1 == 18) {
+                                    total[0] = total[0] + 3;
+                                    txttotal.setText(Integer.toString(total[0]));
+                                } else {
+                                    total[0]++;
+                                    txttotal.setText(Integer.toString(total[0]));
+                                }
+                                prgD.incrementProgressBy(-1);
+                                txt1D.setText(Integer.toString(prgD.getProgress() + 1));
+                            }
+                            view.clearAnimation();
                         }
-                        prgD.incrementProgressBy(-1);
-                        txt1D.setText(Integer.toString(prgD.getProgress() + 1));
-                    }
+                    },50);
                 }
             });
             btn2D.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View view) {
-                    if (total[0] == 0) {
+                public void onClick(final View view) {
+                    view.startAnimation(animation);
+                    view.postOnAnimationDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            if (total[0] == 0) {
 
-                    } else {
-                        if (prgD.getProgress() == 17) {
-
-                        } else {
-                            if (prgD.getProgress() + 1 == 14 || prgD.getProgress() + 1 == 15) {
-                                if (total[0] < 2) {
-
-                                } else {
-                                    total[0] = total[0] - 2;
-                                    txttotal.setText(Integer.toString(total[0]));
-                                    prgD.incrementProgressBy(+1);
-                                    txt1D.setText(Integer.toString(prgD.getProgress() + 1));
-                                }
-                            } else if (prgD.getProgress() + 1 == 16 || prgD.getProgress() + 1 == 17) {
-                                if (total[0] < 3) {
-
-                                } else {
-                                    total[0] = total[0] - 3;
-                                    txttotal.setText(Integer.toString(total[0]));
-                                    prgD.incrementProgressBy(+1);
-                                    txt1D.setText(Integer.toString(prgD.getProgress() + 1));
-                                }
                             } else {
-                                total[0]--;
-                                txttotal.setText(Integer.toString(total[0]));
-                                prgD.incrementProgressBy(+1);
-                                txt1D.setText(Integer.toString(prgD.getProgress() + 1));
+                                if (prgD.getProgress() == 17) {
+
+                                } else {
+                                    if (prgD.getProgress() + 1 == 14 || prgD.getProgress() + 1 == 15) {
+                                        if (total[0] < 2) {
+
+                                        } else {
+                                            total[0] = total[0] - 2;
+                                            txttotal.setText(Integer.toString(total[0]));
+                                            prgD.incrementProgressBy(+1);
+                                            txt1D.setText(Integer.toString(prgD.getProgress() + 1));
+                                        }
+                                    } else if (prgD.getProgress() + 1 == 16 || prgD.getProgress() + 1 == 17) {
+                                        if (total[0] < 3) {
+
+                                        } else {
+                                            total[0] = total[0] - 3;
+                                            txttotal.setText(Integer.toString(total[0]));
+                                            prgD.incrementProgressBy(+1);
+                                            txt1D.setText(Integer.toString(prgD.getProgress() + 1));
+                                        }
+                                    } else {
+                                        total[0]--;
+                                        txttotal.setText(Integer.toString(total[0]));
+                                        prgD.incrementProgressBy(+1);
+                                        txt1D.setText(Integer.toString(prgD.getProgress() + 1));
+                                    }
+                                }
                             }
+                            view.clearAnimation();
                         }
-                    }
+                    },50);
                 }
             });
         }
         {
             btn1E.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View view) {
-                    if (prgE.getProgress() == 7) {
+                public void onClick(final View view) {
+                    view.startAnimation(animation);
+                    view.postOnAnimationDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            if (prgE.getProgress() == 7) {
 
-                    } else {
-                        if (prgE.getProgress() + 1 == 15 || prgE.getProgress() + 1 == 16) {
-                            total[0] = total[0] + 2;
-                            txttotal.setText(Integer.toString(total[0]));
-                        } else if (prgE.getProgress() + 1 == 17 || prgE.getProgress() + 1 == 18) {
-                            total[0] = total[0] + 3;
-                            txttotal.setText(Integer.toString(total[0]));
-                        } else {
-                            total[0]++;
-                            txttotal.setText(Integer.toString(total[0]));
+                            } else {
+                                if (prgE.getProgress() + 1 == 15 || prgE.getProgress() + 1 == 16) {
+                                    total[0] = total[0] + 2;
+                                    txttotal.setText(Integer.toString(total[0]));
+                                } else if (prgE.getProgress() + 1 == 17 || prgE.getProgress() + 1 == 18) {
+                                    total[0] = total[0] + 3;
+                                    txttotal.setText(Integer.toString(total[0]));
+                                } else {
+                                    total[0]++;
+                                    txttotal.setText(Integer.toString(total[0]));
+                                }
+                                prgE.incrementProgressBy(-1);
+                                txt1E.setText(Integer.toString(prgE.getProgress() + 1));
+                            }
+                            view.clearAnimation();
                         }
-                        prgE.incrementProgressBy(-1);
-                        txt1E.setText(Integer.toString(prgE.getProgress() + 1));
-                    }
+                    },50);
+
+
                 }
             });
             btn2E.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View view) {
-                    if (total[0] == 0) {
+                public void onClick(final View view) {
+                    view.startAnimation(animation);
+                    view.postOnAnimationDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            if (total[0] == 0) {
 
-                    } else {
-                        if (prgE.getProgress() == 17) {
-
-                        } else {
-                            if (prgE.getProgress() + 1 == 14 || prgE.getProgress() + 1 == 15) {
-                                if (total[0] < 2) {
-
-                                } else {
-                                    total[0] = total[0] - 2;
-                                    txttotal.setText(Integer.toString(total[0]));
-                                    prgE.incrementProgressBy(+1);
-                                    txt1E.setText(Integer.toString(prgE.getProgress() + 1));
-                                }
-                            } else if (prgE.getProgress() + 1 == 16 || prgE.getProgress() + 1 == 17) {
-                                if (total[0] < 3) {
-
-                                } else {
-                                    total[0] = total[0] - 3;
-                                    txttotal.setText(Integer.toString(total[0]));
-                                    prgE.incrementProgressBy(+1);
-                                    txt1E.setText(Integer.toString(prgE.getProgress() + 1));
-                                }
                             } else {
-                                total[0]--;
-                                txttotal.setText(Integer.toString(total[0]));
-                                prgE.incrementProgressBy(+1);
-                                txt1E.setText(Integer.toString(prgE.getProgress() + 1));
+                                if (prgE.getProgress() == 17) {
+
+                                } else {
+                                    if (prgE.getProgress() + 1 == 14 || prgE.getProgress() + 1 == 15) {
+                                        if (total[0] < 2) {
+
+                                        } else {
+                                            total[0] = total[0] - 2;
+                                            txttotal.setText(Integer.toString(total[0]));
+                                            prgE.incrementProgressBy(+1);
+                                            txt1E.setText(Integer.toString(prgE.getProgress() + 1));
+                                        }
+                                    } else if (prgE.getProgress() + 1 == 16 || prgE.getProgress() + 1 == 17) {
+                                        if (total[0] < 3) {
+
+                                        } else {
+                                            total[0] = total[0] - 3;
+                                            txttotal.setText(Integer.toString(total[0]));
+                                            prgE.incrementProgressBy(+1);
+                                            txt1E.setText(Integer.toString(prgE.getProgress() + 1));
+                                        }
+                                    } else {
+                                        total[0]--;
+                                        txttotal.setText(Integer.toString(total[0]));
+                                        prgE.incrementProgressBy(+1);
+                                        txt1E.setText(Integer.toString(prgE.getProgress() + 1));
+                                    }
+                                }
                             }
+                            view.clearAnimation();
                         }
-                    }
+                    },50);
                 }
             });
         }

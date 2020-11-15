@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Atributos.Atribut2"
-    android:background="@drawable/papel4"
+    android:background="@drawable/papel"
     >
 
     <ProgressBar
@@ -37,25 +37,27 @@
         android:id="@+id/btn2"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginEnd="16dp"
         android:background="@drawable/button_avanc"
         android:text="+"
         android:textAlignment="center"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="@+id/btn1"
-        app:layout_constraintEnd_toStartOf="@+id/txt1"
+        app:layout_constraintEnd_toEndOf="@+id/txtPontos"
+        app:layout_constraintStart_toEndOf="@+id/prgB"
         app:layout_constraintTop_toTopOf="@+id/btn1" />
 
     <TextView
         android:id="@+id/txt1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:text="0"
         android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="@+id/btn2"
         app:layout_constraintEnd_toStartOf="@+id/txtConsti"
+        app:layout_constraintStart_toEndOf="@+id/btn2"
         app:layout_constraintTop_toTopOf="@+id/btn2" />
 
     <TextView
