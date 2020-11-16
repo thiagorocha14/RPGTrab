@@ -15,7 +15,12 @@
         android:layout_marginBottom="24dp"
         android:gravity="center"
         android:text="1"
-        android:textColor="#FFFFFF"
+        android:fontFamily="@font/blaccb"
+        android:shadowColor="#FFFFFF"
+        android:shadowDx="1.5"
+        android:shadowDy="1.3"
+        android:shadowRadius="10"
+        android:textColor="@color/black"
         android:textSize="50sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -31,7 +36,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/txtRandom"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/d4" />
+        app:srcCompat="@drawable/d4"
+        android:tint="@color/black"/>
 
     <ImageView
         android:id="@+id/img10"
@@ -41,7 +47,8 @@
         app:layout_constraintStart_toEndOf="@+id/img4"
         app:layout_constraintTop_toTopOf="@+id/txtRandom"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/d10" />
+        app:srcCompat="@drawable/d10"
+        android:tint="@color/black"/>
 
     <ImageView
         android:id="@+id/img6"
@@ -51,7 +58,8 @@
         app:layout_constraintStart_toEndOf="@+id/img10"
         app:layout_constraintTop_toTopOf="@+id/txtRandom"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/d6" />
+        app:srcCompat="@drawable/d6"
+        android:tint="@color/black"/>
 
     <ImageView
         android:id="@+id/img12"
@@ -61,7 +69,8 @@
         app:layout_constraintEnd_toStartOf="@+id/img8"
         app:layout_constraintTop_toTopOf="@+id/txtRandom"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/d12" />
+        app:srcCompat="@drawable/d12"
+        android:tint="@color/black"/>
 
     <ImageView
         android:id="@+id/img8"
@@ -71,7 +80,8 @@
         app:layout_constraintEnd_toStartOf="@+id/img20"
         app:layout_constraintTop_toTopOf="@+id/txtRandom"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/d8" />
+        app:srcCompat="@drawable/d8"
+        android:tint="@color/black"/>
 
     <ImageView
         android:id="@+id/img20"
@@ -82,6 +92,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/txtRandom"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/d203" />
+        app:srcCompat="@drawable/d203"
+        android:tint="@color/black"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

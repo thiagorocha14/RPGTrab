@@ -5,13 +5,13 @@
     android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragments.Frag1"
-    android:background="@drawable/drag2">
+    tools:context=".Fragments.Frag1">
 
     <pl.droidsonroids.gif.GifImageView
         android:id="@+id/imgGif"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:paddingEnd="20dp"
         android:scaleType="centerCrop"
         android:src="@drawable/gif2"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -19,5 +19,31 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/txtAventura"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/blackcastle"
+        android:text="Você deseja entrar nessa aventura?"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imgGif" />
 
+    <TextView
+        android:id="@+id/txtAventura2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:fontFamily="@font/blackcastle"
+        android:text="Entre pelo Portal"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

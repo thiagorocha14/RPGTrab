@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -42,13 +43,14 @@ public class Atribut1 extends AppCompatActivity {
             txt10,txt11,txt12,txt13 são as barras que cortam o menor número
              */
 
-        final Animation animation;
-        animation = AnimationUtils.loadAnimation(this,R.anim.implod);
-
+            final Animation animation = AnimationUtils.loadAnimation(this,R.anim.implod);
+            final Animation animation2 = AnimationUtils.loadAnimation(this,R.anim.bounce);
+            ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.style_spinner,getResources().getStringArray(R.array.Atributos));
             final Ficha ficha = (Ficha) getIntent().getSerializableExtra("Ficha");
             Button btnNext = findViewById(R.id.btnFinish);
 
             spn1A = findViewById(R.id.spn1A);
+            spn1A.setAdapter(adapter);
             final Button btnRollA = findViewById(R.id.btnRollA);
             final TextView txt1A = findViewById(R.id.txt1A);
             final TextView txt2A = findViewById(R.id.txt2A);
@@ -66,6 +68,7 @@ public class Atribut1 extends AppCompatActivity {
             //Declaração 1
 
             spn1B = findViewById(R.id.spn1B);
+            spn1B.setAdapter(adapter);
             final Button btnRollB = findViewById(R.id.btnRollB);
             final TextView txt1B = findViewById(R.id.txt1B);
             final TextView txt2B = findViewById(R.id.txt2B);
@@ -83,6 +86,7 @@ public class Atribut1 extends AppCompatActivity {
             //Declaração 2
 
             spn1C = findViewById(R.id.spn1C);
+            spn1C.setAdapter(adapter);
             final Button btnRollC = findViewById(R.id.btnRollC);
             final TextView txt1C = findViewById(R.id.txt1C);
             final TextView txt2C = findViewById(R.id.txt2C);
@@ -100,6 +104,7 @@ public class Atribut1 extends AppCompatActivity {
             //Declaração 3
 
             spn1D = findViewById(R.id.spn1D);
+            spn1D.setAdapter(adapter);
             final Button btnRollD = findViewById(R.id.btnRollD);
             final TextView txt1D = findViewById(R.id.txt1D);
             final TextView txt2D = findViewById(R.id.txt2D);
@@ -117,6 +122,7 @@ public class Atribut1 extends AppCompatActivity {
             //Declaração 4
 
             spn1E = findViewById(R.id.spn1E);
+            spn1E.setAdapter(adapter);
             final Button btnRollE = findViewById(R.id.btnRollE);
             final TextView txt1E = findViewById(R.id.txt1E);
             final TextView txt2E = findViewById(R.id.txt2E);
@@ -134,6 +140,7 @@ public class Atribut1 extends AppCompatActivity {
             //Declaração 5
 
             spn1F = findViewById(R.id.spn1F);
+            spn1F.setAdapter(adapter);
             final Button btnRollF = findViewById(R.id.btnRollF);
             final TextView txt1F = findViewById(R.id.txt1F);
             final TextView txt2F = findViewById(R.id.txt2F);
@@ -250,108 +257,114 @@ public class Atribut1 extends AppCompatActivity {
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (spn1A.getSelectedItemPosition() == spn1B.getSelectedItemPosition() || spn1A.getSelectedItemPosition() == spn1C.getSelectedItemPosition() || spn1A.getSelectedItemPosition() == spn1D.getSelectedItemPosition() || spn1A.getSelectedItemPosition() == spn1E.getSelectedItemPosition() || spn1A.getSelectedItemPosition() == spn1F.getSelectedItemPosition() || spn1B.getSelectedItemPosition() == spn1C.getSelectedItemPosition() || spn1B.getSelectedItemPosition() == spn1D.getSelectedItemPosition() || spn1B.getSelectedItemPosition() == spn1E.getSelectedItemPosition() || spn1B.getSelectedItemPosition() == spn1F.getSelectedItemPosition() || spn1C.getSelectedItemPosition() == spn1D.getSelectedItemPosition() || spn1C.getSelectedItemPosition() == spn1E.getSelectedItemPosition() || spn1C.getSelectedItemPosition() == spn1F.getSelectedItemPosition() || spn1D.getSelectedItemPosition() == spn1E.getSelectedItemPosition() || spn1D.getSelectedItemPosition() == spn1F.getSelectedItemPosition() || spn1E.getSelectedItemPosition() == spn1F.getSelectedItemPosition()){
-                    Toast.makeText(getBaseContext(), "Atributos repetidos!", Toast.LENGTH_SHORT).show();
-                }else if(txt9A.getText().toString().equals(" ")||txt9B.getText().toString().equals(" ")||txt9C.getText().toString().equals(" ")||txt9D.getText().toString().equals(" ")||txt9E.getText().toString().equals(" ")||txt9F.getText().toString().equals(" ")){
-                    Toast.makeText(getBaseContext(), "Pra que a pressa amigo?\nVocê ainda nem definiu seus atributos", Toast.LENGTH_SHORT).show();
-                }else{
-                    Atributo atributo = new Atributo();
-                    {
-                        if (spn1A.getSelectedItemPosition() == 0) {
-                            atributo.setForca(txt9A.getText().toString());
-                        } else if (spn1A.getSelectedItemPosition() == 1) {
-                            atributo.setDestreza(txt9A.getText().toString());
-                        } else if (spn1A.getSelectedItemPosition() == 2) {
-                            atributo.setConstituicao(txt9A.getText().toString());
-                        } else if (spn1A.getSelectedItemPosition() == 3) {
-                            atributo.setInteligencia(txt9A.getText().toString());
-                        } else if (spn1A.getSelectedItemPosition() == 4) {
-                            atributo.setSabedoria(txt9A.getText().toString());
-                        } else if (spn1A.getSelectedItemPosition() == 5) {
-                            atributo.setCarisma(txt9A.getText().toString());
+                view.startAnimation(animation2);
+                view.postOnAnimationDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        if (spn1A.getSelectedItemPosition() == spn1B.getSelectedItemPosition() || spn1A.getSelectedItemPosition() == spn1C.getSelectedItemPosition() || spn1A.getSelectedItemPosition() == spn1D.getSelectedItemPosition() || spn1A.getSelectedItemPosition() == spn1E.getSelectedItemPosition() || spn1A.getSelectedItemPosition() == spn1F.getSelectedItemPosition() || spn1B.getSelectedItemPosition() == spn1C.getSelectedItemPosition() || spn1B.getSelectedItemPosition() == spn1D.getSelectedItemPosition() || spn1B.getSelectedItemPosition() == spn1E.getSelectedItemPosition() || spn1B.getSelectedItemPosition() == spn1F.getSelectedItemPosition() || spn1C.getSelectedItemPosition() == spn1D.getSelectedItemPosition() || spn1C.getSelectedItemPosition() == spn1E.getSelectedItemPosition() || spn1C.getSelectedItemPosition() == spn1F.getSelectedItemPosition() || spn1D.getSelectedItemPosition() == spn1E.getSelectedItemPosition() || spn1D.getSelectedItemPosition() == spn1F.getSelectedItemPosition() || spn1E.getSelectedItemPosition() == spn1F.getSelectedItemPosition()){
+                            Toast.makeText(getBaseContext(), "Atributos repetidos!", Toast.LENGTH_SHORT).show();
+                        }else if(txt9A.getText().toString().equals(" ")||txt9B.getText().toString().equals(" ")||txt9C.getText().toString().equals(" ")||txt9D.getText().toString().equals(" ")||txt9E.getText().toString().equals(" ")||txt9F.getText().toString().equals(" ")){
+                            Toast.makeText(getBaseContext(), "Pra que a pressa amigo?\nVocê ainda nem definiu seus atributos", Toast.LENGTH_SHORT).show();
+                        }else{
+                            Atributo atributo = new Atributo();
+                            {
+                                if (spn1A.getSelectedItemPosition() == 0) {
+                                    atributo.setForca(txt9A.getText().toString());
+                                } else if (spn1A.getSelectedItemPosition() == 1) {
+                                    atributo.setDestreza(txt9A.getText().toString());
+                                } else if (spn1A.getSelectedItemPosition() == 2) {
+                                    atributo.setConstituicao(txt9A.getText().toString());
+                                } else if (spn1A.getSelectedItemPosition() == 3) {
+                                    atributo.setInteligencia(txt9A.getText().toString());
+                                } else if (spn1A.getSelectedItemPosition() == 4) {
+                                    atributo.setSabedoria(txt9A.getText().toString());
+                                } else if (spn1A.getSelectedItemPosition() == 5) {
+                                    atributo.setCarisma(txt9A.getText().toString());
+                                }
+                            }
+                            {
+                                if (spn1B.getSelectedItemPosition() == 0) {
+                                    atributo.setForca(txt9B.getText().toString());
+                                } else if (spn1B.getSelectedItemPosition() == 1) {
+                                    atributo.setDestreza(txt9B.getText().toString());
+                                } else if (spn1B.getSelectedItemPosition() == 2) {
+                                    atributo.setConstituicao(txt9B.getText().toString());
+                                } else if (spn1B.getSelectedItemPosition() == 3) {
+                                    atributo.setInteligencia(txt9B.getText().toString());
+                                } else if (spn1B.getSelectedItemPosition() == 4) {
+                                    atributo.setSabedoria(txt9B.getText().toString());
+                                } else if (spn1B.getSelectedItemPosition() == 5) {
+                                    atributo.setCarisma(txt9B.getText().toString());
+                                }
+                            }
+                            {
+                                if (spn1C.getSelectedItemPosition() == 0) {
+                                    atributo.setForca(txt9C.getText().toString());
+                                } else if (spn1C.getSelectedItemPosition() == 1) {
+                                    atributo.setDestreza(txt9C.getText().toString());
+                                } else if (spn1C.getSelectedItemPosition() == 2) {
+                                    atributo.setConstituicao(txt9C.getText().toString());
+                                } else if (spn1C.getSelectedItemPosition() == 3) {
+                                    atributo.setInteligencia(txt9C.getText().toString());
+                                } else if (spn1C.getSelectedItemPosition() == 4) {
+                                    atributo.setSabedoria(txt9C.getText().toString());
+                                } else if (spn1C.getSelectedItemPosition() == 5) {
+                                    atributo.setCarisma(txt9C.getText().toString());
+                                }
+                            }
+                            {
+                                if (spn1D.getSelectedItemPosition() == 0) {
+                                    atributo.setForca(txt9D.getText().toString());
+                                } else if (spn1D.getSelectedItemPosition() == 1) {
+                                    atributo.setDestreza(txt9D.getText().toString());
+                                } else if (spn1D.getSelectedItemPosition() == 2) {
+                                    atributo.setConstituicao(txt9D.getText().toString());
+                                } else if (spn1D.getSelectedItemPosition() == 3) {
+                                    atributo.setInteligencia(txt9D.getText().toString());
+                                } else if (spn1D.getSelectedItemPosition() == 4) {
+                                    atributo.setSabedoria(txt9D.getText().toString());
+                                } else if (spn1D.getSelectedItemPosition() == 5) {
+                                    atributo.setCarisma(txt9D.getText().toString());
+                                }
+                            }
+                            {
+                                if (spn1E.getSelectedItemPosition() == 0) {
+                                    atributo.setForca(txt9E.getText().toString());
+                                } else if (spn1E.getSelectedItemPosition() == 1) {
+                                    atributo.setDestreza(txt9E.getText().toString());
+                                } else if (spn1E.getSelectedItemPosition() == 2) {
+                                    atributo.setConstituicao(txt9E.getText().toString());
+                                } else if (spn1E.getSelectedItemPosition() == 3) {
+                                    atributo.setInteligencia(txt9E.getText().toString());
+                                } else if (spn1E.getSelectedItemPosition() == 4) {
+                                    atributo.setSabedoria(txt9E.getText().toString());
+                                } else if (spn1E.getSelectedItemPosition() == 5) {
+                                    atributo.setCarisma(txt9E.getText().toString());
+                                }
+                            }
+                            {
+                                if (spn1F.getSelectedItemPosition() == 0) {
+                                    atributo.setForca(txt9F.getText().toString());
+                                } else if (spn1F.getSelectedItemPosition() == 1) {
+                                    atributo.setDestreza(txt9F.getText().toString());
+                                } else if (spn1F.getSelectedItemPosition() == 2) {
+                                    atributo.setConstituicao(txt9F.getText().toString());
+                                } else if (spn1F.getSelectedItemPosition() == 3) {
+                                    atributo.setInteligencia(txt9F.getText().toString());
+                                } else if (spn1F.getSelectedItemPosition() == 4) {
+                                    atributo.setSabedoria(txt9F.getText().toString());
+                                } else if (spn1F.getSelectedItemPosition() == 5) {
+                                    atributo.setCarisma(txt9F.getText().toString());
+                                }
+                            }
+                            ficha.setAtributo(atributo);
+                            Intent intent = new Intent(getApplicationContext(), VidaV.class);
+                            intent.putExtra("Ficha",ficha);
+                            startActivity(intent);
+                            finish();
                         }
                     }
-                    {
-                        if (spn1B.getSelectedItemPosition() == 0) {
-                            atributo.setForca(txt9B.getText().toString());
-                        } else if (spn1B.getSelectedItemPosition() == 1) {
-                            atributo.setDestreza(txt9B.getText().toString());
-                        } else if (spn1B.getSelectedItemPosition() == 2) {
-                            atributo.setConstituicao(txt9B.getText().toString());
-                        } else if (spn1B.getSelectedItemPosition() == 3) {
-                            atributo.setInteligencia(txt9B.getText().toString());
-                        } else if (spn1B.getSelectedItemPosition() == 4) {
-                            atributo.setSabedoria(txt9B.getText().toString());
-                        } else if (spn1B.getSelectedItemPosition() == 5) {
-                            atributo.setCarisma(txt9B.getText().toString());
-                        }
-                    }
-                    {
-                        if (spn1C.getSelectedItemPosition() == 0) {
-                            atributo.setForca(txt9C.getText().toString());
-                        } else if (spn1C.getSelectedItemPosition() == 1) {
-                            atributo.setDestreza(txt9C.getText().toString());
-                        } else if (spn1C.getSelectedItemPosition() == 2) {
-                            atributo.setConstituicao(txt9C.getText().toString());
-                        } else if (spn1C.getSelectedItemPosition() == 3) {
-                            atributo.setInteligencia(txt9C.getText().toString());
-                        } else if (spn1C.getSelectedItemPosition() == 4) {
-                            atributo.setSabedoria(txt9C.getText().toString());
-                        } else if (spn1C.getSelectedItemPosition() == 5) {
-                            atributo.setCarisma(txt9C.getText().toString());
-                        }
-                    }
-                    {
-                        if (spn1D.getSelectedItemPosition() == 0) {
-                            atributo.setForca(txt9D.getText().toString());
-                        } else if (spn1D.getSelectedItemPosition() == 1) {
-                            atributo.setDestreza(txt9D.getText().toString());
-                        } else if (spn1D.getSelectedItemPosition() == 2) {
-                            atributo.setConstituicao(txt9D.getText().toString());
-                        } else if (spn1D.getSelectedItemPosition() == 3) {
-                            atributo.setInteligencia(txt9D.getText().toString());
-                        } else if (spn1D.getSelectedItemPosition() == 4) {
-                            atributo.setSabedoria(txt9D.getText().toString());
-                        } else if (spn1D.getSelectedItemPosition() == 5) {
-                            atributo.setCarisma(txt9D.getText().toString());
-                        }
-                    }
-                    {
-                        if (spn1E.getSelectedItemPosition() == 0) {
-                            atributo.setForca(txt9E.getText().toString());
-                        } else if (spn1E.getSelectedItemPosition() == 1) {
-                            atributo.setDestreza(txt9E.getText().toString());
-                        } else if (spn1E.getSelectedItemPosition() == 2) {
-                            atributo.setConstituicao(txt9E.getText().toString());
-                        } else if (spn1E.getSelectedItemPosition() == 3) {
-                            atributo.setInteligencia(txt9E.getText().toString());
-                        } else if (spn1E.getSelectedItemPosition() == 4) {
-                            atributo.setSabedoria(txt9E.getText().toString());
-                        } else if (spn1E.getSelectedItemPosition() == 5) {
-                            atributo.setCarisma(txt9E.getText().toString());
-                        }
-                    }
-                    {
-                        if (spn1F.getSelectedItemPosition() == 0) {
-                            atributo.setForca(txt9F.getText().toString());
-                        } else if (spn1F.getSelectedItemPosition() == 1) {
-                            atributo.setDestreza(txt9F.getText().toString());
-                        } else if (spn1F.getSelectedItemPosition() == 2) {
-                            atributo.setConstituicao(txt9F.getText().toString());
-                        } else if (spn1F.getSelectedItemPosition() == 3) {
-                            atributo.setInteligencia(txt9F.getText().toString());
-                        } else if (spn1F.getSelectedItemPosition() == 4) {
-                            atributo.setSabedoria(txt9F.getText().toString());
-                        } else if (spn1F.getSelectedItemPosition() == 5) {
-                            atributo.setCarisma(txt9F.getText().toString());
-                        }
-                    }
-                    ficha.setAtributo(atributo);
-                    Intent intent = new Intent(getApplicationContext(), VidaV.class);
-                    intent.putExtra("Ficha",ficha);
-                    startActivity(intent);
-                    finish();
-                }
+                },50);
             }
         });
 

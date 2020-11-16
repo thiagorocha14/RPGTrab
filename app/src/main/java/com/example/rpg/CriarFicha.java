@@ -10,6 +10,8 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -22,6 +24,7 @@ import android.widget.Toast;
 
 import com.example.rpg.Atributos.Atribut1;
 import com.example.rpg.Atributos.Atribut2;
+import com.example.rpg.Atributos.Atributo;
 import com.example.rpg.Dialogs.DialogHelp;
 
 import java.util.Arrays;
@@ -37,6 +40,7 @@ public class CriarFicha extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_criar_ficha);
+        final Animation animation = AnimationUtils.loadAnimation(this,R.anim.bounce);
         ArrayAdapter<String> adapterRaca = new ArrayAdapter<String>(this, R.layout.style_spinner,getResources().getStringArray(R.array.Raças));
         ArrayAdapter<String> adapterClass = new ArrayAdapter<String>(this, R.layout.style_spinner,getResources().getStringArray(R.array.Classes));
         ArrayAdapter<String> adapterAlin1 = new ArrayAdapter<String>(this, R.layout.style_spinner,getResources().getStringArray(R.array.Alin1));
@@ -172,36 +176,42 @@ public class CriarFicha extends AppCompatActivity {
         btnAvançar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(edtNick.getText().toString().equals("")){
-                    Toast.makeText(getBaseContext(), "Ué? Precisamos de um nome!", Toast.LENGTH_SHORT).show();
-                }else {
-                    String classe, raca;
-                    classe = spnClass.getSelectedItem().toString();
-                    raca = spnRace.getSelectedItem().toString();
-                    getPaginas(classe, raca);
-                    Integer nivel = skbLvl.getProgress();
-                    nivel++;
-                    Ficha ficha = new Ficha();
-                    ficha.setPersonagem(edtNick.getText().toString());
-                    ficha.setRaca(raca);
-                    ficha.setClasse(classe);
-                    ficha.setNivel(nivel.toString());
-                    ficha.setAlinhamento(spnAlin1.getSelectedItem().toString() + " " + spnAlin2.getSelectedItem().toString());
-                    ficha.setOrigem(spnOrigem.getSelectedItem().toString());
-                    ficha.setPaginaC(pgC);
-                    ficha.setPaginaR(pgR);
-                    if (rbBuy.isChecked()) {
-                        Intent intent = new Intent(getApplicationContext(), Atribut2.class);
-                        intent.putExtra("Ficha", ficha);
-                        startActivity(intent);
-                        finish();
-                    } else if (rbRoll.isChecked()) {
-                        Intent intent = new Intent(getApplicationContext(), Atribut1.class);
-                        intent.putExtra("Ficha", ficha);
-                        startActivity(intent);
-                        finish();
+                view.startAnimation(animation);
+                view.postOnAnimationDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        if(edtNick.getText().toString().equals("")){
+                            Toast.makeText(getBaseContext(), "Ué? Precisamos de um nome!", Toast.LENGTH_SHORT).show();
+                        }else {
+                            String classe, raca;
+                            classe = spnClass.getSelectedItem().toString();
+                            raca = spnRace.getSelectedItem().toString();
+                            getPaginas(classe, raca);
+                            Integer nivel = skbLvl.getProgress();
+                            nivel++;
+                            Ficha ficha = new Ficha();
+                            ficha.setPersonagem(edtNick.getText().toString());
+                            ficha.setRaca(raca);
+                            ficha.setClasse(classe);
+                            ficha.setNivel(nivel.toString());
+                            ficha.setAlinhamento(spnAlin1.getSelectedItem().toString() + " " + spnAlin2.getSelectedItem().toString());
+                            ficha.setOrigem(spnOrigem.getSelectedItem().toString());
+                            ficha.setPaginaC(pgC);
+                            ficha.setPaginaR(pgR);
+                            if (rbBuy.isChecked()) {
+                                Intent intent = new Intent(getApplicationContext(), Atribut2.class);
+                                intent.putExtra("Ficha", ficha);
+                                startActivity(intent);
+                                finish();
+                            } else if (rbRoll.isChecked()) {
+                                Intent intent = new Intent(getApplicationContext(), Atribut1.class);
+                                intent.putExtra("Ficha", ficha);
+                                startActivity(intent);
+                                finish();
+                            }
+                        }
                     }
-                }
+                },50);
             }
         });
     }

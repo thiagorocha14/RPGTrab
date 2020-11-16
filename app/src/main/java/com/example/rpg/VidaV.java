@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,6 +23,8 @@ public class VidaV extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_vida_v);
+        final Animation animation = AnimationUtils.loadAnimation(this,R.anim.bounce);
+        final Animation animation2 = AnimationUtils.loadAnimation(this,R.anim.implod);
         final TextView txtVida = findViewById(R.id.txtVida2);
         final TextView txtFor,txtDes,txtCon,txtInt,txtSab,txtCar,txtaddFor,txtaddDes,txtaddCon,txtaddInt,txtaddSab,txtaddCar,txtForF,txtDesF,txtConF,txtIntF,txtSabF,txtCarF,txtmodFor,txtmodDes,txtmodCon,txtmodInt,txtmodSab,txtmodCar;
         final Button btnaddFor,btnaddDes,btnaddCon,btnaddInt,btnaddSab,btnaddCar,btnDef,btnUlt;
@@ -231,308 +235,350 @@ public class VidaV extends AppCompatActivity {
             txtmodCar.setText(atributo.getModCar());
             btnaddFor.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View view) {
-                    if(cont[0] == 2){
-                        btnaddFor.setVisibility(View.INVISIBLE);
-                        btnaddDes.setVisibility(View.INVISIBLE);
-                        btnaddCon.setVisibility(View.INVISIBLE);
-                        btnaddInt.setVisibility(View.INVISIBLE);
-                        btnaddSab.setVisibility(View.INVISIBLE);
-                        btnaddCar.setVisibility(View.INVISIBLE);
-                        addFor = "+2";
-                        txtaddFor.setText(addFor);
-                        For = Integer.valueOf(atributo.getForca());
-                        For = For+Integer.valueOf(addFor);
-                        atributo.setForca(For.toString());
-                        {
-                            String valorFor = atributo.getForca();
-                            int val = (int) Math.floor((Double.valueOf(valorFor) - 10) / 2);
-                            if (val > 0) {
-                                atributo.setModFor("+" + String.valueOf(val));
-                            } else {
-                                atributo.setModFor(String.valueOf(val));
+                public void onClick(final View view) {
+                    view.startAnimation(animation2);
+                    view.postOnAnimationDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            if(cont[0] == 2){
+                                btnaddFor.setVisibility(View.INVISIBLE);
+                                btnaddDes.setVisibility(View.INVISIBLE);
+                                btnaddCon.setVisibility(View.INVISIBLE);
+                                btnaddInt.setVisibility(View.INVISIBLE);
+                                btnaddSab.setVisibility(View.INVISIBLE);
+                                btnaddCar.setVisibility(View.INVISIBLE);
+                                addFor = "+2";
+                                txtaddFor.setText(addFor);
+                                For = Integer.valueOf(atributo.getForca());
+                                For = For+Integer.valueOf(addFor);
+                                atributo.setForca(For.toString());
+                                {
+                                    String valorFor = atributo.getForca();
+                                    int val = (int) Math.floor((Double.valueOf(valorFor) - 10) / 2);
+                                    if (val > 0) {
+                                        atributo.setModFor("+" + String.valueOf(val));
+                                    } else {
+                                        atributo.setModFor(String.valueOf(val));
+                                    }
+                                }
+                                ficha.setAtributo(atributo);
+                                txtForF.setText(atributo.getForca());
+                                txtmodFor.setText(atributo.getModFor());
+                                cont[0]++;
+                            }else{
+                                btnaddFor.setVisibility(View.INVISIBLE);
+                                addFor = "+2";
+                                txtaddFor.setText(addFor);
+                                For = Integer.valueOf(atributo.getForca());
+                                For = For+Integer.valueOf(addFor);
+                                atributo.setForca(For.toString());
+                                {
+                                    String valorFor = atributo.getForca();
+                                    int val = (int) Math.floor((Double.valueOf(valorFor) - 10) / 2);
+                                    if (val > 0) {
+                                        atributo.setModFor("+" + String.valueOf(val));
+                                    } else {
+                                        atributo.setModFor(String.valueOf(val));
+                                    }
+                                }
+                                ficha.setAtributo(atributo);
+                                txtForF.setText(atributo.getForca());
+                                txtmodFor.setText(atributo.getModFor());
+                                cont[0]++;
                             }
+                            view.clearAnimation();
                         }
-                        ficha.setAtributo(atributo);
-                        txtForF.setText(atributo.getForca());
-                        txtmodFor.setText(atributo.getModFor());
-                        cont[0]++;
-                    }else{
-                        btnaddFor.setVisibility(View.INVISIBLE);
-                        addFor = "+2";
-                        txtaddFor.setText(addFor);
-                        For = Integer.valueOf(atributo.getForca());
-                        For = For+Integer.valueOf(addFor);
-                        atributo.setForca(For.toString());
-                        {
-                            String valorFor = atributo.getForca();
-                            int val = (int) Math.floor((Double.valueOf(valorFor) - 10) / 2);
-                            if (val > 0) {
-                                atributo.setModFor("+" + String.valueOf(val));
-                            } else {
-                                atributo.setModFor(String.valueOf(val));
-                            }
-                        }
-                        ficha.setAtributo(atributo);
-                        txtForF.setText(atributo.getForca());
-                        txtmodFor.setText(atributo.getModFor());
-                        cont[0]++;
-                    }
+                    },50);
                 }
             });
             btnaddDes.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View view) {
-                    if(cont[0] == 2){
-                        btnaddFor.setVisibility(View.INVISIBLE);
-                        btnaddDes.setVisibility(View.INVISIBLE);
-                        btnaddCon.setVisibility(View.INVISIBLE);
-                        btnaddInt.setVisibility(View.INVISIBLE);
-                        btnaddSab.setVisibility(View.INVISIBLE);
-                        btnaddCar.setVisibility(View.INVISIBLE);
-                        addDes = "+2";
-                        txtaddDes.setText(addDes);
-                        Des = Integer.valueOf(atributo.getDestreza());
-                        Des = Des+Integer.valueOf(addDes);
-                        atributo.setDestreza(Des.toString());
-                        {
-                            String valor = atributo.getDestreza();
-                            int val = (int) Math.floor((Double.valueOf(valor) - 10) / 2);
-                            if (val > 0) {
-                                atributo.setModDes("+" + String.valueOf(val));
-                            } else {
-                                atributo.setModDes(String.valueOf(val));
+                public void onClick(final View view) {
+                    view.startAnimation(animation2);
+                    view.postOnAnimationDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            if(cont[0] == 2){
+                                btnaddFor.setVisibility(View.INVISIBLE);
+                                btnaddDes.setVisibility(View.INVISIBLE);
+                                btnaddCon.setVisibility(View.INVISIBLE);
+                                btnaddInt.setVisibility(View.INVISIBLE);
+                                btnaddSab.setVisibility(View.INVISIBLE);
+                                btnaddCar.setVisibility(View.INVISIBLE);
+                                addDes = "+2";
+                                txtaddDes.setText(addDes);
+                                Des = Integer.valueOf(atributo.getDestreza());
+                                Des = Des+Integer.valueOf(addDes);
+                                atributo.setDestreza(Des.toString());
+                                {
+                                    String valor = atributo.getDestreza();
+                                    int val = (int) Math.floor((Double.valueOf(valor) - 10) / 2);
+                                    if (val > 0) {
+                                        atributo.setModDes("+" + String.valueOf(val));
+                                    } else {
+                                        atributo.setModDes(String.valueOf(val));
+                                    }
+                                }
+                                ficha.setAtributo(atributo);
+                                txtDesF.setText(atributo.getDestreza());
+                                txtmodDes.setText(atributo.getModDes());
+                                cont[0]++;
+                            }else{
+                                btnaddDes.setVisibility(View.INVISIBLE);
+                                addDes = "+2";
+                                txtaddDes.setText(addDes);
+                                Des = Integer.valueOf(atributo.getDestreza());
+                                Des = Des+Integer.valueOf(addDes);
+                                atributo.setDestreza(Des.toString());
+                                {
+                                    String valor = atributo.getDestreza();
+                                    int val = (int) Math.floor((Double.valueOf(valor) - 10) / 2);
+                                    if (val > 0) {
+                                        atributo.setModDes("+" + String.valueOf(val));
+                                    } else {
+                                        atributo.setModDes(String.valueOf(val));
+                                    }
+                                }
+                                ficha.setAtributo(atributo);
+                                txtDesF.setText(atributo.getDestreza());
+                                txtmodDes.setText(atributo.getModDes());
+                                cont[0]++;
                             }
+                            view.clearAnimation();
                         }
-                        ficha.setAtributo(atributo);
-                        txtDesF.setText(atributo.getDestreza());
-                        txtmodDes.setText(atributo.getModDes());
-                        cont[0]++;
-                    }else{
-                        btnaddDes.setVisibility(View.INVISIBLE);
-                        addDes = "+2";
-                        txtaddDes.setText(addDes);
-                        Des = Integer.valueOf(atributo.getDestreza());
-                        Des = Des+Integer.valueOf(addDes);
-                        atributo.setDestreza(Des.toString());
-                        {
-                            String valor = atributo.getDestreza();
-                            int val = (int) Math.floor((Double.valueOf(valor) - 10) / 2);
-                            if (val > 0) {
-                                atributo.setModDes("+" + String.valueOf(val));
-                            } else {
-                                atributo.setModDes(String.valueOf(val));
-                            }
-                        }
-                        ficha.setAtributo(atributo);
-                        txtDesF.setText(atributo.getDestreza());
-                        txtmodDes.setText(atributo.getModDes());
-                        cont[0]++;
-                    }
+                    },50);
                 }
             });
             btnaddCon.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View view) {
-                    if(cont[0] == 2){
-                        btnaddFor.setVisibility(View.INVISIBLE);
-                        btnaddDes.setVisibility(View.INVISIBLE);
-                        btnaddCon.setVisibility(View.INVISIBLE);
-                        btnaddInt.setVisibility(View.INVISIBLE);
-                        btnaddSab.setVisibility(View.INVISIBLE);
-                        btnaddCar.setVisibility(View.INVISIBLE);
-                        addCon = "+2";
-                        txtaddCon.setText(addCon);
-                        Con = Integer.valueOf(atributo.getConstituicao());
-                        Con = Con+Integer.valueOf(addCon);
-                        atributo.setConstituicao(Con.toString());
-                        {
-                            String valorCon = atributo.getConstituicao();
-                            int valCon = (int) Math.floor((Double.valueOf(valorCon) - 10) / 2);
-                            if (valCon > 0) {
-                                atributo.setModCon("+" + String.valueOf(valCon));
-                            } else {
-                                atributo.setModCon(String.valueOf(valCon));
+                public void onClick(final View view) {
+                    view.startAnimation(animation2);
+                    view.postOnAnimationDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            if(cont[0] == 2){
+                                btnaddFor.setVisibility(View.INVISIBLE);
+                                btnaddDes.setVisibility(View.INVISIBLE);
+                                btnaddCon.setVisibility(View.INVISIBLE);
+                                btnaddInt.setVisibility(View.INVISIBLE);
+                                btnaddSab.setVisibility(View.INVISIBLE);
+                                btnaddCar.setVisibility(View.INVISIBLE);
+                                addCon = "+2";
+                                txtaddCon.setText(addCon);
+                                Con = Integer.valueOf(atributo.getConstituicao());
+                                Con = Con+Integer.valueOf(addCon);
+                                atributo.setConstituicao(Con.toString());
+                                {
+                                    String valorCon = atributo.getConstituicao();
+                                    int valCon = (int) Math.floor((Double.valueOf(valorCon) - 10) / 2);
+                                    if (valCon > 0) {
+                                        atributo.setModCon("+" + String.valueOf(valCon));
+                                    } else {
+                                        atributo.setModCon(String.valueOf(valCon));
+                                    }
+                                }
+                                ficha.setAtributo(atributo);
+                                txtConF.setText(atributo.getConstituicao());
+                                txtmodCon.setText(atributo.getModCon());
+                                cont[0]++;
+                            }else{
+                                btnaddCon.setVisibility(View.INVISIBLE);
+                                addCon = "+2";
+                                txtaddCon.setText(addCon);
+                                Con = Integer.valueOf(atributo.getConstituicao());
+                                Con = Con+Integer.valueOf(addCon);
+                                atributo.setConstituicao(Con.toString());
+                                {
+                                    String valorCon = atributo.getConstituicao();
+                                    int valCon = (int) Math.floor((Double.valueOf(valorCon) - 10) / 2);
+                                    if (valCon > 0) {
+                                        atributo.setModCon("+" + String.valueOf(valCon));
+                                    } else {
+                                        atributo.setModCon(String.valueOf(valCon));
+                                    }
+                                }
+                                ficha.setAtributo(atributo);
+                                txtConF.setText(atributo.getConstituicao());
+                                txtmodCon.setText(atributo.getModCon());
+                                cont[0]++;
                             }
+                            view.clearAnimation();
                         }
-                        ficha.setAtributo(atributo);
-                        txtConF.setText(atributo.getConstituicao());
-                        txtmodCon.setText(atributo.getModCon());
-                        cont[0]++;
-                    }else{
-                        btnaddCon.setVisibility(View.INVISIBLE);
-                        addCon = "+2";
-                        txtaddCon.setText(addCon);
-                        Con = Integer.valueOf(atributo.getConstituicao());
-                        Con = Con+Integer.valueOf(addCon);
-                        atributo.setConstituicao(Con.toString());
-                        {
-                            String valorCon = atributo.getConstituicao();
-                            int valCon = (int) Math.floor((Double.valueOf(valorCon) - 10) / 2);
-                            if (valCon > 0) {
-                                atributo.setModCon("+" + String.valueOf(valCon));
-                            } else {
-                                atributo.setModCon(String.valueOf(valCon));
-                            }
-                        }
-                        ficha.setAtributo(atributo);
-                        txtConF.setText(atributo.getConstituicao());
-                        txtmodCon.setText(atributo.getModCon());
-                        cont[0]++;
-                    }
+                    },50);
                 }
             });
             btnaddInt.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View view) {
-                    if(cont[0] == 2){
-                        btnaddFor.setVisibility(View.INVISIBLE);
-                        btnaddDes.setVisibility(View.INVISIBLE);
-                        btnaddCon.setVisibility(View.INVISIBLE);
-                        btnaddInt.setVisibility(View.INVISIBLE);
-                        btnaddSab.setVisibility(View.INVISIBLE);
-                        btnaddCar.setVisibility(View.INVISIBLE);
-                        addInt = "+2";
-                        txtaddInt.setText(addInt);
-                        Int = Integer.valueOf(atributo.getInteligencia());
-                        Int = Int+Integer.valueOf(addInt);
-                        atributo.setInteligencia(Int.toString());
-                        {
-                            String valor = atributo.getInteligencia();
-                            int val = (int) Math.floor((Double.valueOf(valor) - 10) / 2);
-                            if (val > 0) {
-                                atributo.setModInt("+" + String.valueOf(val));
-                            } else {
-                                atributo.setModInt(String.valueOf(val));
+                public void onClick(final View view) {
+                    view.startAnimation(animation2);
+                    view.postOnAnimationDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            if(cont[0] == 2){
+                                btnaddFor.setVisibility(View.INVISIBLE);
+                                btnaddDes.setVisibility(View.INVISIBLE);
+                                btnaddCon.setVisibility(View.INVISIBLE);
+                                btnaddInt.setVisibility(View.INVISIBLE);
+                                btnaddSab.setVisibility(View.INVISIBLE);
+                                btnaddCar.setVisibility(View.INVISIBLE);
+                                addInt = "+2";
+                                txtaddInt.setText(addInt);
+                                Int = Integer.valueOf(atributo.getInteligencia());
+                                Int = Int+Integer.valueOf(addInt);
+                                atributo.setInteligencia(Int.toString());
+                                {
+                                    String valor = atributo.getInteligencia();
+                                    int val = (int) Math.floor((Double.valueOf(valor) - 10) / 2);
+                                    if (val > 0) {
+                                        atributo.setModInt("+" + String.valueOf(val));
+                                    } else {
+                                        atributo.setModInt(String.valueOf(val));
+                                    }
+                                }
+                                ficha.setAtributo(atributo);
+                                txtIntF.setText(atributo.getInteligencia());
+                                txtmodInt.setText(atributo.getModInt());
+                                cont[0]++;
+                            }else{
+                                btnaddInt.setVisibility(View.INVISIBLE);
+                                addInt = "+2";
+                                txtaddInt.setText(addInt);
+                                Int = Integer.valueOf(atributo.getInteligencia());
+                                Int = Int+Integer.valueOf(addInt);
+                                atributo.setInteligencia(Int.toString());
+                                {
+                                    String valor = atributo.getInteligencia();
+                                    int val = (int) Math.floor((Double.valueOf(valor) - 10) / 2);
+                                    if (val > 0) {
+                                        atributo.setModInt("+" + String.valueOf(val));
+                                    } else {
+                                        atributo.setModInt(String.valueOf(val));
+                                    }
+                                }
+                                ficha.setAtributo(atributo);
+                                txtIntF.setText(atributo.getInteligencia());
+                                txtmodInt.setText(atributo.getModInt());
+                                cont[0]++;
                             }
+                            view.clearAnimation();
                         }
-                        ficha.setAtributo(atributo);
-                        txtIntF.setText(atributo.getInteligencia());
-                        txtmodInt.setText(atributo.getModInt());
-                        cont[0]++;
-                    }else{
-                        btnaddInt.setVisibility(View.INVISIBLE);
-                        addInt = "+2";
-                        txtaddInt.setText(addInt);
-                        Int = Integer.valueOf(atributo.getInteligencia());
-                        Int = Int+Integer.valueOf(addInt);
-                        atributo.setInteligencia(Int.toString());
-                        {
-                            String valor = atributo.getInteligencia();
-                            int val = (int) Math.floor((Double.valueOf(valor) - 10) / 2);
-                            if (val > 0) {
-                                atributo.setModInt("+" + String.valueOf(val));
-                            } else {
-                                atributo.setModInt(String.valueOf(val));
-                            }
-                        }
-                        ficha.setAtributo(atributo);
-                        txtIntF.setText(atributo.getInteligencia());
-                        txtmodInt.setText(atributo.getModInt());
-                        cont[0]++;
-                    }
+                    },50);
                 }
             });
             btnaddSab.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View view) {
-                    if(cont[0] == 2){
-                        btnaddFor.setVisibility(View.INVISIBLE);
-                        btnaddDes.setVisibility(View.INVISIBLE);
-                        btnaddCon.setVisibility(View.INVISIBLE);
-                        btnaddInt.setVisibility(View.INVISIBLE);
-                        btnaddSab.setVisibility(View.INVISIBLE);
-                        btnaddCar.setVisibility(View.INVISIBLE);
-                        addSab = "+2";
-                        txtaddSab.setText(addSab);
-                        Sab = Integer.valueOf(atributo.getSabedoria());
-                        Sab = Sab+Integer.valueOf(addSab);
-                        atributo.setSabedoria(Sab.toString());
-                        {
-                            String valor = atributo.getSabedoria();
-                            int val = (int) Math.floor((Double.valueOf(valor) - 10) / 2);
-                            if (val > 0) {
-                                atributo.setModSab("+" + String.valueOf(val));
-                            } else {
-                                atributo.setModSab(String.valueOf(val));
+                public void onClick(final View view) {
+                    view.startAnimation(animation2);
+                    view.postOnAnimationDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            if(cont[0] == 2){
+                                btnaddFor.setVisibility(View.INVISIBLE);
+                                btnaddDes.setVisibility(View.INVISIBLE);
+                                btnaddCon.setVisibility(View.INVISIBLE);
+                                btnaddInt.setVisibility(View.INVISIBLE);
+                                btnaddSab.setVisibility(View.INVISIBLE);
+                                btnaddCar.setVisibility(View.INVISIBLE);
+                                addSab = "+2";
+                                txtaddSab.setText(addSab);
+                                Sab = Integer.valueOf(atributo.getSabedoria());
+                                Sab = Sab+Integer.valueOf(addSab);
+                                atributo.setSabedoria(Sab.toString());
+                                {
+                                    String valor = atributo.getSabedoria();
+                                    int val = (int) Math.floor((Double.valueOf(valor) - 10) / 2);
+                                    if (val > 0) {
+                                        atributo.setModSab("+" + String.valueOf(val));
+                                    } else {
+                                        atributo.setModSab(String.valueOf(val));
+                                    }
+                                }
+                                ficha.setAtributo(atributo);
+                                txtSabF.setText(atributo.getSabedoria());
+                                txtmodSab.setText(atributo.getModSab());
+                                cont[0]++;
+                            }else{
+                                btnaddSab.setVisibility(View.INVISIBLE);
+                                addSab = "+2";
+                                txtaddSab.setText(addSab);
+                                Sab = Integer.valueOf(atributo.getSabedoria());
+                                Sab = Sab+Integer.valueOf(addSab);
+                                atributo.setSabedoria(Sab.toString());
+                                {
+                                    String valor = atributo.getSabedoria();
+                                    int val = (int) Math.floor((Double.valueOf(valor) - 10) / 2);
+                                    if (val > 0) {
+                                        atributo.setModSab("+" + String.valueOf(val));
+                                    } else {
+                                        atributo.setModSab(String.valueOf(val));
+                                    }
+                                }
+                                ficha.setAtributo(atributo);
+                                txtSabF.setText(atributo.getSabedoria());
+                                txtmodSab.setText(atributo.getModSab());
+                                cont[0]++;
                             }
+                            view.clearAnimation();
                         }
-                        ficha.setAtributo(atributo);
-                        txtSabF.setText(atributo.getSabedoria());
-                        txtmodSab.setText(atributo.getModSab());
-                        cont[0]++;
-                    }else{
-                        btnaddSab.setVisibility(View.INVISIBLE);
-                        addSab = "+2";
-                        txtaddSab.setText(addSab);
-                        Sab = Integer.valueOf(atributo.getSabedoria());
-                        Sab = Sab+Integer.valueOf(addSab);
-                        atributo.setSabedoria(Sab.toString());
-                        {
-                            String valor = atributo.getSabedoria();
-                            int val = (int) Math.floor((Double.valueOf(valor) - 10) / 2);
-                            if (val > 0) {
-                                atributo.setModSab("+" + String.valueOf(val));
-                            } else {
-                                atributo.setModSab(String.valueOf(val));
-                            }
-                        }
-                        ficha.setAtributo(atributo);
-                        txtSabF.setText(atributo.getSabedoria());
-                        txtmodSab.setText(atributo.getModSab());
-                        cont[0]++;
-                    }
+                    },50);
                 }
             });
             btnaddCar.setOnClickListener(new View.OnClickListener() {
               @Override
-              public void onClick(View view) {
-                  if(cont[0] == 2){
-                      btnaddFor.setVisibility(View.INVISIBLE);
-                      btnaddDes.setVisibility(View.INVISIBLE);
-                      btnaddCon.setVisibility(View.INVISIBLE);
-                      btnaddInt.setVisibility(View.INVISIBLE);
-                      btnaddSab.setVisibility(View.INVISIBLE);
-                      btnaddCar.setVisibility(View.INVISIBLE);
-                      addCar = "+2";
-                      txtaddCar.setText(addCar);
-                      Car = Integer.valueOf(atributo.getCarisma());
-                      Car = Car+Integer.valueOf(addCar);
-                      atributo.setCarisma(Car.toString());
-                      {
-                          String valor = atributo.getCarisma();
-                          int val = (int) Math.floor((Double.valueOf(valor) - 10) / 2);
-                          if (val > 0) {
-                              atributo.setModCar("+" + String.valueOf(val));
-                          } else {
-                              atributo.setModCar(String.valueOf(val));
+              public void onClick(final View view) {
+                  view.startAnimation(animation2);
+                  view.postOnAnimationDelayed(new Runnable() {
+                      @Override
+                      public void run() {
+                          if(cont[0] == 2){
+                              btnaddFor.setVisibility(View.INVISIBLE);
+                              btnaddDes.setVisibility(View.INVISIBLE);
+                              btnaddCon.setVisibility(View.INVISIBLE);
+                              btnaddInt.setVisibility(View.INVISIBLE);
+                              btnaddSab.setVisibility(View.INVISIBLE);
+                              btnaddCar.setVisibility(View.INVISIBLE);
+                              addCar = "+2";
+                              txtaddCar.setText(addCar);
+                              Car = Integer.valueOf(atributo.getCarisma());
+                              Car = Car+Integer.valueOf(addCar);
+                              atributo.setCarisma(Car.toString());
+                              {
+                                  String valor = atributo.getCarisma();
+                                  int val = (int) Math.floor((Double.valueOf(valor) - 10) / 2);
+                                  if (val > 0) {
+                                      atributo.setModCar("+" + String.valueOf(val));
+                                  } else {
+                                      atributo.setModCar(String.valueOf(val));
+                                  }
+                              }
+                              ficha.setAtributo(atributo);
+                              txtCarF.setText(atributo.getCarisma());
+                              txtmodCar.setText(atributo.getModCar());
+                              cont[0]++;
+                          }else{
+                              btnaddCar.setVisibility(View.INVISIBLE);
+                              addCar = "+2";
+                              txtaddCar.setText(addCar);
+                              Car = Integer.valueOf(atributo.getCarisma());
+                              Car = Car+Integer.valueOf(addCar);
+                              atributo.setCarisma(Car.toString());
+                              {
+                                  String valor = atributo.getCarisma();
+                                  int val = (int) Math.floor((Double.valueOf(valor) - 10) / 2);
+                                  if (val > 0) {
+                                      atributo.setModCar("+" + String.valueOf(val));
+                                  } else {
+                                      atributo.setModCar(String.valueOf(val));
+                                  }
+                              }
+                              ficha.setAtributo(atributo);
+                              txtCarF.setText(atributo.getCarisma());
+                              txtmodCar.setText(atributo.getModCar());
+                              cont[0]++;
                           }
+                          view.clearAnimation();
                       }
-                      ficha.setAtributo(atributo);
-                      txtCarF.setText(atributo.getCarisma());
-                      txtmodCar.setText(atributo.getModCar());
-                      cont[0]++;
-                  }else{
-                      btnaddCar.setVisibility(View.INVISIBLE);
-                      addCar = "+2";
-                      txtaddCar.setText(addCar);
-                      Car = Integer.valueOf(atributo.getCarisma());
-                      Car = Car+Integer.valueOf(addCar);
-                      atributo.setCarisma(Car.toString());
-                      {
-                          String valor = atributo.getCarisma();
-                          int val = (int) Math.floor((Double.valueOf(valor) - 10) / 2);
-                          if (val > 0) {
-                              atributo.setModCar("+" + String.valueOf(val));
-                          } else {
-                              atributo.setModCar(String.valueOf(val));
-                          }
-                      }
-                      ficha.setAtributo(atributo);
-                      txtCarF.setText(atributo.getCarisma());
-                      txtmodCar.setText(atributo.getModCar());
-                      cont[0]++;
-                  }
+                  },50);
               }
             });
         }else{
@@ -636,35 +682,49 @@ public class VidaV extends AppCompatActivity {
         }
         btnDef.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                if (cont[0]<=2){
-                    Toast.makeText(getBaseContext(), "Você ainda tem pontos pra adicionar!", Toast.LENGTH_SHORT).show();
-                }else {
-                    getVida(ficha.getClasse(), Integer.valueOf(atributo.getModCon()), Integer.valueOf(ficha.getNivel()));
-                    txtVida.setText("Sua vida é: " + totalTot);
-                    ficha.setVida(total.toString());
-                    btnDef.setVisibility(View.INVISIBLE);
-                }
+            public void onClick(final View view) {
+                view.startAnimation(animation2);
+                view.postOnAnimationDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        if (cont[0]<=2){
+                            Toast.makeText(getBaseContext(), "Você ainda tem pontos pra adicionar!", Toast.LENGTH_SHORT).show();
+                        }else {
+                            getVida(ficha.getClasse(), Integer.valueOf(atributo.getModCon()), Integer.valueOf(ficha.getNivel()));
+                            txtVida.setText("Sua vida é: " + totalTot);
+                            ficha.setVida(total.toString());
+                            btnDef.setVisibility(View.INVISIBLE);
+                        }
+                        view.clearAnimation();
+                    }
+                },50);
             }
         });
         btnUlt.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                if (total == null){
-                    Toast.makeText(getBaseContext(), "Defina sua vida!", Toast.LENGTH_SHORT).show();
-                }else{
-                    String classe = ficha.getClasse();
-                    if(classe.equals("Arcanista")||classe.equals("Bardo")||classe.equals("Clérigo")||classe.equals("Druida")){
-                        Intent intent = new Intent(getApplicationContext(), ListMagias.class);
-                        intent.putExtra("Ficha",ficha);
-                        startActivity(intent);
-                        finish();
-                    }else{
-                        BD.enviar(ficha);
-                        finish();
-                    }
+            public void onClick(final View view) {
+                view.startAnimation(animation);
+                view.postOnAnimationDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        if (total == null){
+                            Toast.makeText(getBaseContext(), "Defina sua vida!", Toast.LENGTH_SHORT).show();
+                        }else{
+                            String classe = ficha.getClasse();
+                            if(classe.equals("Arcanista")||classe.equals("Bardo")||classe.equals("Clérigo")||classe.equals("Druida")){
+                                Intent intent = new Intent(getApplicationContext(), ListMagias.class);
+                                intent.putExtra("Ficha",ficha);
+                                startActivity(intent);
+                                finish();
+                            }else{
+                                BD.enviar(ficha);
+                                finish();
+                            }
 
-                }
+                        }
+                        view.clearAnimation();
+                    }
+                },50);
             }
         });
 
@@ -714,15 +774,19 @@ public class VidaV extends AppCompatActivity {
             dado = 5+modCon;
         }
         base = total.toString();
-        totalTot = " +";
+        totalTot = "+ ";
         mais = " + ";
-        for (int i = 1;i<nivel;i++){
-            total = total+dado;
-            if(i == nivel-1){
-                mais = " ";
+        if(nivel==1){
+            totalTot = total.toString();
+        }else{
+            for (int i = 1;i<nivel;i++){
+                total = total+dado;
+                if(i == nivel-1){
+                    mais = " ";
+                }
+                totalTot = totalTot + dado.toString() + mais;
             }
-            totalTot = totalTot + dado.toString()+mais;
+            totalTot = base+" "+totalTot+"= "+total.toString();
         }
-        totalTot = base+" "+totalTot+"= "+total.toString();
     }
 }
