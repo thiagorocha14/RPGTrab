@@ -48,7 +48,7 @@ public class Frag4 extends Fragment {
                 .password(null)
                 .scrollHandle(null)
                 .enableAntialiasing(true)
-                .spacing(1)
+                .spacing(2)
                 .pageFitPolicy(FitPolicy.WIDTH)
                 .load();
         return view;
