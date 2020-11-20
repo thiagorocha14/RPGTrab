@@ -1,19 +1,15 @@
 package com.example.rpg.Fragments;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 
-import com.example.rpg.CriarFicha;
 import com.example.rpg.Ficha;
 import com.example.rpg.R;
 import com.github.barteksc.pdfviewer.PDFView;
@@ -43,7 +39,7 @@ public class Frag4 extends Fragment {
                 p = Integer.parseInt(ficha.getPaginaR()) - 1;
             }
         }
-        pdfView.fromAsset("t20.pdf")
+        pdfView.fromAsset("t.pdf")
                 .enableSwipe(true)
                 .swipeHorizontal(false)
                 .enableDoubletap(true)
