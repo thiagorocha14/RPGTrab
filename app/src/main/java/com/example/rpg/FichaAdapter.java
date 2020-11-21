@@ -35,9 +35,6 @@ public class FichaAdapter extends ArrayAdapter<Ficha> {
             ImageView img = view.findViewById(R.id.imageView3);
 
             Ficha ficha = lista.get(position);
-            if (ficha.getLink()!=null){
-                Picasso.get().load(ficha.getLink()).into(img);
-            }
             txtNome.setText(ficha.getPersonagem());
             txtClasse.setText(ficha.getClasse());
             txtNivel.setText(ficha.getNivel());

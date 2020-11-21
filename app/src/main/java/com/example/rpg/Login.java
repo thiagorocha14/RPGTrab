@@ -13,6 +13,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -30,6 +32,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
     private TextView txtNew,txtForget;
     private Button btnLogin;
     private User user;
+    final Animation animation = AnimationUtils.loadAnimation(Login.this,R.anim.bounce);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,7 +55,13 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
 
         switch (v.getId()){
             case R.id.btnCad:
-                login();
+                v.startAnimation(animation);
+                v.postOnAnimationDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        login();
+                    }
+                },50);
                 break;
             case R.id.txtForget:
                 String email = edtEmail.getText().toString().trim();

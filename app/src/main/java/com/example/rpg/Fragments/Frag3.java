@@ -17,11 +17,14 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 
+import com.example.rpg.Atributos.Atribut2;
 import com.example.rpg.BD;
 import com.example.rpg.Ficha;
 import com.example.rpg.FichaAdapter;
 import com.example.rpg.Login;
+import com.example.rpg.MainActivity;
 import com.example.rpg.R;
+import com.example.rpg.ShowFicha;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -66,12 +69,18 @@ public class Frag3 extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 ficha = adapter.getItem(position);
+                Intent intent = new Intent(getContext(), ShowFicha.class);
+                intent.putExtra("Ficha", ficha);
+                startActivity(intent);
+                /*
                 AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
                 alert.setTitle("Ó grande "+ficha.getPersonagem())
                      .setMessage("Você pode encontrar sobre "+ficha.getRaca()+" na página "+ficha.getPaginaR()+" no Livro do Jogador Tormenta20 "+"\n"+"Você pode encontrar sobre "+ficha.getClasse()+" na página "+ficha.getPaginaC()+" no Livro do Jogador Tormenta20 ")
                         .setPositiveButton("Ir para a Classe",dialog)
                         .setNegativeButton("Ir para a Raca",dialog);
                 alert.show();
+
+                 */
             }
         });
         listFichas.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
