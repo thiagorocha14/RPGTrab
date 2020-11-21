@@ -37,6 +37,7 @@
     <string name="caris">Carisma</string>
     <string name="sabe">Sabedoria</string>
     <string name="inte">Inteligência</string>
+    <string name="perit">Perícias Treinadas:</string>
 
     <string-array name="Alin1">
         <item>Caótico</item>
@@ -811,5 +812,36 @@
     </string-array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="pericias">
+        <item>Acrobacia</item>
+        <item>Adestramento</item>
+        <item>Atletismo</item>
+        <item>Atuação</item>
+        <item>Cavalgar</item>
+        <item>Conhecimento</item>
+        <item>Cura</item>
+        <item>Diplomacia</item>
+        <item>Enganação</item>
+        <item>Fortitude</item>
+        <item>Furtividade</item>
+        <item>Guerra</item>
+        <item>Iniciativa</item>
+        <item>Intimidação</item>
+        <item>Intuição</item>
+        <item>Investigação</item>
+        <item>Jogatina</item>
+        <item>Ladinagem</item>
+        <item>Luta</item>
+        <item>Misticismo</item>
+        <item>Nobreza</item>
+        <item>Ofício</item>
+        <item>Percepção</item>
+        <item>Pilotagem</item>
+        <item>Pontaria</item>
+        <item>Reflexos</item>
+        <item>Religião</item>
+        <item>Sobrevivência</item>
+        <item>Vontade</item>
+    </string-array>
 
 </resources>

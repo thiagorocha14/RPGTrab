@@ -17,6 +17,7 @@ import android.webkit.MimeTypeMap;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -726,8 +727,8 @@ public class ListMagias extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 if(quantidade[0] == 0){
                     if(listmagia.isItemChecked(i)){
-                        Toast.makeText(getBaseContext(), "Você não pode escolher essa magias, suas magias acabaram parceiro!", Toast.LENGTH_SHORT).show();
                         listmagia.setItemChecked(i,false);
+                        Toast.makeText(getBaseContext(), "Você não pode escolher essa magias, suas magias acabaram parceiro!", Toast.LENGTH_SHORT).show();
                     }else{
                         quantidade[0]++;
                         txtMagias.setText("Você tem "+ quantidade[0].toString()+" magias pra escolher");
@@ -798,7 +799,7 @@ public class ListMagias extends AppCompatActivity {
                     .addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
                         @Override
                         public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
-
+                            finish();
                         }
                     });
         }

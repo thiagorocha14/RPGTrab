@@ -14,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
@@ -27,8 +28,10 @@ public class ShowFicha extends AppCompatActivity {
         setContentView(R.layout.activity_show_ficha);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         final ImageView imgbg = findViewById(R.id.imgbg);
+        final TextView txtName = findViewById(R.id.txtNameShow);
         Ficha ficha = (Ficha) getIntent().getSerializableExtra("Ficha");
-        final ConstraintLayout layout = (ConstraintLayout) findViewById(R.id.show_ficha);
+        txtName.setText(ficha.getPersonagem());
+        //final ConstraintLayout layout = (ConstraintLayout) findViewById(R.id.show_ficha);
         Picasso.get().load(ficha.getLink()).into(imgbg,new com.squareup.picasso.Callback(){
 
             @Override
@@ -36,7 +39,10 @@ public class ShowFicha extends AppCompatActivity {
                 Bitmap bitmap = ((BitmapDrawable) imgbg.getDrawable()).getBitmap();
                 if (bitmap != null) {
                     Palette color = Palette.from(bitmap).generate();
-                    int darkVibrantColor = color.getVibrantColor(getResources().getColor(R.color.colorPrimary));
+                    int vibrantColor = color.getVibrantColor(getResources().getColor(R.color.colorPrimary));
+                    int dark = color.getDarkVibrantColor(getResources().getColor(R.color.colorPrimary));
+                    txtName.setTextColor(vibrantColor);
+                    //layout.setBackgroundColor(dark);
                 }
             }
 
@@ -45,6 +51,7 @@ public class ShowFicha extends AppCompatActivity {
 
             }
         });
+
         /*Picasso.get().load(ficha.getLink()).into(new Target() {
             @Override
             public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {

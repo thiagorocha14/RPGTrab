@@ -710,17 +710,10 @@ public class VidaV extends AppCompatActivity {
                         if (total == null){
                             Toast.makeText(getBaseContext(), "Defina sua vida!", Toast.LENGTH_SHORT).show();
                         }else{
-                            String classe = ficha.getClasse();
-                            if(classe.equals("Arcanista")||classe.equals("Bardo")||classe.equals("Clérigo")||classe.equals("Druida")){
-                                Intent intent = new Intent(getApplicationContext(), ListMagias.class);
-                                intent.putExtra("Ficha",ficha);
-                                startActivity(intent);
-                                finish();
-                            }else{
-                                BD.enviar(ficha);
-                                finish();
-                            }
-
+                            Intent intent = new Intent(getApplicationContext(), Pericias.class);
+                            intent.putExtra("Ficha",ficha);
+                            startActivity(intent);
+                            finish();
                         }
                         view.clearAnimation();
                     }
