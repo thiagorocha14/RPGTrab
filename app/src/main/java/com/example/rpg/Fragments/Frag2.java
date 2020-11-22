@@ -19,6 +19,8 @@ import com.example.rpg.Atributos.Atributo;
 import com.example.rpg.Dialogs.DialogDado;
 import com.example.rpg.R;
 import com.example.rpg.VidaV;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.util.Random;
 

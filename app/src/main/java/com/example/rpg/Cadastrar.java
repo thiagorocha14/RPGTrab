@@ -21,7 +21,6 @@ public class Cadastrar extends AppCompatActivity {
 
     private EditText edtEmail,edtSenha,edtConfirm;
     private Button btnCad;
-    final Animation animation = AnimationUtils.loadAnimation(Cadastrar.this,R.anim.bounce);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +28,8 @@ public class Cadastrar extends AppCompatActivity {
         setContentView(R.layout.activity_cadastrar);
         getSupportActionBar().hide();
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
+        final Animation animation = AnimationUtils.loadAnimation(Cadastrar.this,R.anim.bounce);
+        
         edtEmail = findViewById(R.id.edtEmail);
         edtSenha = findViewById(R.id.edtSenha);
         edtConfirm  = findViewById(R.id.edtConfirm);

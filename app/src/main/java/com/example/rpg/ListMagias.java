@@ -17,17 +17,13 @@ import android.webkit.MimeTypeMap;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
@@ -60,7 +56,7 @@ public class ListMagias extends AppCompatActivity {
         Magias = new String();
         storageReference = FirebaseStorage.getInstance().getReference("uploads");
         ficha = (Ficha) getIntent().getSerializableExtra("Ficha");
-        txtMagias = findViewById(R.id.txtMagias);
+        txtMagias = findViewById(R.id.txtPericias);
         listmagia = (ListView) findViewById(R.id.listmagias);
         btnMagias = findViewById(R.id.btnMagias);
         btnAbjur = findViewById(R.id.btnAbjur); btnAdiv = findViewById(R.id.btnAdiv);btnConv = findViewById(R.id.btnConv);btnEncan = findViewById(R.id.btnEncan);btnEvoc = findViewById(R.id.btnEvoc);btnIlusao = findViewById(R.id.btnIlusao);btnNecro = findViewById(R.id.btnNecro);btnTrans = findViewById(R.id.btnTrans);

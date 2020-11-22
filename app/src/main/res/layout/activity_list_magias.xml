@@ -119,7 +119,7 @@
         app:layout_constraintTop_toBottomOf="@+id/btnNecro" />
 
     <TextView
-        android:id="@+id/txtMagias"
+        android:id="@+id/txtPericias"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:gravity="center"

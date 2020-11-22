@@ -27,57 +27,54 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class Login extends AppCompatActivity implements View.OnClickListener{
+public class Login extends AppCompatActivity{
     private EditText edtEmail,edtSenha;
     private TextView txtNew,txtForget;
     private Button btnLogin;
     private User user;
-    final Animation animation = AnimationUtils.loadAnimation(Login.this,R.anim.bounce);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         getSupportActionBar().hide();
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
+        final Animation animation = AnimationUtils.loadAnimation(Login.this,R.anim.bounce);
         edtEmail = findViewById(R.id.edtEmail);
         edtSenha = findViewById(R.id.edtSenha);
         txtNew = findViewById(R.id.txtNew);
         txtForget = findViewById(R.id.txtForget);
         btnLogin = findViewById(R.id.btnCad);
-        btnLogin.setOnClickListener(this);
-        txtForget.setOnClickListener(this);
-        txtNew.setOnClickListener(this);
-    }
-
-    @Override
-    public void onClick(View v) {
-
-        switch (v.getId()){
-            case R.id.btnCad:
-                v.startAnimation(animation);
-                v.postOnAnimationDelayed(new Runnable() {
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                view.startAnimation(animation);
+                view.postOnAnimationDelayed(new Runnable() {
                     @Override
                     public void run() {
                         login();
                     }
                 },50);
-                break;
-            case R.id.txtForget:
+            }
+        });
+        txtForget.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
                 String email = edtEmail.getText().toString().trim();
                 if(email.isEmpty()){
                     Toast.makeText(Login.this,"Preencha o email para recuperar a senha",Toast.LENGTH_LONG).show();
                 }else{
                     enviar(email);
                 }
-                break;
-            case R.id.txtNew:
+            }
+        });
+        txtNew.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
                 Intent intent = new Intent(Login.this,Cadastrar.class);
                 startActivity(intent);
                 finish();
-                break;
-        }
-
+            }
+        });
     }
 
     private void enviar(String email) {

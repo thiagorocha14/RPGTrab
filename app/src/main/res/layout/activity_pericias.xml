@@ -18,33 +18,83 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" >
+
+    </ListView>
 
     <TextView
-        android:id="@+id/txtMagias"
+        android:id="@+id/txtPericias"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:gravity="center"
         android:text="@string/perit"
+        android:fontFamily="@font/blackcastle"
+        android:shadowColor="#FFFFFF"
+        android:shadowDx="1.5"
+        android:shadowDy="1.3"
+        android:shadowRadius="10"
         android:textColor="@color/black"
-        android:textSize="16sp"
+        android:textSize="22dp"
         app:layout_constraintBottom_toTopOf="@+id/listperi"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/btnPeri"
+        android:id="@+id/txtEnd"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginBottom="8dp"
         android:gravity="center"
         android:text="@string/btn_finish"
+        android:fontFamily="@font/blackcastle"
+        android:shadowColor="#FFFFFF"
+        android:shadowDx="1.5"
+        android:shadowDy="1.3"
+        android:shadowRadius="10"
         android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/listperi"
         app:layout_constraintStart_toStartOf="@+id/listperi"
         app:layout_constraintTop_toBottomOf="@+id/listperi"/>
+
+    <Button
+        android:id="@+id/btnPeri1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        android:background="@drawable/button_dados"
+        android:fontFamily="@font/dragonforce"
+        android:shadowColor="#FFFFFF"
+        android:shadowDx="1.5"
+        android:shadowDy="1.3"
+        android:shadowRadius="10"
+        android:textColor="@color/black"
+        android:textSize="24dp"
+        android:padding="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/listperi"
+        app:layout_constraintEnd_toStartOf="@+id/btnPeri2"
+        app:layout_constraintStart_toStartOf="@+id/listperi"
+        app:layout_constraintTop_toTopOf="@+id/listperi" />
+
+    <Button
+        android:id="@+id/btnPeri2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        android:background="@drawable/button_dados"
+        android:fontFamily="@font/dragonforce"
+        android:shadowColor="#FFFFFF"
+        android:shadowDx="1.5"
+        android:shadowDy="1.3"
+        android:shadowRadius="10"
+        android:textColor="@color/black"
+        android:textSize="24dp"
+        android:padding="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btnPeri1"
+        app:layout_constraintEnd_toEndOf="@+id/listperi"
+        app:layout_constraintStart_toEndOf="@+id/btnPeri1"
+        app:layout_constraintTop_toTopOf="@+id/btnPeri1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
