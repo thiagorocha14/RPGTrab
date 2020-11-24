@@ -14,8 +14,10 @@
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
         tools:srcCompat="@color/white" />
 
     <TextView
@@ -30,8 +32,271 @@
         android:shadowDx="1.5"
         android:shadowDy="1.3"
         android:shadowRadius="10"
+        android:textColor="@color/black"
         android:textSize="32sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtClassShow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:text="TextView"
+        android:fontFamily="@font/blackcastle"
+        android:shadowColor="#000000"
+        android:shadowDx="1.5"
+        android:shadowDy="1.3"
+        android:shadowRadius="10"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toTopOf="@+id/txtNivelShow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/txtNameShow" />
+
+    <TextView
+        android:id="@+id/txtNivelShow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:fontFamily="@font/dragonforce"
+        android:shadowColor="#000000"
+        android:shadowDx="1.5"
+        android:shadowDy="1.3"
+        android:shadowRadius="10"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="@+id/txtNameShow"
+        app:layout_constraintEnd_toEndOf="@+id/txtClassShow"
+        app:layout_constraintStart_toStartOf="@+id/txtRacaShow"
+        app:layout_constraintTop_toBottomOf="@+id/txtClassShow" />
+
+    <TextView
+        android:id="@+id/txtRacaShow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/blackcastle"
+        android:shadowColor="#000000"
+        android:shadowDx="1.5"
+        android:shadowDy="1.3"
+        android:shadowRadius="10"
+        android:text="TextView"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="@+id/txtClassShow"
+        app:layout_constraintEnd_toStartOf="@+id/txtClassShow"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/txtNameShow"
+        app:layout_constraintTop_toTopOf="@+id/txtClassShow" />
+
+    <TextView
+        android:id="@+id/txtSVida"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/txtNameShow"
+        app:layout_constraintTop_toBottomOf="@+id/txtNameShow" />
+
+    <TextView
+        android:id="@+id/txtVidaShow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/txtSVida"
+        app:layout_constraintStart_toEndOf="@+id/txtSVida"
+        app:layout_constraintTop_toTopOf="@+id/txtSVida" />
+
+    <TextView
+        android:id="@+id/txtSOrigem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/txtSVida"
+        app:layout_constraintTop_toBottomOf="@+id/txtSVida" />
+
+    <TextView
+        android:id="@+id/txtOrigemShow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/txtSOrigem"
+        app:layout_constraintStart_toEndOf="@+id/txtSOrigem"
+        app:layout_constraintTop_toTopOf="@+id/txtSOrigem" />
+
+    <TextView
+        android:id="@+id/txtSAlin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="33dp"
+        tools:layout_editor_absoluteY="170dp" />
+
+    <TextView
+        android:id="@+id/txtAlinShow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/txtSAlin"
+        app:layout_constraintStart_toEndOf="@+id/txtSAlin"
+        app:layout_constraintTop_toTopOf="@+id/txtSAlin" />
+
+    <TextView
+        android:id="@+id/txtSFor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="33dp"
+        tools:layout_editor_absoluteY="206dp" />
+
+    <TextView
+        android:id="@+id/txtForShow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/txtSFor"
+        app:layout_constraintStart_toEndOf="@+id/txtSFor"
+        app:layout_constraintTop_toTopOf="@+id/txtSFor" />
+
+    <TextView
+        android:id="@+id/txtSDes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="33dp"
+        tools:layout_editor_absoluteY="240dp" />
+
+    <TextView
+        android:id="@+id/txtModForShow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/txtForShow"
+        app:layout_constraintStart_toEndOf="@+id/txtForShow"
+        app:layout_constraintTop_toTopOf="@+id/txtForShow" />
+
+    <TextView
+        android:id="@+id/txtDesShow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/txtSDes"
+        app:layout_constraintStart_toEndOf="@+id/txtSDes"
+        app:layout_constraintTop_toTopOf="@+id/txtSDes" />
+
+    <TextView
+        android:id="@+id/txtModDesShow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/txtDesShow"
+        app:layout_constraintStart_toEndOf="@+id/txtDesShow"
+        app:layout_constraintTop_toTopOf="@+id/txtDesShow" />
+
+    <TextView
+        android:id="@+id/txtSCon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="32dp"
+        tools:layout_editor_absoluteY="273dp" />
+
+    <TextView
+        android:id="@+id/txtConShow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/txtSCon"
+        app:layout_constraintStart_toEndOf="@+id/txtSCon"
+        app:layout_constraintTop_toTopOf="@+id/txtSCon" />
+
+    <TextView
+        android:id="@+id/txtModConShow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/txtConShow"
+        app:layout_constraintStart_toEndOf="@+id/txtConShow"
+        app:layout_constraintTop_toTopOf="@+id/txtConShow" />
+
+    <TextView
+        android:id="@+id/txtSInt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="33dp"
+        tools:layout_editor_absoluteY="305dp" />
+
+    <TextView
+        android:id="@+id/txtIntShow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/txtSInt"
+        app:layout_constraintStart_toEndOf="@+id/txtSInt"
+        app:layout_constraintTop_toTopOf="@+id/txtSInt" />
+
+    <TextView
+        android:id="@+id/txtModIntShow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/txtIntShow"
+        app:layout_constraintStart_toEndOf="@+id/txtIntShow"
+        app:layout_constraintTop_toTopOf="@+id/txtIntShow" />
+
+    <TextView
+        android:id="@+id/txtSSab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="33dp"
+        tools:layout_editor_absoluteY="335dp" />
+
+    <TextView
+        android:id="@+id/txtSabShow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/txtSSab"
+        app:layout_constraintStart_toEndOf="@+id/txtSSab"
+        app:layout_constraintTop_toTopOf="@+id/txtSSab" />
+
+    <TextView
+        android:id="@+id/txtModSabShow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/txtSabShow"
+        app:layout_constraintStart_toEndOf="@+id/txtSabShow"
+        app:layout_constraintTop_toTopOf="@+id/txtSabShow" />
+
+    <TextView
+        android:id="@+id/txtSCar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="33dp"
+        tools:layout_editor_absoluteY="376dp" />
+
+    <TextView
+        android:id="@+id/txtCarShow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/txtSCar"
+        app:layout_constraintStart_toEndOf="@+id/txtSCar"
+        app:layout_constraintTop_toTopOf="@+id/txtSCar" />
+
+    <TextView
+        android:id="@+id/txtModCarShow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/txtCarShow"
+        app:layout_constraintStart_toEndOf="@+id/txtCarShow"
+        app:layout_constraintTop_toTopOf="@+id/txtCarShow" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

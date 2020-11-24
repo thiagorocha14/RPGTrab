@@ -31,7 +31,6 @@ public class ShowFicha extends AppCompatActivity {
         final TextView txtName = findViewById(R.id.txtNameShow);
         Ficha ficha = (Ficha) getIntent().getSerializableExtra("Ficha");
         txtName.setText(ficha.getPersonagem());
-        //final ConstraintLayout layout = (ConstraintLayout) findViewById(R.id.show_ficha);
         Picasso.get().load(ficha.getLink()).into(imgbg,new com.squareup.picasso.Callback(){
 
             @Override
@@ -40,9 +39,7 @@ public class ShowFicha extends AppCompatActivity {
                 if (bitmap != null) {
                     Palette color = Palette.from(bitmap).generate();
                     int vibrantColor = color.getVibrantColor(getResources().getColor(R.color.colorPrimary));
-                    int dark = color.getDarkVibrantColor(getResources().getColor(R.color.colorPrimary));
                     txtName.setTextColor(vibrantColor);
-                    //layout.setBackgroundColor(dark);
                 }
             }
 
