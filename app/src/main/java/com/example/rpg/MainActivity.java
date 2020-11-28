@@ -18,8 +18,11 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
+
+import com.example.rpg.Fragments.Frag4;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -35,6 +38,91 @@ public class MainActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
         BottomNavigationView navView = findViewById(R.id.nav_view);
+        Intent intent = getIntent();
+        if (intent.hasExtra("Classe")){
+            Ficha ficha = (Ficha) getIntent().getSerializableExtra("Ficha");
+            Fragment Frag = new Frag4();
+            Bundle bundle = new Bundle();
+            bundle.putString("Extra","Classe");
+            bundle.putSerializable("ficha",ficha);
+            Frag.setArguments(bundle);
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.nav_host_fragment,Frag);
+            fragmentTransaction.addToBackStack(null);
+            fragmentTransaction.commit();
+        }
+        if (intent.hasExtra("Raca")){
+            Ficha ficha = (Ficha) getIntent().getSerializableExtra("Ficha");
+            Fragment Frag = new Frag4();
+            Bundle bundle = new Bundle();
+            bundle.putString("Extra","Raca");
+            bundle.putSerializable("ficha",ficha);
+            Frag.setArguments(bundle);
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.nav_host_fragment,Frag);
+            fragmentTransaction.addToBackStack(null);
+            fragmentTransaction.commit();
+        }
+        if (intent.hasExtra("Peri")){
+            Ficha ficha = (Ficha) getIntent().getSerializableExtra("Ficha");
+            Fragment Frag = new Frag4();
+            Bundle bundle = new Bundle();
+            bundle.putString("Extra","Peri");
+            bundle.putSerializable("ficha",ficha);
+            Frag.setArguments(bundle);
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.nav_host_fragment,Frag);
+            fragmentTransaction.addToBackStack(null);
+            fragmentTransaction.commit();
+        }
+        if (intent.hasExtra("Magia")){
+            Ficha ficha = (Ficha) getIntent().getSerializableExtra("Ficha");
+            Fragment Frag = new Frag4();
+            Bundle bundle = new Bundle();
+            bundle.putString("Extra","Magia");
+            bundle.putSerializable("ficha",ficha);
+            Frag.setArguments(bundle);
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.nav_host_fragment,Frag);
+            fragmentTransaction.addToBackStack(null);
+            fragmentTransaction.commit();
+        }
+        if (intent.hasExtra("Atrib")){
+            Ficha ficha = (Ficha) getIntent().getSerializableExtra("Ficha");
+            Fragment Frag = new Frag4();
+            Bundle bundle = new Bundle();
+            bundle.putString("Extra","Atrib");
+            bundle.putSerializable("ficha",ficha);
+            Frag.setArguments(bundle);
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.nav_host_fragment,Frag);
+            fragmentTransaction.addToBackStack(null);
+            fragmentTransaction.commit();
+        }
+        if (intent.hasExtra("Origem")){
+            Ficha ficha = (Ficha) getIntent().getSerializableExtra("Ficha");
+            Fragment Frag = new Frag4();
+            Bundle bundle = new Bundle();
+            bundle.putString("Extra","Origem");
+            bundle.putSerializable("ficha",ficha);
+            Frag.setArguments(bundle);
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.nav_host_fragment,Frag);
+            fragmentTransaction.addToBackStack(null);
+            fragmentTransaction.commit();
+        }
+        if (intent.hasExtra("Alin")){
+            Ficha ficha = (Ficha) getIntent().getSerializableExtra("Ficha");
+            Fragment Frag = new Frag4();
+            Bundle bundle = new Bundle();
+            bundle.putString("Extra","Alin");
+            bundle.putSerializable("ficha",ficha);
+            Frag.setArguments(bundle);
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.nav_host_fragment,Frag);
+            fragmentTransaction.addToBackStack(null);
+            fragmentTransaction.commit();
+        }
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications).build();

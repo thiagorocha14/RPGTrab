@@ -46,6 +46,8 @@
     <string name="scaris">Carisma:</string>
     <string name="ssabe">Sabedoria:</string>
     <string name="sinte">Inteligência:</string>
+    <string name="smagia">Magias:</string>
+    <string name="speri">Perícias Treinadas:</string>
 
     <string-array name="Alin1">
         <item>Caótico</item>

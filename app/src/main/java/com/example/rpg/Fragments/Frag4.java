@@ -38,6 +38,21 @@ public class Frag4 extends Fragment {
             if (extra.equals("Raca")) {
                 p = Integer.parseInt(ficha.getPaginaR()) - 1;
             }
+            if (extra.equals("Peri")) {
+                p = 112+6-1;
+            }
+            if (extra.equals("Magia")) {
+                p = 158+6-1;
+            }
+            if (extra.equals("Atrib")) {
+                p = 17+6-1;
+            }
+            if (extra.equals("Origem")) {
+                p = 85+6-1;
+            }
+            if (extra.equals("Alin")) {
+                p = 109+6-1;
+            }
         }
         pdfView.fromAsset("t.pdf")
                 .enableSwipe(true)
