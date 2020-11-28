@@ -38,6 +38,14 @@
     <string name="sabe">Sabedoria</string>
     <string name="inte">Inteligência</string>
     <string name="perit">Perícias Treinadas:</string>
+    <string name="spv">PV:</string>
+    <string name="sAtrib">Atributos:</string>
+    <string name="sconsti">Constituição:</string>
+    <string name="sforc">Força:</string>
+    <string name="sdestre">Destreza:</string>
+    <string name="scaris">Carisma:</string>
+    <string name="ssabe">Sabedoria:</string>
+    <string name="sinte">Inteligência:</string>
 
     <string-array name="Alin1">
         <item>Caótico</item>

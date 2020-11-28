@@ -16,6 +16,7 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.rpg.Atributos.Atributo;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
 
@@ -27,10 +28,29 @@ public class ShowFicha extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_ficha);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        final ImageView imgbg = findViewById(R.id.imgbg);
-        final TextView txtName = findViewById(R.id.txtNameShow);
+        final ImageView imgbg = findViewById(R.id.imgbg);final ImageView imgArrow1 = findViewById(R.id.imgArrow1);final ImageView imgArrow2 = findViewById(R.id.imgArrow2);final ImageView imgArrow3 = findViewById(R.id.imgArrow3);final ImageView imgArrow4 = findViewById(R.id.imgArrow4);final ImageView imgArrow5 = findViewById(R.id.imgArrow5);final ImageView imgArrow6 = findViewById(R.id.imgArrow6);final TextView txtName = findViewById(R.id.txtNameShow);final TextView txtRaca = findViewById(R.id.txtRacaShow);final TextView txtClasse = findViewById(R.id.txtClassShow);final TextView txtNivel = findViewById(R.id.txtNivelShow);final TextView txtPv = findViewById(R.id.txtSVida);final TextView txtPvS = findViewById(R.id.txtVidaShow);final TextView txtOrigem = findViewById(R.id.txtSOrigem);final TextView txtOrigemS = findViewById(R.id.txtOrigemShow);final TextView txtAlin = findViewById(R.id.txtSAlin);final TextView txtAlinS = findViewById(R.id.txtAlinShow);final TextView txtAtrib = findViewById(R.id.txtSAtrib);final TextView txtFor = findViewById(R.id.txtSFor);final TextView txtForS = findViewById(R.id.txtForShow);final TextView txtModFor = findViewById(R.id.txtModForShow);final TextView txtDes = findViewById(R.id.txtSDes);final TextView txtDesS = findViewById(R.id.txtDesShow);final TextView txtModDes = findViewById(R.id.txtModDesShow);final TextView txtCon = findViewById(R.id.txtSCon);final TextView txtConS = findViewById(R.id.txtConShow);final TextView txtModCon = findViewById(R.id.txtModConShow);final TextView txtInt = findViewById(R.id.txtSInt);final TextView txtIntS = findViewById(R.id.txtIntShow);final TextView txtModInt = findViewById(R.id.txtModIntShow);final TextView txtSab = findViewById(R.id.txtSSab);final TextView txtSabS = findViewById(R.id.txtSabShow);final TextView txtModSab = findViewById(R.id.txtModSabShow);final TextView txtCar = findViewById(R.id.txtSCar);final TextView txtCarS = findViewById(R.id.txtCarShow);final TextView txtModCar = findViewById(R.id.txtModCarShow);
         Ficha ficha = (Ficha) getIntent().getSerializableExtra("Ficha");
+        Atributo atributo = ficha.getAtributo();
         txtName.setText(ficha.getPersonagem());
+        txtRaca.setText(ficha.getRaca());
+        txtClasse.setText(ficha.getClasse());
+        txtNivel.setText(ficha.getNivel());
+        txtPvS.setText(ficha.getVida());
+        txtOrigemS.setText(ficha.getOrigem());
+        txtAlinS.setText(ficha.getAlinhamento());
+        txtForS.setText(atributo.getForca());
+        txtDesS.setText(atributo.getDestreza());
+        txtConS.setText(atributo.getConstituicao());
+        txtIntS.setText(atributo.getInteligencia());
+        txtSabS.setText(atributo.getSabedoria());
+        txtCarS.setText(atributo.getCarisma());
+        txtModFor.setText(atributo.getModFor());
+        txtModDes.setText(atributo.getModDes());
+        txtModCon.setText(atributo.getModCon());
+        txtModInt.setText(atributo.getModInt());
+        txtModSab.setText(atributo.getModSab());
+        txtModCar.setText(atributo.getModCar());
+        final ConstraintLayout layout = findViewById(R.id.layoutzin);
         Picasso.get().load(ficha.getLink()).into(imgbg,new com.squareup.picasso.Callback(){
 
             @Override
@@ -39,7 +59,10 @@ public class ShowFicha extends AppCompatActivity {
                 if (bitmap != null) {
                     Palette color = Palette.from(bitmap).generate();
                     int vibrantColor = color.getVibrantColor(getResources().getColor(R.color.colorPrimary));
-                    txtName.setTextColor(vibrantColor);
+                    int average = color.getDominantColor(getResources().getColor(R.color.colorPrimary));
+                    layout.setBackgroundColor(average);
+                    txtName.setTextColor(vibrantColor);txtRaca.setTextColor(vibrantColor);txtClasse.setTextColor(vibrantColor);txtNivel.setTextColor(vibrantColor);txtPv.setTextColor(vibrantColor);txtPvS.setTextColor(vibrantColor);txtOrigem.setTextColor(vibrantColor);txtOrigemS.setTextColor(vibrantColor);txtAlin.setTextColor(vibrantColor);txtAlinS.setTextColor(vibrantColor);txtAtrib.setTextColor(vibrantColor);txtFor.setTextColor(vibrantColor);txtDes.setTextColor(vibrantColor);txtCon.setTextColor(vibrantColor);txtInt.setTextColor(vibrantColor);txtSab.setTextColor(vibrantColor);txtCar.setTextColor(vibrantColor);txtForS.setTextColor(vibrantColor);txtDesS.setTextColor(vibrantColor);txtConS.setTextColor(vibrantColor);txtIntS.setTextColor(vibrantColor);txtSabS.setTextColor(vibrantColor);txtCarS.setTextColor(vibrantColor);txtModFor.setTextColor(vibrantColor);txtModDes.setTextColor(vibrantColor);txtModCon.setTextColor(vibrantColor);txtModInt.setTextColor(vibrantColor);txtModSab.setTextColor(vibrantColor);txtModCar.setTextColor(vibrantColor);
+                    imgArrow1.setColorFilter(vibrantColor);imgArrow2.setColorFilter(vibrantColor);imgArrow3.setColorFilter(vibrantColor);imgArrow4.setColorFilter(vibrantColor);imgArrow5.setColorFilter(vibrantColor);imgArrow6.setColorFilter(vibrantColor);
                 }
             }
 
