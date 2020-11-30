@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/style_dialog"
+    android:background="@drawable/background_dialog"
     >
     <TextView
         android:id="@+id/txtRandom"
@@ -92,7 +92,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/txtRandom"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/d203"
+        app:srcCompat="@drawable/d20"
         android:tint="@color/black"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

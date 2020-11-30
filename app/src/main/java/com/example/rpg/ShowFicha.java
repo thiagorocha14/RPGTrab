@@ -64,6 +64,7 @@ public class ShowFicha extends AppCompatActivity {
                 intent.putExtra("Classe",extra);
                 intent.putExtra("Ficha",ficha);
                 startActivity(intent);
+                finish();
             }
         });
         txtRaca.setOnClickListener(new View.OnClickListener() {
@@ -74,6 +75,7 @@ public class ShowFicha extends AppCompatActivity {
                 intent.putExtra("Raca",extra);
                 intent.putExtra("Ficha",ficha);
                 startActivity(intent);
+                finish();
             }
         });
         txtPeri.setOnClickListener(new View.OnClickListener() {
@@ -84,6 +86,7 @@ public class ShowFicha extends AppCompatActivity {
                 intent.putExtra("Peri",extra);
                 intent.putExtra("Ficha",ficha);
                 startActivity(intent);
+                finish();
             }
         });
         txtAlin.setOnClickListener(new View.OnClickListener() {
@@ -94,6 +97,7 @@ public class ShowFicha extends AppCompatActivity {
                 intent.putExtra("Alin",extra);
                 intent.putExtra("Ficha",ficha);
                 startActivity(intent);
+                finish();
             }
         });
         txtMagias.setOnClickListener(new View.OnClickListener() {
@@ -104,6 +108,7 @@ public class ShowFicha extends AppCompatActivity {
                 intent.putExtra("Magia",extra);
                 intent.putExtra("Ficha",ficha);
                 startActivity(intent);
+                finish();
             }
         });
         txtAtrib.setOnClickListener(new View.OnClickListener() {
@@ -114,6 +119,7 @@ public class ShowFicha extends AppCompatActivity {
                 intent.putExtra("Atrib",extra);
                 intent.putExtra("Ficha",ficha);
                 startActivity(intent);
+                finish();
             }
         });
         txtOrigem.setOnClickListener(new View.OnClickListener() {
@@ -124,6 +130,7 @@ public class ShowFicha extends AppCompatActivity {
                 intent.putExtra("Origem",extra);
                 intent.putExtra("Ficha",ficha);
                 startActivity(intent);
+                finish();
             }
         });
         if (classe.equals("Arcanista")||classe.equals("Bardo")||classe.equals("Clérigo")||classe.equals("Druida")){

@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Pericias"
-    android:background="@drawable/papel6">
+    tools:context=".Criation.Pericias"
+    android:background="@drawable/bg_papel4">
 
     <ListView
         android:id="@+id/listperi"
@@ -64,7 +64,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Button"
-        android:background="@drawable/button_dados"
+        android:background="@drawable/background_avanc"
         android:fontFamily="@font/dragonforce"
         android:shadowColor="#FFFFFF"
         android:shadowDx="1.5"
@@ -83,7 +83,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Button"
-        android:background="@drawable/button_dados"
+        android:background="@drawable/background_avanc"
         android:fontFamily="@font/dragonforce"
         android:shadowColor="#FFFFFF"
         android:shadowDx="1.5"

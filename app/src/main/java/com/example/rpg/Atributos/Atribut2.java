@@ -13,10 +13,9 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.rpg.BD;
 import com.example.rpg.Ficha;
 import com.example.rpg.R;
-import com.example.rpg.VidaV;
+import com.example.rpg.Criation.VidaV;
 
 public class Atribut2 extends AppCompatActivity {
     @Override

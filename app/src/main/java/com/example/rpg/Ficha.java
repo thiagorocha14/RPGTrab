@@ -12,8 +12,8 @@ public class Ficha implements Serializable {
     private String Raca;
     private String Classe;
     private String Id;
-    private String paginaC;
-    private String paginaR;
+    private int PgC;
+    private int PgR;
     private String Nivel;
     private String Alinhamento;
     private String Origem;
@@ -21,25 +21,25 @@ public class Ficha implements Serializable {
     private String Magia;
     private String Link;
     private String Pericia;
-    private Atributo atributo = new Atributo();
+    private Atributo Atributo = new Atributo();
 
     public Ficha() {
     }
 
-    public Ficha(String personagem, String raca, String classe, String id, String paginaC, String paginaR, String nivel, String alinhamento, String origem,String vida,String magia,String link, Atributo atributo,String pericia) {
+    public Ficha(String personagem, String raca, String classe, String id, int pgC, int pgR, String nivel, String alinhamento, String origem, String vida, String magia, String link, Atributo atributo, String pericia) {
         Personagem = personagem;
         Raca = raca;
         Classe = classe;
         Id = id;
-        this.paginaC = paginaC;
-        this.paginaR = paginaR;
+        PgC = pgC;
+        PgR = pgR;
         Nivel = nivel;
         Alinhamento = alinhamento;
         Origem = origem;
         Vida = vida;
         Magia = magia;
         Link = link;
-        this.atributo = atributo;
+        Atributo = atributo;
         Pericia = pericia;
     }
 
@@ -75,20 +75,20 @@ public class Ficha implements Serializable {
         Id = id;
     }
 
-    public String getPaginaC() {
-        return paginaC;
+    public int getPgC() {
+        return PgC;
     }
 
-    public void setPaginaC(String paginaC) {
-        this.paginaC = paginaC;
+    public void setPgC(int pgC) {
+        PgC = pgC;
     }
 
-    public String getPaginaR() {
-        return paginaR;
+    public int getPgR() {
+        return PgR;
     }
 
-    public void setPaginaR(String paginaR) {
-        this.paginaR = paginaR;
+    public void setPgR(int pgR) {
+        PgR = pgR;
     }
 
     public String getNivel() {
@@ -132,11 +132,11 @@ public class Ficha implements Serializable {
     }
 
     public Atributo getAtributo() {
-        return atributo;
+        return Atributo;
     }
 
     public void setAtributo(Atributo atributo) {
-        this.atributo = atributo;
+        Atributo = atributo;
     }
 
     public String getLink() {
@@ -161,13 +161,13 @@ public class Ficha implements Serializable {
                 "Personagem: " + Personagem + '\n' +
                 "Raca: " + Raca + '\n' +
                 "Classe: " + Classe + '\n' +
-                "Página da Classe: " + paginaC + '\n' +
-                "Página da Raca: " + paginaR + '\n' +
+                "Página da Classe: " + PgC + '\n' +
+                "Página da Raca: " + PgR + '\n' +
                 "Nivel: " + Nivel + '\n' +
                 "Alinhamento: " + Alinhamento + '\n' +
                 "Origem: " + Origem + '\n' +
                 "Vida: "+Vida+'\n'+
-                "Atributos: "+'\n'+atributo+'\n'+
+                "Atributos: "+'\n'+ Atributo +'\n'+
                 "Magias: "+'\n'+Magia;
     }
 }

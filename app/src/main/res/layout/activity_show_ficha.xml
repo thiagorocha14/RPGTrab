@@ -91,13 +91,13 @@
                     android:id="@+id/txtNivelShow"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="TextView"
                     android:fontFamily="@font/dragonforce"
                     android:padding="4dp"
                     android:shadowColor="#000000"
                     android:shadowDx="1.5"
                     android:shadowDy="1.3"
                     android:shadowRadius="10"
+                    android:text="TextView"
                     android:textColor="@color/black"
                     android:textSize="28sp"
                     app:layout_constraintBottom_toBottomOf="@+id/txtNameShow"
@@ -469,12 +469,12 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:fontFamily="@font/blackcastle"
+                    android:padding="4dp"
                     android:shadowColor="#000000"
                     android:shadowDx="1.5"
                     android:shadowDy="1.3"
                     android:shadowRadius="10"
                     android:text=" "
-                    android:padding="4dp"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     app:layout_constraintBottom_toBottomOf="@+id/txtSSab"
@@ -562,7 +562,7 @@
                     app:layout_constraintBottom_toBottomOf="@+id/txtForShow"
                     app:layout_constraintStart_toEndOf="@+id/txtForShow"
                     app:layout_constraintTop_toTopOf="@+id/txtForShow"
-                    app:srcCompat="@drawable/arrow24" />
+                    app:srcCompat="@drawable/ic_arrow_24" />
 
                 <ImageView
                     android:id="@+id/imgArrow2"
@@ -572,7 +572,7 @@
                     app:layout_constraintBottom_toBottomOf="@+id/txtDesShow"
                     app:layout_constraintStart_toEndOf="@+id/txtDesShow"
                     app:layout_constraintTop_toTopOf="@+id/txtDesShow"
-                    app:srcCompat="@drawable/arrow24" />
+                    app:srcCompat="@drawable/ic_arrow_24" />
 
                 <ImageView
                     android:id="@+id/imgArrow3"
@@ -582,7 +582,7 @@
                     app:layout_constraintBottom_toBottomOf="@+id/txtConShow"
                     app:layout_constraintStart_toEndOf="@+id/txtConShow"
                     app:layout_constraintTop_toTopOf="@+id/txtConShow"
-                    app:srcCompat="@drawable/arrow24" />
+                    app:srcCompat="@drawable/ic_arrow_24" />
 
                 <ImageView
                     android:id="@+id/imgArrow4"
@@ -592,7 +592,7 @@
                     app:layout_constraintBottom_toBottomOf="@+id/txtIntShow"
                     app:layout_constraintStart_toEndOf="@+id/txtIntShow"
                     app:layout_constraintTop_toTopOf="@+id/txtIntShow"
-                    app:srcCompat="@drawable/arrow24" />
+                    app:srcCompat="@drawable/ic_arrow_24" />
 
                 <ImageView
                     android:id="@+id/imgArrow5"
@@ -602,7 +602,7 @@
                     app:layout_constraintBottom_toBottomOf="@+id/txtSabShow"
                     app:layout_constraintStart_toEndOf="@+id/txtSabShow"
                     app:layout_constraintTop_toTopOf="@+id/txtSabShow"
-                    app:srcCompat="@drawable/arrow24" />
+                    app:srcCompat="@drawable/ic_arrow_24" />
 
                 <ImageView
                     android:id="@+id/imgArrow6"
@@ -612,7 +612,7 @@
                     app:layout_constraintBottom_toBottomOf="@+id/txtCarShow"
                     app:layout_constraintStart_toEndOf="@+id/txtCarShow"
                     app:layout_constraintTop_toTopOf="@+id/txtCarShow"
-                    app:srcCompat="@drawable/arrow24" />
+                    app:srcCompat="@drawable/ic_arrow_24" />
 
                 <TextView
                     android:id="@+id/txtSAtrib"
@@ -665,6 +665,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/txtSMagias"
                     app:layout_constraintTop_toBottomOf="@+id/txtSMagias" />
+
                 <TextView
                     android:id="@+id/txtSPeri"
                     android:layout_width="wrap_content"

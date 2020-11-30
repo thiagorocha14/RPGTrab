@@ -11,7 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.example.rpg.CriarFicha;
+import com.example.rpg.Criation.CriarRaca;
 import com.example.rpg.R;
 
 public class Frag1 extends Fragment {
@@ -25,7 +25,8 @@ public class Frag1 extends Fragment {
         imgGif.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getContext(), CriarFicha.class);
+                //Intent intent = new Intent(getContext(), CriarFicha.class);
+                Intent intent = new Intent(getContext(), CriarRaca.class);
                 startActivity(intent);
             }
         });

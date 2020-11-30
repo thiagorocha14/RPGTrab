@@ -15,7 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import com.example.rpg.Ficha;
 import com.example.rpg.R;
-import com.example.rpg.VidaV;
+import com.example.rpg.Criation.VidaV;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;

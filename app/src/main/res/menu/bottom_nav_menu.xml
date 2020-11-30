@@ -3,21 +3,21 @@
 
     <item
         android:id="@+id/navigation_home"
-        android:icon="@drawable/person18dp"
+        android:icon="@drawable/ic_person_24"
         android:title="@string/tab_text_1" />
 
     <item
         android:id="@+id/navigation_dashboard"
-        android:icon="@drawable/dado18dp"
+        android:icon="@drawable/ic_dice_24"
         android:title="@string/tab_text_2" />
 
     <item
         android:id="@+id/navigation_notifications"
-        android:icon="@drawable/menu18dp"
+        android:icon="@drawable/ic_list_24"
         android:title="@string/tab_text_3" />
     <item
         android:id="@+id/navigation_livro"
-        android:icon="@drawable/livro18dp"
+        android:icon="@drawable/ic_book_24"
         android:title="@string/tab_text_4" />
 
 </menu>

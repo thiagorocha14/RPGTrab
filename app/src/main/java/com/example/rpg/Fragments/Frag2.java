@@ -1,7 +1,5 @@
 package com.example.rpg.Fragments;
 
-import android.app.Dialog;
-import android.content.Intent;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -15,12 +13,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.rpg.Atributos.Atributo;
 import com.example.rpg.Dialogs.DialogDado;
 import com.example.rpg.R;
-import com.example.rpg.VidaV;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
 
 import java.util.Random;
 

@@ -33,25 +33,25 @@ public class Frag4 extends Fragment {
             extra = getArguments().getString("Extra");
             ficha = (Ficha) getArguments().getSerializable("ficha");
             if (extra.equals("Classe")) {
-                p = Integer.parseInt(ficha.getPaginaC()) - 1;
+                p = ficha.getPgC()+5;
             }
             if (extra.equals("Raca")) {
-                p = Integer.parseInt(ficha.getPaginaR()) - 1;
+                p = ficha.getPgR()+5;
             }
             if (extra.equals("Peri")) {
-                p = 112+6-1;
+                p = 112+5;
             }
             if (extra.equals("Magia")) {
-                p = 158+6-1;
+                p = 158+5;
             }
             if (extra.equals("Atrib")) {
-                p = 17+6-1;
+                p = 17+5;
             }
             if (extra.equals("Origem")) {
-                p = 85+6-1;
+                p = 85+5;
             }
             if (extra.equals("Alin")) {
-                p = 109+6-1;
+                p = 109+5;
             }
         }
         pdfView.fromAsset("t.pdf")

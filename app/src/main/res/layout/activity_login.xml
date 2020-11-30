@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Login"
-    android:background="@drawable/drag7">
+    android:background="@drawable/bg_drag">
 
     <Button
         android:id="@+id/btnCad"
@@ -13,7 +13,7 @@
         android:layout_height="74dp"
         android:layout_marginTop="24dp"
         android:layout_marginBottom="8dp"
-        android:background="@drawable/button_login"
+        android:background="@drawable/background_login"
         android:text="@string/btn_login"
         android:textColor="#FFF"
         android:textSize="22dp"
@@ -33,7 +33,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/d20" />
+        app:srcCompat="@drawable/icon_d20" />
 
     <EditText
         android:id="@+id/edtEmail"

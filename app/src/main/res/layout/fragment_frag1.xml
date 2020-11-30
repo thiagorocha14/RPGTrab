@@ -13,7 +13,7 @@
         android:layout_height="0dp"
         android:paddingEnd="20dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/gif2"
+        android:src="@drawable/bg_gif"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
