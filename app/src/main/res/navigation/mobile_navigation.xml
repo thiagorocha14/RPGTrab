@@ -3,22 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@+id/navigation_fichas">
 
     <fragment
-        android:id="@+id/navigation_home"
-        android:name="com.example.rpg.Fragments.Frag1"
-        android:label="@string/tab_text_1"
-        tools:layout="@layout/fragment_frag1" />
-
-    <fragment
-        android:id="@+id/navigation_dashboard"
+        android:id="@+id/navigation_dice"
         android:name="com.example.rpg.Fragments.Frag2"
         android:label="@string/tab_text_2"
         tools:layout="@layout/fragment_frag2" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
+        android:id="@+id/navigation_fichas"
         android:name="com.example.rpg.Fragments.Frag3"
         android:label="@string/tab_text_3"
         tools:layout="@layout/fragment_frag3" />

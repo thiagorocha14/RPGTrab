@@ -90,17 +90,19 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
         android:background="@drawable/background_avanc"
         android:fontFamily="@font/dragonforce"
+        android:padding="8dp"
         android:shadowColor="#FFFFFF"
         android:shadowDx="1.5"
         android:shadowDy="1.3"
         android:shadowRadius="10"
         android:text="@string/btn_avancar"
         android:textSize="20dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/txtMetodo"
-        app:layout_constraintStart_toStartOf="@+id/spnOrigem" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/txtLevel"

@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 
 import com.example.rpg.Ficha;
@@ -21,6 +23,7 @@ public class CriarRaca extends AppCompatActivity {
         setContentView(R.layout.activity_criar_raca);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         final ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager2);
+        final Animation animation = AnimationUtils.loadAnimation(this,R.anim.bounce);
         Button btnAvanc = findViewById(R.id.btnAvanRaca);
         final String[] lst_raca = {"Humano","Anão","Dahllan","Elfo","Goblin","Lefou","Minotauro","Qareen","Golem","Hynne","Kliren","Medusa","Osteon","Sereia/Tristão","Sílfide","Suraggel","Trog"};
         final SlideAdapter adapter = new SlideAdapter(this);
@@ -28,14 +31,20 @@ public class CriarRaca extends AppCompatActivity {
         btnAvanc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int i = viewPager.getCurrentItem();
-                Ficha ficha = new Ficha();
-                ficha.setRaca(lst_raca[i]);
-                ficha.setPgR(getPaginas(lst_raca[i]));
-                Intent intent = new Intent(CriarRaca.this, CriarClasse.class);
-                intent.putExtra("Ficha", ficha);
-                startActivity(intent);
-                finish();
+                view.startAnimation(animation);
+                view.postOnAnimationDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        int i = viewPager.getCurrentItem();
+                        Ficha ficha = new Ficha();
+                        ficha.setRaca(lst_raca[i]);
+                        ficha.setPgR(getPaginas(lst_raca[i]));
+                        Intent intent = new Intent(CriarRaca.this, CriarClasse.class);
+                        intent.putExtra("Ficha", ficha);
+                        startActivity(intent);
+                        finish();
+                    }
+                },50);
             }
         });
     }

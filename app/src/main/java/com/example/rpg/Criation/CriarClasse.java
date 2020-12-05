@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 
 import com.example.rpg.Ficha;
@@ -20,6 +22,7 @@ public class CriarClasse extends AppCompatActivity {
         setContentView(R.layout.activity_criar_classe);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         final ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
+        final Animation animation = AnimationUtils.loadAnimation(this,R.anim.bounce);
         final Ficha ficha = (Ficha) getIntent().getSerializableExtra("Ficha");
         Button btnAvanc = findViewById(R.id.btnAvanClasse);
         SlideAdapter adapter = new SlideAdapter(this);
@@ -28,13 +31,19 @@ public class CriarClasse extends AppCompatActivity {
         btnAvanc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int i = viewPager.getCurrentItem();
-                ficha.setClasse(lst_classes[i]);
-                ficha.setPgC(getPaginas(lst_classes[i]));
-                Intent intent = new Intent(CriarClasse.this, CriarFicha.class);
-                intent.putExtra("Ficha", ficha);
-                startActivity(intent);
-                finish();
+                view.startAnimation(animation);
+                view.postOnAnimationDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        int i = viewPager.getCurrentItem();
+                        ficha.setClasse(lst_classes[i]);
+                        ficha.setPgC(getPaginas(lst_classes[i]));
+                        Intent intent = new Intent(CriarClasse.this, CriarFicha.class);
+                        intent.putExtra("Ficha", ficha);
+                        startActivity(intent);
+                        finish();
+                    }
+                },50);
             }
         });
     }

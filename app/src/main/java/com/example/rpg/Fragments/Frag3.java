@@ -1,5 +1,7 @@
 package com.example.rpg.Fragments;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -14,11 +16,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.example.rpg.Atributos.Atribut2;
 import com.example.rpg.BD;
+import com.example.rpg.Criation.CriarRaca;
 import com.example.rpg.Ficha;
 import com.example.rpg.FichaAdapter;
 import com.example.rpg.Login;
@@ -41,12 +45,53 @@ public class Frag3 extends Fragment {
     ListView listFichas;
     ArrayAdapter<Ficha> adapter;
     Ficha ficha;
+    boolean isRotate = false;
+    boolean show = false;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_frag3, container, false);
+        final View view = inflater.inflate(R.layout.fragment_frag3, container, false);
         listFichas = view.findViewById(R.id.listPer);
+        FloatingActionButton btnadd = view.findViewById(R.id.btnAddFicha);
+        final FloatingActionButton fabAdd = view.findViewById(R.id.fabAdd);
+        final FloatingActionButton fabSearch = view.findViewById(R.id.fabSearch);
+        final EditText edtSearch = view.findViewById(R.id.ediSearch);
+        init(fabAdd);
+        init(fabSearch);
+        init(edtSearch);
+        btnadd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                isRotate = rotateFab(v, !isRotate);
+                if(isRotate){
+                    showIn(fabAdd);
+                    showIn(fabSearch);
+                }else{
+                    showOut(fabAdd);
+                    showOut(fabSearch);
+                }
+            }
+        });
+        fabAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), CriarRaca.class);
+                startActivity(intent);
+            }
+        });
+        fabSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (show==false) {
+                    showIn(edtSearch);
+                    show = true;
+                }else{
+                    edtSearch.setVisibility(View.GONE);
+                    show = false;
+                }
+            }
+        });
         BD.conectar();
         BD.fichabd.addValueEventListener(new ValueEventListener() {
 
@@ -149,5 +194,53 @@ public class Frag3 extends Fragment {
             }
         }
     };
+    public static boolean rotateFab(final View v, boolean rotate) {
+        v.animate().setDuration(200)
+                .setListener(new AnimatorListenerAdapter() {
+                    @Override
+                    public void onAnimationEnd(Animator animation) {
+                        super.onAnimationEnd(animation);
+                    }
+                })
+                .rotation(rotate ? 135f : 0f);
+        return rotate;
+    }
+    public static void showIn(final View v) {
+        v.setVisibility(View.VISIBLE);
+        v.setAlpha(0f);
+        v.setTranslationY(v.getHeight());
+        v.animate()
+                .setDuration(200)
+                .translationY(0)
+                .setListener(new AnimatorListenerAdapter() {
+                    @Override
+                    public void onAnimationEnd(Animator animation) {
+                        super.onAnimationEnd(animation);
+                    }
+                })
+                .alpha(1f)
+                .start();
+    }
+    public static void showOut(final View v) {
+        v.setVisibility(View.VISIBLE);
+        v.setAlpha(1f);
+        v.setTranslationY(0);
+        v.animate()
+                .setDuration(200)
+                .translationY(v.getHeight())
+                .setListener(new AnimatorListenerAdapter() {
+                    @Override
+                    public void onAnimationEnd(Animator animation) {
+                        v.setVisibility(View.GONE);
+                        super.onAnimationEnd(animation);
+                    }
+                }).alpha(0f)
+                .start();
+    }
 
+    public static void init(final View v) {
+        v.setVisibility(View.GONE);
+        v.setTranslationY(v.getHeight());
+        v.setAlpha(0f);
+    }
 }
