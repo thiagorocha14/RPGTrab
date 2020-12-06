@@ -11,6 +11,7 @@ import android.view.Menu;
 import android.view.WindowManager;
 
 import com.example.rpg.Fragments.Frag4;
+import com.example.rpg.Objects.Ficha;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.fragment.app.FragmentTransaction;
@@ -30,11 +31,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         BottomNavigationView navView = findViewById(R.id.nav_view);
         Intent intent = getIntent();
-        if (intent.hasExtra("Classe")){
+        if (intent.hasExtra("com.example.rpg.Objects.Classe")){
             Ficha ficha = (Ficha) getIntent().getSerializableExtra("Ficha");
             Fragment Frag = new Frag4();
             Bundle bundle = new Bundle();
-            bundle.putString("Extra","Classe");
+            bundle.putString("Extra","com.example.rpg.Objects.Classe");
             bundle.putSerializable("ficha",ficha);
             Frag.setArguments(bundle);
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();

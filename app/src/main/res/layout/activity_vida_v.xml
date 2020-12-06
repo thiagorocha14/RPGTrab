@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/bg_papel"
     android:textAlignment="center"
-    tools:context=".Criation.VidaV">
+    tools:context=".Criation.Vida">
 
     <TextView
         android:id="@+id/textView16"

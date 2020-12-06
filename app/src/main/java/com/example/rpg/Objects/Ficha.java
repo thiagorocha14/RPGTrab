@@ -1,6 +1,4 @@
-package com.example.rpg;
-
-import com.example.rpg.Atributos.Atributo;
+package com.example.rpg.Objects;
 
 import java.io.Serializable;
 
@@ -10,9 +8,9 @@ public class Ficha implements Serializable {
     private String Personagem;
     //private String Sistema;
     private String Raca;
-    private String Classe;
+    private Classe Classe;
     private String Id;
-    private int PgC;
+    //private int PgC;
     private int PgR;
     private String Nivel;
     private String Alinhamento;
@@ -26,12 +24,12 @@ public class Ficha implements Serializable {
     public Ficha() {
     }
 
-    public Ficha(String personagem, String raca, String classe, String id, int pgC, int pgR, String nivel, String alinhamento, String origem, String vida, String magia, String link, Atributo atributo, String pericia) {
+    public Ficha(String personagem, String raca, Classe classe, String id, int pgC, int pgR, String nivel, String alinhamento, String origem, String vida, String magia, String link, Atributo atributo, String pericia) {
         Personagem = personagem;
         Raca = raca;
         Classe = classe;
         Id = id;
-        PgC = pgC;
+        //PgC = pgC;
         PgR = pgR;
         Nivel = nivel;
         Alinhamento = alinhamento;
@@ -59,11 +57,11 @@ public class Ficha implements Serializable {
         Raca = raca;
     }
 
-    public String getClasse() {
+    public Classe getClasseO() {
         return Classe;
     }
 
-    public void setClasse(String classe) {
+    public void setClasseO(Classe classe) {
         Classe = classe;
     }
 
@@ -75,13 +73,15 @@ public class Ficha implements Serializable {
         Id = id;
     }
 
-    public int getPgC() {
+   /* public int getPgC() {
         return PgC;
     }
 
     public void setPgC(int pgC) {
         PgC = pgC;
     }
+
+    */
 
     public int getPgR() {
         return PgR;
@@ -160,8 +160,8 @@ public class Ficha implements Serializable {
         return "Ficha:" +"\n"+
                 "Personagem: " + Personagem + '\n' +
                 "Raca: " + Raca + '\n' +
-                "Classe: " + Classe + '\n' +
-                "Página da Classe: " + PgC + '\n' +
+                "com.example.rpg.Objects.Classe: " + Classe + '\n' +
+                "Página da com.example.rpg.Objects.Classe: " + Classe.getPgC() + '\n' +
                 "Página da Raca: " + PgR + '\n' +
                 "Nivel: " + Nivel + '\n' +
                 "Alinhamento: " + Alinhamento + '\n' +

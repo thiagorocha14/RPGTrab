@@ -21,16 +21,16 @@
             android:name=".ShowFicha"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Criation.ListMagias"
+            android:name=".Criation.Magias"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Criation.VidaV"
+            android:name=".Criation.Vida"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Atributos.Atribut2"
+            android:name=".Criation.Atribut2"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Atributos.Atribut1"
+            android:name=".Criation.Atribut1"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Criation.CriarFicha"

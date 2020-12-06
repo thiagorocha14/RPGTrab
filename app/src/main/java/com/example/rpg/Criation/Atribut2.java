@@ -1,4 +1,4 @@
-package com.example.rpg.Atributos;
+package com.example.rpg.Criation;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -13,9 +13,10 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.rpg.Ficha;
+import com.example.rpg.Objects.Atributo;
+import com.example.rpg.Objects.Ficha;
 import com.example.rpg.R;
-import com.example.rpg.Criation.VidaV;
+import com.example.rpg.Criation.Vida;
 
 public class Atribut2 extends AppCompatActivity {
     @Override
@@ -281,7 +282,7 @@ public class Atribut2 extends AppCompatActivity {
                             atributo.setSabedoria(txt1D.getText().toString());
                             atributo.setCarisma(txt1E.getText().toString());
                             ficha.setAtributo(atributo);
-                            Intent intent = new Intent(getApplicationContext(), VidaV.class);
+                            Intent intent = new Intent(getApplicationContext(), Vida.class);
                             intent.putExtra("Ficha",ficha);
                             startActivity(intent);
                             finish();

@@ -112,8 +112,7 @@ public class Login extends AppCompatActivity{
                 user.setSenha(edtSenha.getText().toString().trim());
                 verificar();
             } else {
-                Toast.makeText(getBaseContext(), "Sem conexão com a internet",
-                        Toast.LENGTH_LONG).show();
+                Toast.makeText(getBaseContext(), "Sem conexão com a internet", Toast.LENGTH_LONG).show();
             }
     }
  }

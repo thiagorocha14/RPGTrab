@@ -2,27 +2,22 @@ package com.example.rpg;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.palette.graphics.Palette;
 
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.text.Layout;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.rpg.Atributos.Atributo;
-import com.example.rpg.Fragments.Frag4;
+import com.example.rpg.Objects.Atributo;
+import com.example.rpg.Objects.Classe;
+import com.example.rpg.Objects.Ficha;
 import com.squareup.picasso.Picasso;
-import com.squareup.picasso.Target;
 
 public class ShowFicha extends AppCompatActivity {
     Context context = ShowFicha.this;
@@ -34,7 +29,8 @@ public class ShowFicha extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         final ImageView imgbg = findViewById(R.id.imgbg);final ImageView imgArrow1 = findViewById(R.id.imgArrow1);final ImageView imgArrow2 = findViewById(R.id.imgArrow2);final ImageView imgArrow3 = findViewById(R.id.imgArrow3);final ImageView imgArrow4 = findViewById(R.id.imgArrow4);final ImageView imgArrow5 = findViewById(R.id.imgArrow5);final ImageView imgArrow6 = findViewById(R.id.imgArrow6);final TextView txtName = findViewById(R.id.txtNameShow);final TextView txtRaca = findViewById(R.id.txtRacaShow);final TextView txtClasse = findViewById(R.id.txtClassShow);final TextView txtNivel = findViewById(R.id.txtNivelShow);final TextView txtPv = findViewById(R.id.txtSVida);final TextView txtPvS = findViewById(R.id.txtVidaShow);final TextView txtOrigem = findViewById(R.id.txtSOrigem);final TextView txtOrigemS = findViewById(R.id.txtOrigemShow);final TextView txtAlin = findViewById(R.id.txtSAlin);final TextView txtAlinS = findViewById(R.id.txtAlinShow);final TextView txtAtrib = findViewById(R.id.txtSAtrib);final TextView txtFor = findViewById(R.id.txtSFor);final TextView txtForS = findViewById(R.id.txtForShow);final TextView txtModFor = findViewById(R.id.txtModForShow);final TextView txtDes = findViewById(R.id.txtSDes);final TextView txtDesS = findViewById(R.id.txtDesShow);final TextView txtModDes = findViewById(R.id.txtModDesShow);final TextView txtCon = findViewById(R.id.txtSCon);final TextView txtConS = findViewById(R.id.txtConShow);final TextView txtModCon = findViewById(R.id.txtModConShow);final TextView txtInt = findViewById(R.id.txtSInt);final TextView txtIntS = findViewById(R.id.txtIntShow);final TextView txtModInt = findViewById(R.id.txtModIntShow);final TextView txtSab = findViewById(R.id.txtSSab);final TextView txtSabS = findViewById(R.id.txtSabShow);final TextView txtModSab = findViewById(R.id.txtModSabShow);final TextView txtCar = findViewById(R.id.txtSCar);final TextView txtCarS = findViewById(R.id.txtCarShow);final TextView txtModCar = findViewById(R.id.txtModCarShow);final TextView txtMagias = findViewById(R.id.txtSMagias);final TextView txtMagiasShow = findViewById(R.id.txtMagiaShow);final TextView txtPeri = findViewById(R.id.txtSPeri);final TextView txtPeriShow = findViewById(R.id.txtPeriShow);
         final Ficha ficha = (Ficha) getIntent().getSerializableExtra("Ficha");
-        String classe = ficha.getClasse();
+        final Classe classeO = ficha.getClasseO();
+        String classe = classeO.getClasse();
         Atributo atributo = ficha.getAtributo();
         txtName.setText(ficha.getPersonagem());
         txtRaca.setText(ficha.getRaca());
@@ -61,7 +57,7 @@ public class ShowFicha extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 String extra = "extra";
-                intent.putExtra("Classe",extra);
+                intent.putExtra("com.example.rpg.Objects.Classe",extra);
                 intent.putExtra("Ficha",ficha);
                 startActivity(intent);
                 finish();

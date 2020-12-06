@@ -1,4 +1,4 @@
-package com.example.rpg;
+package com.example.rpg.Adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -13,7 +13,8 @@ import androidx.viewpager.widget.PagerAdapter;
 
 import com.example.rpg.Criation.CriarClasse;
 import com.example.rpg.Criation.CriarRaca;
-import com.example.rpg.Dialogs.DialogPdf;
+import com.example.rpg.Adapters.DialogPdfAdapter;
+import com.example.rpg.R;
 
 public class SlideAdapter extends PagerAdapter {
     Context context;
@@ -68,7 +69,7 @@ public class SlideAdapter extends PagerAdapter {
         imgPager.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DialogPdf dialog = new DialogPdf();
+                DialogPdfAdapter dialog = new DialogPdfAdapter();
                 dialog.setPage(getPage(txtPager.getText().toString()));
                 dialog.show(((AppCompatActivity)context).getSupportFragmentManager(), "Title");
             }

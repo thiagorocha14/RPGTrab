@@ -11,9 +11,10 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 
-import com.example.rpg.Ficha;
+import com.example.rpg.Objects.Classe;
+import com.example.rpg.Objects.Ficha;
 import com.example.rpg.R;
-import com.example.rpg.SlideAdapter;
+import com.example.rpg.Adapters.SlideAdapter;
 
 public class CriarClasse extends AppCompatActivity {
     @Override
@@ -24,6 +25,7 @@ public class CriarClasse extends AppCompatActivity {
         final ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
         final Animation animation = AnimationUtils.loadAnimation(this,R.anim.bounce);
         final Ficha ficha = (Ficha) getIntent().getSerializableExtra("Ficha");
+        final Classe classe = new Classe();
         Button btnAvanc = findViewById(R.id.btnAvanClasse);
         SlideAdapter adapter = new SlideAdapter(this);
         viewPager.setAdapter(adapter);
@@ -36,8 +38,8 @@ public class CriarClasse extends AppCompatActivity {
                     @Override
                     public void run() {
                         int i = viewPager.getCurrentItem();
-                        ficha.setClasse(lst_classes[i]);
-                        ficha.setPgC(getPaginas(lst_classes[i]));
+                        classe.setClasse(lst_classes[i]);
+                        ficha.setClasseO(classe);
                         Intent intent = new Intent(CriarClasse.this, CriarFicha.class);
                         intent.putExtra("Ficha", ficha);
                         startActivity(intent);
@@ -46,38 +48,5 @@ public class CriarClasse extends AppCompatActivity {
                 },50);
             }
         });
-    }
-    public int getPaginas(String classe){
-        int pgC = 0;
-        if(classe.equals("Arcanista")){
-            pgC = 36;
-        } else if(classe.equals("Bárbaro")){
-            pgC = 40;
-        } else if(classe.equals("Bardo")){
-            pgC = 43;
-        } else if(classe.equals("Bucaneiro")){
-            pgC = 46;
-        } else if(classe.equals("Caçador")){
-            pgC = 49;
-        } else if(classe.equals("Cavaleiro")){
-            pgC = 52;
-        } else if(classe.equals("Clérigo")){
-            pgC = 56;
-        } else if(classe.equals("Druida")){
-            pgC = 60;
-        } else if(classe.equals("Guerreiro")){
-            pgC = 64;
-        } else if(classe.equals("Inventor")){
-            pgC = 67;
-        } else if(classe.equals("Ladino")){
-            pgC = 72;
-        } else if(classe.equals("Lutador")){
-            pgC = 75;
-        } else if(classe.equals("Nobre")){
-            pgC = 78;
-        } else if(classe.equals("Paladino")){
-            pgC = 81;
-        }
-        return pgC;
     }
 }

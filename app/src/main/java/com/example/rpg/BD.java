@@ -1,7 +1,6 @@
 package com.example.rpg;
 
-import android.util.Log;
-
+import com.example.rpg.Objects.Ficha;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;

@@ -12,11 +12,12 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.rpg.Atributos.Atributo;
-import com.example.rpg.Ficha;
+import com.example.rpg.Objects.Atributo;
+import com.example.rpg.Objects.Classe;
+import com.example.rpg.Objects.Ficha;
 import com.example.rpg.R;
 
-public class VidaV extends AppCompatActivity {
+public class Vida extends AppCompatActivity {
     Integer total,dado,For,Des,Con,Int,Sab,Car;
     String totalTot,base,mais,raca,addFor,addDes,addCon,addInt,addSab,addCar;
     final Integer[] cont = {0};
@@ -678,7 +679,7 @@ public class VidaV extends AppCompatActivity {
             txtmodInt.setText(atributo.getModInt());
             txtmodSab.setText(atributo.getModSab());
             txtmodCar.setText(atributo.getModCar());
-            getVida(ficha.getClasse(),Integer.valueOf(atributo.getModCon()),Integer.valueOf(ficha.getNivel()));
+            getVida(ficha.getClasseO(),Integer.valueOf(atributo.getModCon()),Integer.valueOf(ficha.getNivel()));
             txtVida.setText("Sua vida é: "+totalTot);
             ficha.setVida(total.toString());
         }
@@ -692,7 +693,7 @@ public class VidaV extends AppCompatActivity {
                         if (cont[0]<=2){
                             Toast.makeText(getBaseContext(), "Você ainda tem pontos pra adicionar!", Toast.LENGTH_SHORT).show();
                         }else {
-                            getVida(ficha.getClasse(), Integer.valueOf(atributo.getModCon()), Integer.valueOf(ficha.getNivel()));
+                            getVida(ficha.getClasseO(), Integer.valueOf(atributo.getModCon()), Integer.valueOf(ficha.getNivel()));
                             txtVida.setText("Sua vida é: " + totalTot);
                             ficha.setVida(total.toString());
                             btnDef.setVisibility(View.INVISIBLE);
@@ -724,50 +725,9 @@ public class VidaV extends AppCompatActivity {
         });
 
     }
-    public void getVida(String classe, Integer modCon,Integer nivel){
-        if(classe.equals("Arcanista")){
-            total = 8+modCon;
-            dado = 2+modCon;
-        } else if(classe.equals("Bárbaro")){
-            total = 24+modCon;
-            dado = 6+modCon;
-        } else if(classe.equals("Bardo")){
-            total = 12+modCon;
-            dado = 3+modCon;
-        } else if(classe.equals("Bucaneiro")){
-            total = 16+modCon;
-            dado = 4+modCon;
-        } else if(classe.equals("Caçador")){
-            total = 16+modCon;
-            dado = 4+modCon;
-        } else if(classe.equals("Cavaleiro")){
-            total = 20+modCon;
-            dado = 5+modCon;
-        } else if(classe.equals("Clérigo")){
-            total = 16+modCon;
-            dado = 4+modCon;
-        } else if(classe.equals("Druida")){
-            total = 16+modCon;
-            dado = 4+modCon;
-        } else if(classe.equals("Guerreiro")){
-            total = 20+modCon;
-            dado = 5+modCon;
-        } else if(classe.equals("Inventor")){
-            total = 12+modCon;
-            dado = 3+modCon;
-        } else if(classe.equals("Ladino")){
-            total = 12+modCon;
-            dado = 3+modCon;
-        } else if(classe.equals("Lutador")){
-            total = 20+modCon;
-            dado = 5+modCon;
-        } else if(classe.equals("Nobre")){
-            total = 16+modCon;
-            dado = 4+modCon;
-        } else if(classe.equals("Paladino")){
-            total = 20+modCon;
-            dado = 5+modCon;
-        }
+    public void getVida(Classe classe, Integer modCon, Integer nivel){
+        total = classe.getDadoInicial()+modCon;
+        dado = classe.getDadoNivel()+modCon;
         base = total.toString();
         totalTot = "+ ";
         mais = " + ";

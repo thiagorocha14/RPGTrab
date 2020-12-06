@@ -22,7 +22,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.rpg.BD;
-import com.example.rpg.Ficha;
+import com.example.rpg.Objects.Classe;
+import com.example.rpg.Objects.Ficha;
 import com.example.rpg.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -36,7 +37,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class ListMagias extends AppCompatActivity {
+public class Magias extends AppCompatActivity {
 
     private ListView listmagia;
     private String Magias;
@@ -75,7 +76,8 @@ public class ListMagias extends AppCompatActivity {
         final String[][] magi2 = {new String[50],new String[50],new String[50],new String[50]};
         final String[][] magi3 = {new String[50],new String[50],new String[50],new String[50]};
         final String[][] finalLvmagias = {new String[50]};
-        final String classe = ficha.getClasse();
+        final Classe classeO = ficha.getClasseO();
+        final String classe = classeO.getClasse();
         final Integer nivel = Integer.valueOf(ficha.getNivel());
         if (classe.equals("Druida")||classe.equals("Bardo")){
             quantidade[0] = 2+(nivel/2);
@@ -122,7 +124,7 @@ public class ListMagias extends AppCompatActivity {
                             listmagia.setVisibility(View.VISIBLE);
                             btnMagias.setVisibility(View.VISIBLE);
                             finalLvmagias[0] = lvmagias[0];
-                            listmagia.setAdapter(new ArrayAdapter<String>(ListMagias.this, R.layout.layout_list_magias, finalLvmagias[0]));
+                            listmagia.setAdapter(new ArrayAdapter<String>(com.example.rpg.Criation.Magias.this, R.layout.layout_list_magias, finalLvmagias[0]));
                             listmagia.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
                             txtMagias.setText("Você tem "+ quantidade[0].toString()+" magias pra escolher");
                         } else if (cont[0] == 1) {
@@ -195,7 +197,7 @@ public class ListMagias extends AppCompatActivity {
                             listmagia.setVisibility(View.VISIBLE);
                             btnMagias.setVisibility(View.VISIBLE);
                             finalLvmagias[0] = lvmagias[0];
-                            listmagia.setAdapter(new ArrayAdapter<String>(ListMagias.this, R.layout.layout_list_magias, finalLvmagias[0]));
+                            listmagia.setAdapter(new ArrayAdapter<String>(com.example.rpg.Criation.Magias.this, R.layout.layout_list_magias, finalLvmagias[0]));
                             listmagia.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
                             txtMagias.setText("Você tem "+ quantidade[0].toString()+" magias pra escolher");
                         } else if (cont[0] == 1) {
@@ -268,7 +270,7 @@ public class ListMagias extends AppCompatActivity {
                             listmagia.setVisibility(View.VISIBLE);
                             btnMagias.setVisibility(View.VISIBLE);
                             finalLvmagias[0] = lvmagias[0];
-                            listmagia.setAdapter(new ArrayAdapter<String>(ListMagias.this, R.layout.layout_list_magias, finalLvmagias[0]));
+                            listmagia.setAdapter(new ArrayAdapter<String>(com.example.rpg.Criation.Magias.this, R.layout.layout_list_magias, finalLvmagias[0]));
                             listmagia.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
                             txtMagias.setText("Você tem "+ quantidade[0].toString()+" magias pra escolher");
                         } else if (cont[0] == 1) {
@@ -341,7 +343,7 @@ public class ListMagias extends AppCompatActivity {
                             listmagia.setVisibility(View.VISIBLE);
                             btnMagias.setVisibility(View.VISIBLE);
                             finalLvmagias[0] = lvmagias[0];
-                            listmagia.setAdapter(new ArrayAdapter<String>(ListMagias.this, R.layout.layout_list_magias, finalLvmagias[0]));
+                            listmagia.setAdapter(new ArrayAdapter<String>(com.example.rpg.Criation.Magias.this, R.layout.layout_list_magias, finalLvmagias[0]));
                             listmagia.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
                             txtMagias.setText("Você tem "+ quantidade[0].toString()+" magias pra escolher");
                         } else if (cont[0] == 1) {
@@ -414,7 +416,7 @@ public class ListMagias extends AppCompatActivity {
                             listmagia.setVisibility(View.VISIBLE);
                             btnMagias.setVisibility(View.VISIBLE);
                             finalLvmagias[0] = lvmagias[0];
-                            listmagia.setAdapter(new ArrayAdapter<String>(ListMagias.this, R.layout.layout_list_magias, finalLvmagias[0]));
+                            listmagia.setAdapter(new ArrayAdapter<String>(com.example.rpg.Criation.Magias.this, R.layout.layout_list_magias, finalLvmagias[0]));
                             listmagia.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
                             txtMagias.setText("Você tem "+ quantidade[0].toString()+" magias pra escolher");
                         } else if (cont[0] == 1) {
@@ -487,7 +489,7 @@ public class ListMagias extends AppCompatActivity {
                             listmagia.setVisibility(View.VISIBLE);
                             btnMagias.setVisibility(View.VISIBLE);
                             finalLvmagias[0] = lvmagias[0];
-                            listmagia.setAdapter(new ArrayAdapter<String>(ListMagias.this, R.layout.layout_list_magias, finalLvmagias[0]));
+                            listmagia.setAdapter(new ArrayAdapter<String>(com.example.rpg.Criation.Magias.this, R.layout.layout_list_magias, finalLvmagias[0]));
                             listmagia.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
                             txtMagias.setText("Você tem "+ quantidade[0].toString()+" magias pra escolher");
                         } else if (cont[0] == 1) {
@@ -560,7 +562,7 @@ public class ListMagias extends AppCompatActivity {
                             listmagia.setVisibility(View.VISIBLE);
                             btnMagias.setVisibility(View.VISIBLE);
                             finalLvmagias[0] = lvmagias[0];
-                            listmagia.setAdapter(new ArrayAdapter<String>(ListMagias.this, R.layout.layout_list_magias, finalLvmagias[0]));
+                            listmagia.setAdapter(new ArrayAdapter<String>(com.example.rpg.Criation.Magias.this, R.layout.layout_list_magias, finalLvmagias[0]));
                             listmagia.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
                             txtMagias.setText("Você tem "+ quantidade[0].toString()+" magias pra escolher");
                         } else if (cont[0] == 1) {
@@ -633,7 +635,7 @@ public class ListMagias extends AppCompatActivity {
                             listmagia.setVisibility(View.VISIBLE);
                             btnMagias.setVisibility(View.VISIBLE);
                             finalLvmagias[0] = lvmagias[0];
-                            listmagia.setAdapter(new ArrayAdapter<String>(ListMagias.this, R.layout.layout_list_magias, finalLvmagias[0]));
+                            listmagia.setAdapter(new ArrayAdapter<String>(com.example.rpg.Criation.Magias.this, R.layout.layout_list_magias, finalLvmagias[0]));
                             listmagia.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
                             txtMagias.setText("Você tem "+ quantidade[0].toString()+" magias pra escolher");
                         } else if (cont[0] == 1) {
@@ -755,7 +757,7 @@ public class ListMagias extends AppCompatActivity {
                             }
                     }
                     ficha.setMagia(Magias);
-                    AlertDialog.Builder alert = new AlertDialog.Builder(ListMagias.this);
+                    AlertDialog.Builder alert = new AlertDialog.Builder(com.example.rpg.Criation.Magias.this);
                     alert.setTitle("Deseja enviar uma imagem do seu personagem?").setPositiveButton("Sim",dialog).setNegativeButton("Não",dialog);
                     alert.show();
                 }else{

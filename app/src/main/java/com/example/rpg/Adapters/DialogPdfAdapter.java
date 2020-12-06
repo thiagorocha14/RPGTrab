@@ -1,4 +1,4 @@
-package com.example.rpg.Dialogs;
+package com.example.rpg.Adapters;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatDialogFragment;
 
@@ -14,7 +13,7 @@ import com.example.rpg.R;
 import com.github.barteksc.pdfviewer.PDFView;
 import com.github.barteksc.pdfviewer.util.FitPolicy;
 
-public class DialogPdf extends AppCompatDialogFragment {
+public class DialogPdfAdapter extends AppCompatDialogFragment {
     int p = 0;
     public void setPage(int page){
         p = page;

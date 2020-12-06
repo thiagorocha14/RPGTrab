@@ -1,4 +1,4 @@
-package com.example.rpg.Atributos;
+package com.example.rpg.Objects;
 
 import java.io.Serializable;
 

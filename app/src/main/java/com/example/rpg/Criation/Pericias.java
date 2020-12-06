@@ -21,9 +21,10 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.rpg.Atributos.Atributo;
+import com.example.rpg.Objects.Atributo;
 import com.example.rpg.BD;
-import com.example.rpg.Ficha;
+import com.example.rpg.Objects.Classe;
+import com.example.rpg.Objects.Ficha;
 import com.example.rpg.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -33,37 +34,46 @@ import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
+import java.util.List;
+
 public class Pericias extends AppCompatActivity {
 
     private String Pericia;
     Ficha ficha;
+    Classe classeO;
     Uri uri;
     String url  = "";
     private static final int SELECT_IMAGE = 1;
     private StorageReference storageReference;
     String[] listabase = new String[2];
-    String specialperi = "";
-    TextView txtTitu;
-    Integer[] quantidade = new Integer[1];
+    TextView txtTitu,txtAvanc;
+    Button btnPeri1,btnPeri2;
+    Integer quantidade;
+    String classe;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pericias);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         txtTitu = findViewById(R.id.txtPericias);
-        final Button btnPeri1 = findViewById(R.id.btnPeri1);
-        final Button btnPeri2 = findViewById(R.id.btnPeri2);
+        btnPeri1 = findViewById(R.id.btnPeri1);
+        btnPeri2 = findViewById(R.id.btnPeri2);
         btnPeri1.setVisibility(View.INVISIBLE);
         btnPeri2.setVisibility(View.INVISIBLE);
-        final TextView txtAvanc = findViewById(R.id.txtEnd);
+        txtAvanc = findViewById(R.id.txtEnd);
         ficha = (Ficha) getIntent().getSerializableExtra("Ficha");
         Atributo atributo = ficha.getAtributo();
+        classeO = ficha.getClasseO();
+        classe = classeO.getClasse();
         storageReference = FirebaseStorage.getInstance().getReference("uploads");
-        quantidade[0] = Integer.parseInt(atributo.getModInt());
-        if (quantidade[0] <0){
-            quantidade[0] = 0;
+        quantidade = Integer.parseInt(atributo.getModInt());
+        if (quantidade <0){
+            quantidade = 0;
         }
-        final String classe = ficha.getClasse();
+        quantidade = quantidade+classeO.getPeriQuanti();
+        txtTitu.setText("Você tem "+ quantidade.toString()+" perícias pra treinar");
+        List<String> listc = classeO.getPeriBase();
+        listabase = listc.toArray(listabase);
         final ListView listperi = (ListView) findViewById(R.id.listperi);
         final String[] listapericias = getResources().getStringArray(R.array.pericias);
         if(classe.equals("Bucaneiro")||classe.equals("Caçador")||classe.equals("Guerreiro")||classe.equals("Nobre")){
@@ -87,12 +97,12 @@ public class Pericias extends AppCompatActivity {
             btnPeri1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    specialperi = peri1;
-                    getPeri(classe);
+                    listabase[1] = peri1;
                     btnPeri1.setVisibility(View.INVISIBLE);
                     btnPeri2.setVisibility(View.INVISIBLE);
                     listperi.setVisibility(View.VISIBLE);
                     txtAvanc.setVisibility(View.VISIBLE);
+                    txtTitu.setText("Você tem "+ quantidade.toString()+" perícias pra treinar");
                     listperi.setAdapter(new ArrayAdapter<String>(Pericias.this, R.layout.layout_list_magias, listapericias));
                     listperi.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
                     for(int i = 0;i<listabase.length;i++){
@@ -107,12 +117,12 @@ public class Pericias extends AppCompatActivity {
             btnPeri2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    specialperi = peri2;
-                    getPeri(classe);
+                    listabase[1] = peri2;
                     btnPeri1.setVisibility(View.INVISIBLE);
                     btnPeri2.setVisibility(View.INVISIBLE);
                     listperi.setVisibility(View.VISIBLE);
                     txtAvanc.setVisibility(View.VISIBLE);
+                    txtTitu.setText("Você tem "+ quantidade.toString()+" perícias pra treinar");
                     listperi.setAdapter(new ArrayAdapter<String>(Pericias.this, R.layout.layout_list_magias, listapericias));
                     listperi.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
                     for(int i = 0;i<listabase.length;i++){
@@ -125,7 +135,6 @@ public class Pericias extends AppCompatActivity {
                 }
             });
         }else{
-            getPeri(classe);
             listperi.setAdapter(new ArrayAdapter<String>(Pericias.this, R.layout.layout_list_magias, listapericias));
             listperi.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
             for(int i = 0;i<listabase.length;i++){
@@ -139,7 +148,7 @@ public class Pericias extends AppCompatActivity {
         listperi.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                if(quantidade[0] == 0){
+                if(quantidade == 0){
                     if(adapterView.getItemAtPosition(i).equals(listabase[0])||adapterView.getItemAtPosition(i).equals(listabase[1])){
                         listperi.setItemChecked(i,true);
                         Toast.makeText(getBaseContext(), "Essas perícias são da sua classe.", Toast.LENGTH_SHORT).show();
@@ -147,19 +156,19 @@ public class Pericias extends AppCompatActivity {
                         listperi.setItemChecked(i,false);
                         Toast.makeText(getBaseContext(), "Suas perícias acabaram :(", Toast.LENGTH_SHORT).show();
                     }else{
-                        quantidade[0]++;
-                        txtTitu.setText("Você tem "+ quantidade[0].toString()+" perícias pra treinar");
+                        quantidade++;
+                        txtTitu.setText("Você tem "+ quantidade.toString()+" perícias pra treinar");
                     }
                 }else{
                     if(adapterView.getItemAtPosition(i).equals(listabase[0])||adapterView.getItemAtPosition(i).equals(listabase[1])){
                         listperi.setItemChecked(i,true);
                         Toast.makeText(getBaseContext(), "Essas perícias são da sua classe", Toast.LENGTH_SHORT).show();
                     }else if(listperi.isItemChecked(i)){
-                        quantidade[0]--;
-                        txtTitu.setText("Você tem "+ quantidade[0].toString()+" perícias pra treinar");
+                        quantidade--;
+                        txtTitu.setText("Você tem "+ quantidade.toString()+" perícias pra treinar");
                     }else{
-                        quantidade[0]++;
-                        txtTitu.setText("Você tem "+ quantidade[0].toString()+" perícias pra treinar");
+                        quantidade++;
+                        txtTitu.setText("Você tem "+ quantidade.toString()+" perícias pra treinar");
                     }
                 }
             }
@@ -167,7 +176,7 @@ public class Pericias extends AppCompatActivity {
         txtAvanc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(quantidade[0]==0){
+                if(quantidade==0){
                     Pericia = new String();
                     SparseBooleanArray a = listperi.getCheckedItemPositions();
                     for (int i = 0; i < listapericias.length; i++) {
@@ -177,7 +186,7 @@ public class Pericias extends AppCompatActivity {
                     }
                     ficha.setPericia(Pericia);
                     if(classe.equals("Arcanista")||classe.equals("Bardo")||classe.equals("Clérigo")||classe.equals("Druida")){
-                        Intent intent = new Intent(getApplicationContext(), ListMagias.class);
+                        Intent intent = new Intent(getApplicationContext(), Magias.class);
                         intent.putExtra("Ficha",ficha);
                         startActivity(intent);
                         finish();
@@ -249,69 +258,5 @@ public class Pericias extends AppCompatActivity {
         ContentResolver cr = getContentResolver();
         MimeTypeMap mime = MimeTypeMap.getSingleton();
         return mime.getExtensionFromMimeType(cr.getType(uri));
-    }
-    public void getPeri(String classe){
-        if(classe.equals("Arcanista")){
-            listabase[0] = "Misticismo";
-            listabase[1] = "Vontade";
-            quantidade[0] = quantidade[0] +1;
-        } else if(classe.equals("Bárbaro")){
-            listabase[0] = "Fortitude";
-            listabase[1] = "Luta";
-            quantidade[0] = quantidade[0] +4;
-        } else if(classe.equals("Bardo")){
-            listabase[0] = "Atuação";
-            listabase[1] = "Reflexos";
-            quantidade[0] = quantidade[0] +6;
-        } else if(classe.equals("Bucaneiro")){
-            //listabase[0] = "Luta";
-            listabase[0] = specialperi;
-            listabase[1] = "Reflexos";
-            quantidade[0] = quantidade[0] +4;
-        } else if(classe.equals("Caçador")){
-            //listabase[0] = "Luta";
-            listabase[0] = specialperi;
-            listabase[1] = "Sobrevivência";
-            quantidade[0] = quantidade[0] +6;
-        } else if(classe.equals("Cavaleiro")){
-            listabase[0] = "Fortitude";
-            listabase[1] = "Luta";
-            quantidade[0] = quantidade[0] +2;
-        } else if(classe.equals("Clérigo")){
-            listabase[0] = "Religião";
-            listabase[1] = "Vontade";
-            quantidade[0] = quantidade[0] +2;
-        } else if(classe.equals("Druida")){
-            listabase[0] = "Sobrevivência";
-            listabase[1] = "Vontade";
-            quantidade[0] = quantidade[0] +4;
-        } else if(classe.equals("Guerreiro")){
-            listabase[0] = specialperi;
-            //listabase[1] = "Pontaria";
-            listabase[1] = "Fortitude";
-            quantidade[0] = quantidade[0] +2;
-        } else if(classe.equals("Inventor")){
-            listabase[0] = "Ofício";
-            listabase[1] = "Vontade";
-            quantidade[0] = quantidade[0] +4;
-        } else if(classe.equals("Ladino")){
-            listabase[0] = "Ladinagem";
-            listabase[1] = "Reflexos";
-            quantidade[0] = quantidade[0] +8;
-        } else if(classe.equals("Lutador")){
-            listabase[0] = "Fortitude";
-            listabase[1] = "Luta";
-            quantidade[0] = quantidade[0] +4;
-        } else if(classe.equals("Nobre")){
-            listabase[0] = specialperi;
-            //listabase[1] = "Intimidação";
-            listabase[1] = "Vontade";
-            quantidade[0] = quantidade[0] +4;
-        } else if(classe.equals("Paladino")){
-            listabase[0] = "Luta";
-            listabase[1] = "Vontade";
-            quantidade[0] = quantidade[0] +2;
-        }
-        txtTitu.setText("Você tem "+ quantidade[0].toString()+" perícias pra treinar");
     }
 }

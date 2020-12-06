@@ -18,10 +18,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.rpg.Atributos.Atribut1;
-import com.example.rpg.Atributos.Atribut2;
-import com.example.rpg.Dialogs.DialogPdf;
-import com.example.rpg.Ficha;
+import com.example.rpg.Adapters.DialogPdfAdapter;
+import com.example.rpg.Objects.Ficha;
 import com.example.rpg.R;
 
 public class CriarFicha extends AppCompatActivity {
@@ -83,7 +81,7 @@ public class CriarFicha extends AppCompatActivity {
             imgJog.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    DialogPdf dialog = new DialogPdf();
+                    DialogPdfAdapter dialog = new DialogPdfAdapter();
                     dialog.setPage(114-1);
                     dialog.show(getSupportFragmentManager(), "dialog");
                 }
@@ -91,7 +89,7 @@ public class CriarFicha extends AppCompatActivity {
             imgNivel.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    DialogPdf dialog = new DialogPdf();
+                    DialogPdfAdapter dialog = new DialogPdfAdapter();
                     dialog.setPage(41-1);
                     dialog.show(getSupportFragmentManager(), "dialog");
                 }
@@ -99,7 +97,7 @@ public class CriarFicha extends AppCompatActivity {
             imgAlin.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    DialogPdf dialog = new DialogPdf();
+                    DialogPdfAdapter dialog = new DialogPdfAdapter();
                     dialog.setPage(115-1);
                     dialog.show(getSupportFragmentManager(), "dialog");
                 }
@@ -107,7 +105,7 @@ public class CriarFicha extends AppCompatActivity {
             imgOrigem.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    DialogPdf dialog = new DialogPdf();
+                    DialogPdfAdapter dialog = new DialogPdfAdapter();
                     dialog.setPage(91-1);
                     dialog.show(getSupportFragmentManager(), "dialog");
                 }
@@ -115,7 +113,7 @@ public class CriarFicha extends AppCompatActivity {
             imgAtributos.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    DialogPdf dialog = new DialogPdf();
+                    DialogPdfAdapter dialog = new DialogPdfAdapter();
                     dialog.setPage(23-1);
                     dialog.show(getSupportFragmentManager(), "dialog");
                 }

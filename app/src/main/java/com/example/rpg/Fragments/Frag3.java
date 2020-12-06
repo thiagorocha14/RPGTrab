@@ -5,52 +5,49 @@ import android.animation.AnimatorListenerAdapter;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.Toast;
 
-import com.example.rpg.Atributos.Atribut2;
 import com.example.rpg.BD;
 import com.example.rpg.Criation.CriarRaca;
-import com.example.rpg.Ficha;
-import com.example.rpg.FichaAdapter;
-import com.example.rpg.Login;
-import com.example.rpg.MainActivity;
+import com.example.rpg.Objects.Ficha;
+import com.example.rpg.Adapters.FichaAdapter;
 import com.example.rpg.R;
 import com.example.rpg.ShowFicha;
+import com.example.rpg.User;
+import com.example.rpg.Util;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 
 public class Frag3 extends Fragment {
 
     ListView listFichas;
-    ArrayAdapter<Ficha> adapter;
+    FichaAdapter adapter;
     Ficha ficha;
     boolean isRotate = false;
     boolean show = false;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-
         final View view = inflater.inflate(R.layout.fragment_frag3, container, false);
         listFichas = view.findViewById(R.id.listPer);
         FloatingActionButton btnadd = view.findViewById(R.id.btnAddFicha);
@@ -60,38 +57,42 @@ public class Frag3 extends Fragment {
         init(fabAdd);
         init(fabSearch);
         init(edtSearch);
-        btnadd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                isRotate = rotateFab(v, !isRotate);
-                if(isRotate){
-                    showIn(fabAdd);
-                    showIn(fabSearch);
-                }else{
-                    showOut(fabAdd);
-                    showOut(fabSearch);
+        if (Util.statusNet(getContext())) {
+            btnadd.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    isRotate = rotateFab(v, !isRotate);
+                    if(isRotate){
+                        showIn(fabAdd);
+                        showIn(fabSearch);
+                    }else{
+                        showOut(fabAdd);
+                        showOut(fabSearch);
+                    }
                 }
-            }
-        });
-        fabAdd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getContext(), CriarRaca.class);
-                startActivity(intent);
-            }
-        });
-        fabSearch.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (show==false) {
-                    showIn(edtSearch);
-                    show = true;
-                }else{
-                    edtSearch.setVisibility(View.GONE);
-                    show = false;
+            });
+            fabAdd.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(getContext(), CriarRaca.class);
+                    startActivity(intent);
                 }
-            }
-        });
+            });
+            fabSearch.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (show==false) {
+                        showIn(edtSearch);
+                        show = true;
+                    }else{
+                        edtSearch.setVisibility(View.GONE);
+                        show = false;
+                    }
+                }
+            });
+        } else {
+            Toast.makeText(getContext(), "Sem conexão com a internet", Toast.LENGTH_LONG).show();
+        }
         BD.conectar();
         BD.fichabd.addValueEventListener(new ValueEventListener() {
 
@@ -105,11 +106,29 @@ public class Frag3 extends Fragment {
                 if (getActivity() != null) {
                     adapter = new FichaAdapter(getActivity(),lista);
                     listFichas.setAdapter(adapter);
+                    listFichas.setTextFilterEnabled(true);
                 }
 
             }
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) { }
+        });
+        edtSearch.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                String text = edtSearch.getText().toString().toLowerCase(Locale.getDefault());
+                adapter.filter(text);
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
         });
         listFichas.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -118,15 +137,6 @@ public class Frag3 extends Fragment {
                 Intent intent = new Intent(getContext(), ShowFicha.class);
                 intent.putExtra("Ficha", ficha);
                 startActivity(intent);
-                /*
-                AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
-                alert.setTitle("Ó grande "+ficha.getPersonagem())
-                     .setMessage("Você pode encontrar sobre "+ficha.getRaca()+" na página "+ficha.getPaginaR()+" no Livro do Jogador Tormenta20 "+"\n"+"Você pode encontrar sobre "+ficha.getClasse()+" na página "+ficha.getPaginaC()+" no Livro do Jogador Tormenta20 ")
-                        .setPositiveButton("Ir para a Classe",dialog)
-                        .setNegativeButton("Ir para a Raca",dialog);
-                alert.show();
-
-                 */
             }
         });
         listFichas.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
@@ -151,43 +161,6 @@ public class Frag3 extends Fragment {
                     BD.excluir(ficha);
                     adapter.notifyDataSetChanged();
                 break;
-                case DialogInterface.BUTTON_NEGATIVE:
-
-                    break;
-            }
-        }
-    };
-    DialogInterface.OnClickListener dialog = new DialogInterface.OnClickListener() {
-        @Override
-        public void onClick(DialogInterface dialog, int which) {
-            Fragment Frag = new Frag4();
-            Bundle bundle = new Bundle();
-            switch (which){
-                case DialogInterface.BUTTON_POSITIVE:
-                    bundle.putString("Extra","Classe");
-                break;
-                case DialogInterface.BUTTON_NEGATIVE:
-                    bundle.putString("Extra","Raca");
-                    break;
-        }
-            bundle.putSerializable("ficha",ficha);
-            Frag.setArguments(bundle);
-            FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.nav_host_fragment,Frag);
-            fragmentTransaction.addToBackStack(null);
-            fragmentTransaction.commit();
-    }
-  };
-    DialogInterface.OnClickListener dialog3 = new DialogInterface.OnClickListener() {
-        @Override
-        public void onClick(DialogInterface dialog, int which) {
-            switch (which){
-                case DialogInterface.BUTTON_POSITIVE:
-                        FirebaseAuth.getInstance().signOut();
-                        Intent intent = new Intent(getContext(), Login.class);
-                        startActivity(intent);
-                        getActivity().finish();
-                    break;
                 case DialogInterface.BUTTON_NEGATIVE:
 
                     break;

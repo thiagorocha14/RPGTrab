@@ -10,7 +10,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.rpg.Ficha;
+import com.example.rpg.Objects.Classe;
+import com.example.rpg.Objects.Ficha;
 import com.example.rpg.R;
 import com.github.barteksc.pdfviewer.PDFView;
 import com.github.barteksc.pdfviewer.util.FitPolicy;
@@ -32,8 +33,9 @@ public class Frag4 extends Fragment {
         if(bundle !=null && bundle.containsKey("Extra")){
             extra = getArguments().getString("Extra");
             ficha = (Ficha) getArguments().getSerializable("ficha");
-            if (extra.equals("Classe")) {
-                p = ficha.getPgC()+5;
+            Classe classe = ficha.getClasseO();
+            if (extra.equals("com.example.rpg.Objects.Classe")) {
+                p = classe.getPgC()+5;
             }
             if (extra.equals("Raca")) {
                 p = ficha.getPgR()+5;

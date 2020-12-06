@@ -1,4 +1,4 @@
-package com.example.rpg.Atributos;
+package com.example.rpg.Criation;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
@@ -13,9 +13,11 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-import com.example.rpg.Ficha;
+
+import com.example.rpg.Objects.Atributo;
+import com.example.rpg.Objects.Ficha;
 import com.example.rpg.R;
-import com.example.rpg.Criation.VidaV;
+import com.example.rpg.Criation.Vida;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -358,7 +360,7 @@ public class Atribut1 extends AppCompatActivity {
                                 }
                             }
                             ficha.setAtributo(atributo);
-                            Intent intent = new Intent(getApplicationContext(), VidaV.class);
+                            Intent intent = new Intent(getApplicationContext(), Vida.class);
                             intent.putExtra("Ficha",ficha);
                             startActivity(intent);
                             finish();

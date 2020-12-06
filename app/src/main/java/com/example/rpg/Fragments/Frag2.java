@@ -13,7 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.rpg.Dialogs.DialogDado;
+import com.example.rpg.Adapters.DialogDadoAdapter;
 import com.example.rpg.R;
 
 import java.util.Random;
@@ -44,7 +44,7 @@ public class Frag2 extends Fragment {
                 v.postOnAnimationDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        DialogDado dialog = new DialogDado();
+                        DialogDadoAdapter dialog = new DialogDadoAdapter();
                         dialog.setDado(4);
                         dialog.show(getChildFragmentManager(),"dialog");
                         v.clearAnimation();
@@ -59,7 +59,7 @@ public class Frag2 extends Fragment {
                 v.postOnAnimationDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        DialogDado dialog = new DialogDado();
+                        DialogDadoAdapter dialog = new DialogDadoAdapter();
                         dialog.setDado(6);
                         dialog.show(getChildFragmentManager(),"dialog");
                         v.clearAnimation();
@@ -74,7 +74,7 @@ public class Frag2 extends Fragment {
                 v.postOnAnimationDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        DialogDado dialog = new DialogDado();
+                        DialogDadoAdapter dialog = new DialogDadoAdapter();
                         dialog.setDado(8);
                         dialog.show(getChildFragmentManager(),"dialog");
                         v.clearAnimation();
@@ -89,7 +89,7 @@ public class Frag2 extends Fragment {
                 v.postOnAnimationDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        DialogDado dialog = new DialogDado();
+                        DialogDadoAdapter dialog = new DialogDadoAdapter();
                         dialog.setDado(10);
                         dialog.show(getChildFragmentManager(),"dialog");
                         v.clearAnimation();
@@ -104,7 +104,7 @@ public class Frag2 extends Fragment {
                 v.postOnAnimationDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        DialogDado dialog = new DialogDado();
+                        DialogDadoAdapter dialog = new DialogDadoAdapter();
                         dialog.setDado(12);
                         dialog.show(getChildFragmentManager(),"dialog");
                         v.clearAnimation();
@@ -119,7 +119,7 @@ public class Frag2 extends Fragment {
                 v.postOnAnimationDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        DialogDado dialog = new DialogDado();
+                        DialogDadoAdapter dialog = new DialogDadoAdapter();
                         dialog.setDado(20);
                         dialog.show(getChildFragmentManager(),"dialog");
                         v.clearAnimation();
@@ -140,7 +140,7 @@ public class Frag2 extends Fragment {
 
                         }else{
                             Integer da = Integer.valueOf(vald);
-                            DialogDado dialog = new DialogDado();
+                            DialogDadoAdapter dialog = new DialogDadoAdapter();
                             dialog.setDado(da);
                             dialog.show(getChildFragmentManager(), "dialog");
                         }

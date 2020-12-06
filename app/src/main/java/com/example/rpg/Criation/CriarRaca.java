@@ -11,9 +11,9 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 
-import com.example.rpg.Ficha;
+import com.example.rpg.Objects.Ficha;
 import com.example.rpg.R;
-import com.example.rpg.SlideAdapter;
+import com.example.rpg.Adapters.SlideAdapter;
 
 public class CriarRaca extends AppCompatActivity {
 
