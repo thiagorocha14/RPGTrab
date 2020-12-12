@@ -13,7 +13,6 @@ import androidx.viewpager.widget.PagerAdapter;
 
 import com.example.rpg.Criation.CriarClasse;
 import com.example.rpg.Criation.CriarRaca;
-import com.example.rpg.Adapters.DialogPdfAdapter;
 import com.example.rpg.R;
 
 public class SlideAdapter extends PagerAdapter {
@@ -46,7 +45,7 @@ public class SlideAdapter extends PagerAdapter {
     @Override
     public Object instantiateItem(final ViewGroup container, int position) {
         inflater = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
-        View view = inflater.inflate(R.layout.slide,container,false);
+        View view = inflater.inflate(R.layout.adapter_slide,container,false);
         ImageView imgPager = view.findViewById(R.id.imgPager);
         ImageView imgL = view.findViewById(R.id.imgArrowL);
         ImageView imgR = view.findViewById(R.id.imgArrowR);

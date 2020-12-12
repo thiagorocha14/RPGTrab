@@ -25,7 +25,7 @@ public class Vida extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_vida_v);
+        setContentView(R.layout.activity_vida);
         final Animation animation = AnimationUtils.loadAnimation(this,R.anim.bounce);
         final Animation animation2 = AnimationUtils.loadAnimation(this,R.anim.implod);
         final TextView txtVida = findViewById(R.id.txtVida2);

@@ -1,4 +1,4 @@
-package com.example.rpg;
+package com.example.rpg.Logins;
 
 public class User {
 

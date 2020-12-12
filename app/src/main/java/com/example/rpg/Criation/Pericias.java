@@ -103,7 +103,7 @@ public class Pericias extends AppCompatActivity {
                     listperi.setVisibility(View.VISIBLE);
                     txtAvanc.setVisibility(View.VISIBLE);
                     txtTitu.setText("Você tem "+ quantidade.toString()+" perícias pra treinar");
-                    listperi.setAdapter(new ArrayAdapter<String>(Pericias.this, R.layout.layout_list_magias, listapericias));
+                    listperi.setAdapter(new ArrayAdapter<String>(Pericias.this, R.layout.style_list_magias, listapericias));
                     listperi.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
                     for(int i = 0;i<listabase.length;i++){
                         for(int o = 0;o<listapericias.length;o++){
@@ -123,7 +123,7 @@ public class Pericias extends AppCompatActivity {
                     listperi.setVisibility(View.VISIBLE);
                     txtAvanc.setVisibility(View.VISIBLE);
                     txtTitu.setText("Você tem "+ quantidade.toString()+" perícias pra treinar");
-                    listperi.setAdapter(new ArrayAdapter<String>(Pericias.this, R.layout.layout_list_magias, listapericias));
+                    listperi.setAdapter(new ArrayAdapter<String>(Pericias.this, R.layout.style_list_magias, listapericias));
                     listperi.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
                     for(int i = 0;i<listabase.length;i++){
                         for(int o = 0;o<listapericias.length;o++){
@@ -135,7 +135,7 @@ public class Pericias extends AppCompatActivity {
                 }
             });
         }else{
-            listperi.setAdapter(new ArrayAdapter<String>(Pericias.this, R.layout.layout_list_magias, listapericias));
+            listperi.setAdapter(new ArrayAdapter<String>(Pericias.this, R.layout.style_list_magias, listapericias));
             listperi.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
             for(int i = 0;i<listabase.length;i++){
                 for(int o = 0;o<listapericias.length;o++){

@@ -124,7 +124,7 @@ public class Magias extends AppCompatActivity {
                             listmagia.setVisibility(View.VISIBLE);
                             btnMagias.setVisibility(View.VISIBLE);
                             finalLvmagias[0] = lvmagias[0];
-                            listmagia.setAdapter(new ArrayAdapter<String>(com.example.rpg.Criation.Magias.this, R.layout.layout_list_magias, finalLvmagias[0]));
+                            listmagia.setAdapter(new ArrayAdapter<String>(com.example.rpg.Criation.Magias.this, R.layout.style_list_magias, finalLvmagias[0]));
                             listmagia.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
                             txtMagias.setText("Você tem "+ quantidade[0].toString()+" magias pra escolher");
                         } else if (cont[0] == 1) {
@@ -197,7 +197,7 @@ public class Magias extends AppCompatActivity {
                             listmagia.setVisibility(View.VISIBLE);
                             btnMagias.setVisibility(View.VISIBLE);
                             finalLvmagias[0] = lvmagias[0];
-                            listmagia.setAdapter(new ArrayAdapter<String>(com.example.rpg.Criation.Magias.this, R.layout.layout_list_magias, finalLvmagias[0]));
+                            listmagia.setAdapter(new ArrayAdapter<String>(com.example.rpg.Criation.Magias.this, R.layout.style_list_magias, finalLvmagias[0]));
                             listmagia.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
                             txtMagias.setText("Você tem "+ quantidade[0].toString()+" magias pra escolher");
                         } else if (cont[0] == 1) {
@@ -270,7 +270,7 @@ public class Magias extends AppCompatActivity {
                             listmagia.setVisibility(View.VISIBLE);
                             btnMagias.setVisibility(View.VISIBLE);
                             finalLvmagias[0] = lvmagias[0];
-                            listmagia.setAdapter(new ArrayAdapter<String>(com.example.rpg.Criation.Magias.this, R.layout.layout_list_magias, finalLvmagias[0]));
+                            listmagia.setAdapter(new ArrayAdapter<String>(com.example.rpg.Criation.Magias.this, R.layout.style_list_magias, finalLvmagias[0]));
                             listmagia.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
                             txtMagias.setText("Você tem "+ quantidade[0].toString()+" magias pra escolher");
                         } else if (cont[0] == 1) {
@@ -343,7 +343,7 @@ public class Magias extends AppCompatActivity {
                             listmagia.setVisibility(View.VISIBLE);
                             btnMagias.setVisibility(View.VISIBLE);
                             finalLvmagias[0] = lvmagias[0];
-                            listmagia.setAdapter(new ArrayAdapter<String>(com.example.rpg.Criation.Magias.this, R.layout.layout_list_magias, finalLvmagias[0]));
+                            listmagia.setAdapter(new ArrayAdapter<String>(com.example.rpg.Criation.Magias.this, R.layout.style_list_magias, finalLvmagias[0]));
                             listmagia.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
                             txtMagias.setText("Você tem "+ quantidade[0].toString()+" magias pra escolher");
                         } else if (cont[0] == 1) {
@@ -416,7 +416,7 @@ public class Magias extends AppCompatActivity {
                             listmagia.setVisibility(View.VISIBLE);
                             btnMagias.setVisibility(View.VISIBLE);
                             finalLvmagias[0] = lvmagias[0];
-                            listmagia.setAdapter(new ArrayAdapter<String>(com.example.rpg.Criation.Magias.this, R.layout.layout_list_magias, finalLvmagias[0]));
+                            listmagia.setAdapter(new ArrayAdapter<String>(com.example.rpg.Criation.Magias.this, R.layout.style_list_magias, finalLvmagias[0]));
                             listmagia.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
                             txtMagias.setText("Você tem "+ quantidade[0].toString()+" magias pra escolher");
                         } else if (cont[0] == 1) {
@@ -489,7 +489,7 @@ public class Magias extends AppCompatActivity {
                             listmagia.setVisibility(View.VISIBLE);
                             btnMagias.setVisibility(View.VISIBLE);
                             finalLvmagias[0] = lvmagias[0];
-                            listmagia.setAdapter(new ArrayAdapter<String>(com.example.rpg.Criation.Magias.this, R.layout.layout_list_magias, finalLvmagias[0]));
+                            listmagia.setAdapter(new ArrayAdapter<String>(com.example.rpg.Criation.Magias.this, R.layout.style_list_magias, finalLvmagias[0]));
                             listmagia.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
                             txtMagias.setText("Você tem "+ quantidade[0].toString()+" magias pra escolher");
                         } else if (cont[0] == 1) {
@@ -562,7 +562,7 @@ public class Magias extends AppCompatActivity {
                             listmagia.setVisibility(View.VISIBLE);
                             btnMagias.setVisibility(View.VISIBLE);
                             finalLvmagias[0] = lvmagias[0];
-                            listmagia.setAdapter(new ArrayAdapter<String>(com.example.rpg.Criation.Magias.this, R.layout.layout_list_magias, finalLvmagias[0]));
+                            listmagia.setAdapter(new ArrayAdapter<String>(com.example.rpg.Criation.Magias.this, R.layout.style_list_magias, finalLvmagias[0]));
                             listmagia.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
                             txtMagias.setText("Você tem "+ quantidade[0].toString()+" magias pra escolher");
                         } else if (cont[0] == 1) {
@@ -635,7 +635,7 @@ public class Magias extends AppCompatActivity {
                             listmagia.setVisibility(View.VISIBLE);
                             btnMagias.setVisibility(View.VISIBLE);
                             finalLvmagias[0] = lvmagias[0];
-                            listmagia.setAdapter(new ArrayAdapter<String>(com.example.rpg.Criation.Magias.this, R.layout.layout_list_magias, finalLvmagias[0]));
+                            listmagia.setAdapter(new ArrayAdapter<String>(com.example.rpg.Criation.Magias.this, R.layout.style_list_magias, finalLvmagias[0]));
                             listmagia.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
                             txtMagias.setText("Você tem "+ quantidade[0].toString()+" magias pra escolher");
                         } else if (cont[0] == 1) {
@@ -720,7 +720,7 @@ public class Magias extends AppCompatActivity {
                 }
             }
             finalLvmagias[0] = lvmagias[0];
-            listmagia.setAdapter(new ArrayAdapter<String>(this, R.layout.layout_list_magias, finalLvmagias[0]));
+            listmagia.setAdapter(new ArrayAdapter<String>(this, R.layout.style_list_magias, finalLvmagias[0]));
             listmagia.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
         }
         listmagia.setOnItemClickListener(new AdapterView.OnItemClickListener() {

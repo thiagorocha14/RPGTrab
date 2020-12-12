@@ -57,7 +57,7 @@ public class ShowFicha extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 String extra = "extra";
-                intent.putExtra("com.example.rpg.Objects.Classe",extra);
+                intent.putExtra("Classe",extra);
                 intent.putExtra("Ficha",ficha);
                 startActivity(intent);
                 finish();

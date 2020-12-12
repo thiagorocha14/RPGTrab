@@ -31,7 +31,7 @@ public class DialogDadoAdapter extends AppCompatDialogFragment {
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity(), R.style.CustomAlertDialog);
         LayoutInflater inflater = getActivity().getLayoutInflater();
-        View view = inflater.inflate(R.layout.act_dialog, null);
+        View view = inflater.inflate(R.layout.dialog_dado, null);
         txt = view.findViewById(R.id.txtRandom);
         img4 = view.findViewById(R.id.img4);
         img6 = view.findViewById(R.id.img6);

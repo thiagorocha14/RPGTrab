@@ -10,7 +10,8 @@ import androidx.fragment.app.Fragment;
 import android.view.Menu;
 import android.view.WindowManager;
 
-import com.example.rpg.Fragments.Frag4;
+import com.example.rpg.Fragments.Frag3;
+import com.example.rpg.Logins.Login;
 import com.example.rpg.Objects.Ficha;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -31,11 +32,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         BottomNavigationView navView = findViewById(R.id.nav_view);
         Intent intent = getIntent();
-        if (intent.hasExtra("com.example.rpg.Objects.Classe")){
+        if (intent.hasExtra("Classe")){
             Ficha ficha = (Ficha) getIntent().getSerializableExtra("Ficha");
-            Fragment Frag = new Frag4();
+            Fragment Frag = new Frag3();
             Bundle bundle = new Bundle();
-            bundle.putString("Extra","com.example.rpg.Objects.Classe");
+            bundle.putString("Extra","Classe");
             bundle.putSerializable("ficha",ficha);
             Frag.setArguments(bundle);
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
@@ -45,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         }
         if (intent.hasExtra("Raca")){
             Ficha ficha = (Ficha) getIntent().getSerializableExtra("Ficha");
-            Fragment Frag = new Frag4();
+            Fragment Frag = new Frag3();
             Bundle bundle = new Bundle();
             bundle.putString("Extra","Raca");
             bundle.putSerializable("ficha",ficha);
@@ -57,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         }
         if (intent.hasExtra("Peri")){
             Ficha ficha = (Ficha) getIntent().getSerializableExtra("Ficha");
-            Fragment Frag = new Frag4();
+            Fragment Frag = new Frag3();
             Bundle bundle = new Bundle();
             bundle.putString("Extra","Peri");
             bundle.putSerializable("ficha",ficha);
@@ -69,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
         }
         if (intent.hasExtra("Magia")){
             Ficha ficha = (Ficha) getIntent().getSerializableExtra("Ficha");
-            Fragment Frag = new Frag4();
+            Fragment Frag = new Frag3();
             Bundle bundle = new Bundle();
             bundle.putString("Extra","Magia");
             bundle.putSerializable("ficha",ficha);
@@ -81,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
         }
         if (intent.hasExtra("Atrib")){
             Ficha ficha = (Ficha) getIntent().getSerializableExtra("Ficha");
-            Fragment Frag = new Frag4();
+            Fragment Frag = new Frag3();
             Bundle bundle = new Bundle();
             bundle.putString("Extra","Atrib");
             bundle.putSerializable("ficha",ficha);
@@ -93,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
         }
         if (intent.hasExtra("Origem")){
             Ficha ficha = (Ficha) getIntent().getSerializableExtra("Ficha");
-            Fragment Frag = new Frag4();
+            Fragment Frag = new Frag3();
             Bundle bundle = new Bundle();
             bundle.putString("Extra","Origem");
             bundle.putSerializable("ficha",ficha);
@@ -105,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
         }
         if (intent.hasExtra("Alin")){
             Ficha ficha = (Ficha) getIntent().getSerializableExtra("Ficha");
-            Fragment Frag = new Frag4();
+            Fragment Frag = new Frag3();
             Bundle bundle = new Bundle();
             bundle.putString("Extra","Alin");
             bundle.putSerializable("ficha",ficha);

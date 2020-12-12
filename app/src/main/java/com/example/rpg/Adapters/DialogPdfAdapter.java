@@ -23,7 +23,7 @@ public class DialogPdfAdapter extends AppCompatDialogFragment {
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         LayoutInflater inflater = getActivity().getLayoutInflater();
-        View view = inflater.inflate(R.layout.activity_dialog_pdf, null);
+        View view = inflater.inflate(R.layout.dialog_pdf, null);
         PDFView pdfView = view.findViewById(R.id.pdfDialog);
         pdfView.fromAsset("t.pdf")
                 .enableSwipe(true)

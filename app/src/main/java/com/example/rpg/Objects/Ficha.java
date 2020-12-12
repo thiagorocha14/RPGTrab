@@ -160,8 +160,8 @@ public class Ficha implements Serializable {
         return "Ficha:" +"\n"+
                 "Personagem: " + Personagem + '\n' +
                 "Raca: " + Raca + '\n' +
-                "com.example.rpg.Objects.Classe: " + Classe + '\n' +
-                "Página da com.example.rpg.Objects.Classe: " + Classe.getPgC() + '\n' +
+                "Classe: " + Classe + '\n' +
+                "Página da Classe: " + Classe.getPgC() + '\n' +
                 "Página da Raca: " + PgR + '\n' +
                 "Nivel: " + Nivel + '\n' +
                 "Alinhamento: " + Alinhamento + '\n' +

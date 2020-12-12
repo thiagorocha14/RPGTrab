@@ -33,7 +33,7 @@ public class FichaAdapter extends ArrayAdapter<Ficha> {
         if (lista != null) {
             LayoutInflater inflater = (LayoutInflater)
                     context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
-            view = inflater.inflate(R.layout.act_lista, parent, false);
+            view = inflater.inflate(R.layout.adapter_lista, parent, false);
 
             TextView txtNome = view.findViewById(R.id.txtNomeAdapter);
             TextView txtClasse = view.findViewById(R.id.txtClasseAdapter);

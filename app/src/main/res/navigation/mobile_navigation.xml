@@ -7,20 +7,20 @@
 
     <fragment
         android:id="@+id/navigation_dice"
-        android:name="com.example.rpg.Fragments.Frag2"
+        android:name="com.example.rpg.Fragments.Frag1"
         android:label="@string/tab_text_2"
-        tools:layout="@layout/fragment_frag2" />
+        tools:layout="@layout/fragment_frag1" />
 
     <fragment
         android:id="@+id/navigation_fichas"
-        android:name="com.example.rpg.Fragments.Frag3"
+        android:name="com.example.rpg.Fragments.Frag2"
         android:label="@string/tab_text_3"
-        tools:layout="@layout/fragment_frag3" />
+        tools:layout="@layout/fragment_frag2" />
 
     <fragment
         android:id="@+id/navigation_livro"
-        android:name="com.example.rpg.Fragments.Frag4"
+        android:name="com.example.rpg.Fragments.Frag3"
         android:label="@string/tab_text_4"
-        tools:layout="@layout/fragment_frag4"/>
+        tools:layout="@layout/fragment_frag3"/>
 
 </navigation>

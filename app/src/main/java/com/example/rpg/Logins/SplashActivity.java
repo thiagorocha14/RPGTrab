@@ -1,13 +1,15 @@
-package com.example.rpg;
+package com.example.rpg.Logins;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import androidx.annotation.NonNull;
+
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
+
 import android.view.WindowManager;
 
+import com.example.rpg.MainActivity;
+import com.example.rpg.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -28,7 +30,7 @@ public class SplashActivity extends AppCompatActivity {
                     startActivity(new Intent(getBaseContext(),Login.class));
                     finish();
                 }else{
-                    startActivity(new Intent(getBaseContext(),MainActivity.class));
+                    startActivity(new Intent(getBaseContext(), MainActivity.class));
                     finish();
                 }
             }
