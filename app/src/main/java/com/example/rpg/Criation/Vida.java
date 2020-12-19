@@ -681,7 +681,8 @@ public class Vida extends AppCompatActivity {
             txtmodCar.setText(atributo.getModCar());
             getVida(ficha.getClasseO(),Integer.valueOf(atributo.getModCon()),Integer.valueOf(ficha.getNivel()));
             txtVida.setText("Sua vida é: "+totalTot);
-            ficha.setVida(total.toString());
+            ficha.setVida(total);
+            ficha.setVidaMax(total);
         }
         btnDef.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -695,7 +696,8 @@ public class Vida extends AppCompatActivity {
                         }else {
                             getVida(ficha.getClasseO(), Integer.valueOf(atributo.getModCon()), Integer.valueOf(ficha.getNivel()));
                             txtVida.setText("Sua vida é: " + totalTot);
-                            ficha.setVida(total.toString());
+                            ficha.setVida(total);
+                            ficha.setVidaMax(total);
                             btnDef.setVisibility(View.INVISIBLE);
                         }
                         view.clearAnimation();

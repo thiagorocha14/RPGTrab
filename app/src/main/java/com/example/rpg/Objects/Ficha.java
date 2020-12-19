@@ -15,7 +15,8 @@ public class Ficha implements Serializable {
     private String Nivel;
     private String Alinhamento;
     private String Origem;
-    private String Vida;
+    private int Vida;
+    private int VidaMax;
     private String Magia;
     private String Link;
     private String Pericia;
@@ -24,17 +25,17 @@ public class Ficha implements Serializable {
     public Ficha() {
     }
 
-    public Ficha(String personagem, String raca, Classe classe, String id, int pgC, int pgR, String nivel, String alinhamento, String origem, String vida, String magia, String link, Atributo atributo, String pericia) {
+    public Ficha(String personagem, String raca, Classe classe, String id, int pgR, String nivel, String alinhamento, String origem, int vida,int vidamax, String magia, String link, Atributo atributo, String pericia) {
         Personagem = personagem;
         Raca = raca;
         Classe = classe;
         Id = id;
-        //PgC = pgC;
         PgR = pgR;
         Nivel = nivel;
         Alinhamento = alinhamento;
         Origem = origem;
         Vida = vida;
+        VidaMax = vidamax;
         Magia = magia;
         Link = link;
         Atributo = atributo;
@@ -115,12 +116,20 @@ public class Ficha implements Serializable {
         Origem = origem;
     }
 
-    public String getVida() {
+    public int getVida() {
         return Vida;
     }
 
-    public void setVida(String vida) {
+    public void setVida(int vida) {
         Vida = vida;
+    }
+
+    public int getVidaMax() {
+        return VidaMax;
+    }
+
+    public void setVidaMax(int vidaMax) {
+        VidaMax = vidaMax;
     }
 
     public String getMagia() {

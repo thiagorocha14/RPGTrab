@@ -5,6 +5,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.palette.graphics.Palette;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
@@ -14,6 +15,7 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.rpg.Adapters.DialogVidaAdapter;
 import com.example.rpg.Objects.Atributo;
 import com.example.rpg.Objects.Classe;
 import com.example.rpg.Objects.Ficha;
@@ -36,7 +38,7 @@ public class ShowFicha extends AppCompatActivity {
         txtRaca.setText(ficha.getRaca());
         txtClasse.setText(classe);
         txtNivel.setText(ficha.getNivel());
-        txtPvS.setText(ficha.getVida());
+        txtPvS.setText(ficha.getVida()+"/"+ficha.getVidaMax());
         txtOrigemS.setText(ficha.getOrigem());
         txtAlinS.setText(ficha.getAlinhamento());
         txtForS.setText(atributo.getForca());
@@ -52,6 +54,19 @@ public class ShowFicha extends AppCompatActivity {
         txtModSab.setText(atributo.getModSab());
         txtModCar.setText(atributo.getModCar());
         txtPeriShow.setText(ficha.getPericia());
+        txtPvS.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DialogVidaAdapter dialog = new DialogVidaAdapter();
+                dialog.setFichaDialog(ficha);
+                dialog.show(getSupportFragmentManager(),"dialog");
+                if (dialog.isVisible()){
+
+                }else{
+                    txtPvS.setText(ficha.getVida()+"/"+ficha.getVidaMax());
+                }
+            }
+        });
         txtClasse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
