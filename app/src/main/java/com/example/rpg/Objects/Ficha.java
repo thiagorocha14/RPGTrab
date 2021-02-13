@@ -17,6 +17,8 @@ public class Ficha implements Serializable {
     private String Origem;
     private int Vida;
     private int VidaMax;
+    private int PM;
+    private int PMMax;
     private String Magia;
     private String Link;
     private String Pericia;
@@ -130,6 +132,22 @@ public class Ficha implements Serializable {
 
     public void setVidaMax(int vidaMax) {
         VidaMax = vidaMax;
+    }
+
+    public int getPM() {
+        return PM;
+    }
+
+    public void setPM(int PM) {
+        this.PM = PM;
+    }
+
+    public int getPMMax() {
+        return PMMax;
+    }
+
+    public void setPMMax(int PMMax) {
+        this.PMMax = PMMax;
     }
 
     public String getMagia() {

@@ -24,13 +24,15 @@ import com.squareup.picasso.Picasso;
 public class ShowFicha extends AppCompatActivity {
     Context context = ShowFicha.this;
     Bitmap bit;
+    TextView txtPvS,txtPmS;
+    Ficha ficha;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_ficha);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        final ImageView imgbg = findViewById(R.id.imgbg);final ImageView imgArrow1 = findViewById(R.id.imgArrow1);final ImageView imgArrow2 = findViewById(R.id.imgArrow2);final ImageView imgArrow3 = findViewById(R.id.imgArrow3);final ImageView imgArrow4 = findViewById(R.id.imgArrow4);final ImageView imgArrow5 = findViewById(R.id.imgArrow5);final ImageView imgArrow6 = findViewById(R.id.imgArrow6);final TextView txtName = findViewById(R.id.txtNameShow);final TextView txtRaca = findViewById(R.id.txtRacaShow);final TextView txtClasse = findViewById(R.id.txtClassShow);final TextView txtNivel = findViewById(R.id.txtNivelShow);final TextView txtPv = findViewById(R.id.txtSVida);final TextView txtPvS = findViewById(R.id.txtVidaShow);final TextView txtOrigem = findViewById(R.id.txtSOrigem);final TextView txtOrigemS = findViewById(R.id.txtOrigemShow);final TextView txtAlin = findViewById(R.id.txtSAlin);final TextView txtAlinS = findViewById(R.id.txtAlinShow);final TextView txtAtrib = findViewById(R.id.txtSAtrib);final TextView txtFor = findViewById(R.id.txtSFor);final TextView txtForS = findViewById(R.id.txtForShow);final TextView txtModFor = findViewById(R.id.txtModForShow);final TextView txtDes = findViewById(R.id.txtSDes);final TextView txtDesS = findViewById(R.id.txtDesShow);final TextView txtModDes = findViewById(R.id.txtModDesShow);final TextView txtCon = findViewById(R.id.txtSCon);final TextView txtConS = findViewById(R.id.txtConShow);final TextView txtModCon = findViewById(R.id.txtModConShow);final TextView txtInt = findViewById(R.id.txtSInt);final TextView txtIntS = findViewById(R.id.txtIntShow);final TextView txtModInt = findViewById(R.id.txtModIntShow);final TextView txtSab = findViewById(R.id.txtSSab);final TextView txtSabS = findViewById(R.id.txtSabShow);final TextView txtModSab = findViewById(R.id.txtModSabShow);final TextView txtCar = findViewById(R.id.txtSCar);final TextView txtCarS = findViewById(R.id.txtCarShow);final TextView txtModCar = findViewById(R.id.txtModCarShow);final TextView txtMagias = findViewById(R.id.txtSMagias);final TextView txtMagiasShow = findViewById(R.id.txtMagiaShow);final TextView txtPeri = findViewById(R.id.txtSPeri);final TextView txtPeriShow = findViewById(R.id.txtPeriShow);
-        final Ficha ficha = (Ficha) getIntent().getSerializableExtra("Ficha");
+        final ImageView imgbg = findViewById(R.id.imgbg);final ImageView imgArrow1 = findViewById(R.id.imgArrow1);final ImageView imgArrow2 = findViewById(R.id.imgArrow2);final ImageView imgArrow3 = findViewById(R.id.imgArrow3);final ImageView imgArrow4 = findViewById(R.id.imgArrow4);final ImageView imgArrow5 = findViewById(R.id.imgArrow5);final ImageView imgArrow6 = findViewById(R.id.imgArrow6);final TextView txtName = findViewById(R.id.txtNameShow);final TextView txtRaca = findViewById(R.id.txtRacaShow);final TextView txtClasse = findViewById(R.id.txtClassShow);final TextView txtNivel = findViewById(R.id.txtNivelShow);final TextView txtPv = findViewById(R.id.txtSVida);txtPvS = findViewById(R.id.txtVidaShow);final TextView txtPm = findViewById(R.id.txtSMana);txtPmS = findViewById(R.id.txtManaShow);final TextView txtOrigem = findViewById(R.id.txtSOrigem);final TextView txtOrigemS = findViewById(R.id.txtOrigemShow);final TextView txtAlin = findViewById(R.id.txtSAlin);final TextView txtAlinS = findViewById(R.id.txtAlinShow);final TextView txtAtrib = findViewById(R.id.txtSAtrib);final TextView txtFor = findViewById(R.id.txtSFor);final TextView txtForS = findViewById(R.id.txtForShow);final TextView txtModFor = findViewById(R.id.txtModForShow);final TextView txtDes = findViewById(R.id.txtSDes);final TextView txtDesS = findViewById(R.id.txtDesShow);final TextView txtModDes = findViewById(R.id.txtModDesShow);final TextView txtCon = findViewById(R.id.txtSCon);final TextView txtConS = findViewById(R.id.txtConShow);final TextView txtModCon = findViewById(R.id.txtModConShow);final TextView txtInt = findViewById(R.id.txtSInt);final TextView txtIntS = findViewById(R.id.txtIntShow);final TextView txtModInt = findViewById(R.id.txtModIntShow);final TextView txtSab = findViewById(R.id.txtSSab);final TextView txtSabS = findViewById(R.id.txtSabShow);final TextView txtModSab = findViewById(R.id.txtModSabShow);final TextView txtCar = findViewById(R.id.txtSCar);final TextView txtCarS = findViewById(R.id.txtCarShow);final TextView txtModCar = findViewById(R.id.txtModCarShow);final TextView txtMagias = findViewById(R.id.txtSMagias);final TextView txtMagiasShow = findViewById(R.id.txtMagiaShow);final TextView txtPeri = findViewById(R.id.txtSPeri);final TextView txtPeriShow = findViewById(R.id.txtPeriShow);
+        ficha = (Ficha) getIntent().getSerializableExtra("Ficha");
         final Classe classeO = ficha.getClasseO();
         String classe = classeO.getClasse();
         Atributo atributo = ficha.getAtributo();
@@ -39,6 +41,7 @@ public class ShowFicha extends AppCompatActivity {
         txtClasse.setText(classe);
         txtNivel.setText(ficha.getNivel());
         txtPvS.setText(ficha.getVida()+"/"+ficha.getVidaMax());
+        txtPmS.setText(ficha.getPM()+"/"+ficha.getPMMax());
         txtOrigemS.setText(ficha.getOrigem());
         txtAlinS.setText(ficha.getAlinhamento());
         txtForS.setText(atributo.getForca());
@@ -60,11 +63,6 @@ public class ShowFicha extends AppCompatActivity {
                 DialogVidaAdapter dialog = new DialogVidaAdapter();
                 dialog.setFichaDialog(ficha);
                 dialog.show(getSupportFragmentManager(),"dialog");
-                if (dialog.isVisible()){
-
-                }else{
-                    txtPvS.setText(ficha.getVida()+"/"+ficha.getVidaMax());
-                }
             }
         });
         txtClasse.setOnClickListener(new View.OnClickListener() {
@@ -161,7 +159,7 @@ public class ShowFicha extends AppCompatActivity {
                     int vibrantColor = color.getVibrantColor(getResources().getColor(R.color.colorPrimary));
                     int average = color.getDominantColor(getResources().getColor(R.color.colorPrimary));
                     layout.setBackgroundColor(average);
-                    txtName.setTextColor(vibrantColor);txtRaca.setTextColor(vibrantColor);txtClasse.setTextColor(vibrantColor);txtNivel.setTextColor(vibrantColor);txtPv.setTextColor(vibrantColor);txtPvS.setTextColor(vibrantColor);txtOrigem.setTextColor(vibrantColor);txtOrigemS.setTextColor(vibrantColor);txtAlin.setTextColor(vibrantColor);txtAlinS.setTextColor(vibrantColor);txtAtrib.setTextColor(vibrantColor);txtFor.setTextColor(vibrantColor);txtDes.setTextColor(vibrantColor);txtCon.setTextColor(vibrantColor);txtInt.setTextColor(vibrantColor);txtSab.setTextColor(vibrantColor);txtCar.setTextColor(vibrantColor);txtForS.setTextColor(vibrantColor);txtDesS.setTextColor(vibrantColor);txtConS.setTextColor(vibrantColor);txtIntS.setTextColor(vibrantColor);txtSabS.setTextColor(vibrantColor);txtCarS.setTextColor(vibrantColor);txtModFor.setTextColor(vibrantColor);txtModDes.setTextColor(vibrantColor);txtModCon.setTextColor(vibrantColor);txtModInt.setTextColor(vibrantColor);txtModSab.setTextColor(vibrantColor);txtModCar.setTextColor(vibrantColor);txtMagias.setTextColor(vibrantColor);txtMagiasShow.setTextColor(vibrantColor);txtPeri.setTextColor(vibrantColor);txtPeriShow.setTextColor(vibrantColor);
+                    txtName.setTextColor(vibrantColor);txtRaca.setTextColor(vibrantColor);txtClasse.setTextColor(vibrantColor);txtNivel.setTextColor(vibrantColor);txtPv.setTextColor(vibrantColor);txtPvS.setTextColor(vibrantColor);txtPm.setTextColor(vibrantColor);txtPmS.setTextColor(vibrantColor);txtOrigem.setTextColor(vibrantColor);txtOrigemS.setTextColor(vibrantColor);txtAlin.setTextColor(vibrantColor);txtAlinS.setTextColor(vibrantColor);txtAtrib.setTextColor(vibrantColor);txtFor.setTextColor(vibrantColor);txtDes.setTextColor(vibrantColor);txtCon.setTextColor(vibrantColor);txtInt.setTextColor(vibrantColor);txtSab.setTextColor(vibrantColor);txtCar.setTextColor(vibrantColor);txtForS.setTextColor(vibrantColor);txtDesS.setTextColor(vibrantColor);txtConS.setTextColor(vibrantColor);txtIntS.setTextColor(vibrantColor);txtSabS.setTextColor(vibrantColor);txtCarS.setTextColor(vibrantColor);txtModFor.setTextColor(vibrantColor);txtModDes.setTextColor(vibrantColor);txtModCon.setTextColor(vibrantColor);txtModInt.setTextColor(vibrantColor);txtModSab.setTextColor(vibrantColor);txtModCar.setTextColor(vibrantColor);txtMagias.setTextColor(vibrantColor);txtMagiasShow.setTextColor(vibrantColor);txtPeri.setTextColor(vibrantColor);txtPeriShow.setTextColor(vibrantColor);
                     imgArrow1.setColorFilter(vibrantColor);imgArrow2.setColorFilter(vibrantColor);imgArrow3.setColorFilter(vibrantColor);imgArrow4.setColorFilter(vibrantColor);imgArrow5.setColorFilter(vibrantColor);imgArrow6.setColorFilter(vibrantColor);
                 }
             }
@@ -171,25 +169,5 @@ public class ShowFicha extends AppCompatActivity {
 
             }
         });
-
-        /*Picasso.get().load(ficha.getLink()).into(new Target() {
-            @Override
-            public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
-                imgbg.setImageBitmap(bitmap);
-                bit = bitmap;
-            }
-
-            @Override
-            public void onBitmapFailed(Exception e, Drawable errorDrawable) {
-
-            }
-
-            @Override
-            public void onPrepareLoad(Drawable placeHolderDrawable) {
-
-            }
-        });
-
-         */
     }
 }

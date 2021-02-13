@@ -18,7 +18,7 @@ import com.example.rpg.Objects.Ficha;
 import com.example.rpg.R;
 
 public class Vida extends AppCompatActivity {
-    Integer total,dado,For,Des,Con,Int,Sab,Car;
+    Integer pm,pmtotal,total,dado,For,Des,Con,Int,Sab,Car;
     String totalTot,base,mais,raca,addFor,addDes,addCon,addInt,addSab,addCar;
     final Integer[] cont = {0};
     @Override
@@ -683,6 +683,8 @@ public class Vida extends AppCompatActivity {
             txtVida.setText("Sua vida é: "+totalTot);
             ficha.setVida(total);
             ficha.setVidaMax(total);
+            ficha.setPM(pmtotal);
+            ficha.setPMMax(pmtotal);
         }
         btnDef.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -698,6 +700,8 @@ public class Vida extends AppCompatActivity {
                             txtVida.setText("Sua vida é: " + totalTot);
                             ficha.setVida(total);
                             ficha.setVidaMax(total);
+                            ficha.setPM(pmtotal);
+                            ficha.setPMMax(pmtotal);
                             btnDef.setVisibility(View.INVISIBLE);
                         }
                         view.clearAnimation();
@@ -730,6 +734,8 @@ public class Vida extends AppCompatActivity {
     public void getVida(Classe classe, Integer modCon, Integer nivel){
         total = classe.getDadoInicial()+modCon;
         dado = classe.getDadoNivel()+modCon;
+        pm = classe.getPMNivel();
+        pmtotal = pm*nivel;
         base = total.toString();
         totalTot = "+ ";
         mais = " + ";
