@@ -1,7 +1,5 @@
 package com.example.rpg.Fragments;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -20,6 +18,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.rpg.Animation;
 import com.example.rpg.BD;
 import com.example.rpg.Criation.CriarRaca;
 import com.example.rpg.Objects.Ficha;
@@ -52,20 +51,20 @@ public class Frag2 extends Fragment {
         final FloatingActionButton fabAdd = view.findViewById(R.id.fabAdd);
         final FloatingActionButton fabSearch = view.findViewById(R.id.fabSearch);
         final EditText edtSearch = view.findViewById(R.id.ediSearch);
-        init(fabAdd);
-        init(fabSearch);
-        init(edtSearch);
+        Animation.init(fabAdd);
+        Animation.init(fabSearch);
+        Animation.init(edtSearch);
         if (Util.statusNet(getContext())) {
             btnadd.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    isRotate = rotateFab(v, !isRotate);
+                    isRotate = Animation.rotateFab135(v, !isRotate);
                     if(isRotate){
-                        showIn(fabAdd);
-                        showIn(fabSearch);
+                        Animation.showIn(fabAdd);
+                        Animation.showIn(fabSearch);
                     }else{
-                        showOut(fabAdd);
-                        showOut(fabSearch);
+                        Animation.showOut(fabAdd);
+                        Animation.showOut(fabSearch);
                     }
                 }
             });
@@ -80,7 +79,7 @@ public class Frag2 extends Fragment {
                 @Override
                 public void onClick(View v) {
                     if (show==false) {
-                        showIn(edtSearch);
+                        Animation.showIn(edtSearch);
                         show = true;
                     }else{
                         edtSearch.setVisibility(View.GONE);
@@ -165,53 +164,4 @@ public class Frag2 extends Fragment {
             }
         }
     };
-    public static boolean rotateFab(final View v, boolean rotate) {
-        v.animate().setDuration(200)
-                .setListener(new AnimatorListenerAdapter() {
-                    @Override
-                    public void onAnimationEnd(Animator animation) {
-                        super.onAnimationEnd(animation);
-                    }
-                })
-                .rotation(rotate ? 135f : 0f);
-        return rotate;
-    }
-    public static void showIn(final View v) {
-        v.setVisibility(View.VISIBLE);
-        v.setAlpha(0f);
-        v.setTranslationY(v.getHeight());
-        v.animate()
-                .setDuration(200)
-                .translationY(0)
-                .setListener(new AnimatorListenerAdapter() {
-                    @Override
-                    public void onAnimationEnd(Animator animation) {
-                        super.onAnimationEnd(animation);
-                    }
-                })
-                .alpha(1f)
-                .start();
-    }
-    public static void showOut(final View v) {
-        v.setVisibility(View.VISIBLE);
-        v.setAlpha(1f);
-        v.setTranslationY(0);
-        v.animate()
-                .setDuration(200)
-                .translationY(v.getHeight())
-                .setListener(new AnimatorListenerAdapter() {
-                    @Override
-                    public void onAnimationEnd(Animator animation) {
-                        v.setVisibility(View.GONE);
-                        super.onAnimationEnd(animation);
-                    }
-                }).alpha(0f)
-                .start();
-    }
-
-    public static void init(final View v) {
-        v.setVisibility(View.GONE);
-        v.setTranslationY(v.getHeight());
-        v.setAlpha(0f);
-    }
 }

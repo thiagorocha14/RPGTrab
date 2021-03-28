@@ -737,7 +737,40 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
     </ScrollView>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnShowficha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:clickable="true"
+        android:src="@drawable/ic_dots_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabSleep"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/ic_sleep_24"
+        app:fabSize="mini"
+        app:layout_constraintBottom_toTopOf="@+id/btnShowficha"
+        app:layout_constraintEnd_toEndOf="@id/btnShowficha"
+        app:layout_constraintStart_toStartOf="@+id/btnShowficha"
+        app:rippleColor="@color/white" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabTest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/ic_dice_24"
+        app:fabSize="mini"
+        app:layout_constraintBottom_toTopOf="@+id/fabSleep"
+        app:layout_constraintEnd_toEndOf="@id/fabSleep"
+        app:rippleColor="@color/white" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
