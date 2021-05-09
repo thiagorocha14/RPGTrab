@@ -7,6 +7,8 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -37,7 +39,7 @@ import java.util.Locale;
 
 public class Frag2 extends Fragment {
 
-    ListView listFichas;
+    RecyclerView listFichas;
     FichaAdapter adapter;
     Ficha ficha;
     boolean isRotate = false;
@@ -47,6 +49,7 @@ public class Frag2 extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_frag2, container, false);
         listFichas = view.findViewById(R.id.listPer);
+        listFichas.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
         FloatingActionButton btnadd = view.findViewById(R.id.btnAddFicha);
         final FloatingActionButton fabAdd = view.findViewById(R.id.fabAdd);
         final FloatingActionButton fabSearch = view.findViewById(R.id.fabSearch);
@@ -103,7 +106,7 @@ public class Frag2 extends Fragment {
                 if (getActivity() != null) {
                     adapter = new FichaAdapter(getActivity(),lista);
                     listFichas.setAdapter(adapter);
-                    listFichas.setTextFilterEnabled(true);
+                    //listFichas.setTextFilterEnabled(true);
                 }
 
             }
@@ -127,7 +130,7 @@ public class Frag2 extends Fragment {
 
             }
         });
-        listFichas.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        /*listFichas.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 ficha = adapter.getItem(position);
@@ -147,7 +150,7 @@ public class Frag2 extends Fragment {
                 alert.show();
                 return true;
             }
-        });
+        });*/
         return view;
     }
     DialogInterface.OnClickListener dialog2 = new DialogInterface.OnClickListener() {

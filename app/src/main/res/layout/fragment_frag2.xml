@@ -5,7 +5,7 @@
     android:id="@+id/frameLayout3"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_papel2"
+    android:background="@drawable/bg_papel"
     tools:context=".Fragments.Frag2">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -48,7 +48,7 @@
         app:layout_constraintEnd_toEndOf="@id/fabAdd"
         app:rippleColor="@color/white" />
 
-    <ListView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/listPer"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -57,7 +57,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ediSearch">
 
-    </ListView>
+    </androidx.recyclerview.widget.RecyclerView>
     <EditText
         android:id="@+id/ediSearch"
         android:layout_width="match_parent"
